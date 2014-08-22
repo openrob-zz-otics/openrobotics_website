@@ -93,4 +93,71 @@ $(function() {
 	
 	$("#form_first_name").on("input",function() {verify();});
 	$("#form_last_name").on("input",function() {verify();});
+	
+		
+	$("#change_password").click(function() {
+		var old_password = $("#form_old_password").val();
+		var password = $("#form_password").val();
+		var password_check = $("#form_password_check").val();
+		var ok = true;
+		
+		if (password.length < 6) {
+			$("#control_password").removeClass("has-success");
+			$("#control_password").addClass("has-error");
+			ok = false;
+		} else {
+			$("#control_password").addClass("has-success");
+			$("#control_password").removeClass("has-error");
+		}
+		
+		if (password != password_check) {
+			$("#control_password_check").removeClass("has-success");
+			$("#control_password_check").addClass("has-error");
+			$("#password_error_message").html("Passwords do not match.");
+			$("#password_error_message").addClass("text-error");
+			ok = false;
+		} else {
+			$("#control_password_check").addClass("has-success");
+			$("#control_password_check").removeClass("has-error");
+			$("#password_error_message").html("");
+			$("#password_error_message").removeClass("text-error");
+			
+		}
+		
+		if (ok) {
+			$.ajax({
+				type: "POST",
+				dataType: "json",
+				url: "/manage/profile/assets/cgi/profile.php?task=3	",
+				data: {
+					old_password: old_password,
+					password: password,
+					password_check: password_check
+				}
+			}).done(function(data) {
+				/*
+				class ReturnUpdatePassword {
+					public $old_password_ok = true;
+					public $update_success = true;
+					public $db_error = false;
+				}
+				*/
+				if (data.update_success) {
+					$("#password_error_message").html("Password Successfully Changed");
+					$("#password_error_message").removeClass("text-error");
+				} else if (data.db_error) {
+					$("#password_error_message").html("DB Error");
+					$("#password_error_message").addClass("text-error");
+				} else if (!data.old_password_ok) {
+					$("#password_error_message").html("Incorrect Old Password");
+					$("#password_error_message").addClass("text-error");
+				}
+			});		
+		}
+	});
+	
+	
+	
+	
+	
 });

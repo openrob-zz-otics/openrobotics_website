@@ -16,6 +16,7 @@
 			$query = "SELECT * FROM `projects` WHERE `id`='$project_id';";
 			if ($result = $db->query($query)) {
 				if ($row = $result->fetch_assoc()) {
+					$query = "SELECT `first_name`, `last_name` FROM `users_info` WHERE `id`='".$row['created_by']."';";
 					echo json_encode($row);
 				}
 			}

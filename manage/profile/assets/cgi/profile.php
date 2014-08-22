@@ -20,6 +20,12 @@ class ReturnUpdate {
 	public $update_success = true;
 }
 
+class ReturnUpdatePassword {
+	public $old_password_ok = true;
+	public $update_success = true;
+	public $db_error = false;
+}
+
 if ($logged_in) {
 	$task = isset($_GET['task']) ? intval($_GET['task']) : 0;
 	$return = new ReturnRead();
@@ -83,6 +89,40 @@ if ($logged_in) {
 		$extension = end($temp);
 		imagepng(imagecreatefromstring(file_get_contents($_FILES["file"]["tmp_name"])), "../../../../upload_content/user_images/" . $user_id . ".png");
 		header("Location: /manage/profile");
-	}	
+	} else if ($task == 3) {
+		$old_password = @$_POST['old_password'];
+		$password = @$_POST['password'];
+		$return = new ReturnUpdatePassword();
+		
+		if ($db = get_db()) {
+			$query = "SELECT `password` FROM `users` WHERE `id`='$user_id';";
+			if ($result = $db->query($query)) {
+				if ($row = $result->fetch_assoc()) {
+					if ($row['password'] != md5($old_password)) {
+						$return->old_password_ok = false;
+						$return->update_success = false;
+					} else {
+						$query = "UPDATE `users` SET `password`=MD5('$password') WHERE `id`='$user_id';";
+						if (!$db->query($query)) {
+							$return->db_error = true;
+							$return->update_success = false;
+						}
+					}	
+				} else {
+					$return->db_error = true;
+					$return->update_success = false;
+				}
+			} else {
+				$return->db_error = true;
+				$return->update_success = false;
+			}
+			$db->close();
+		} else {
+			$return->db_error = true;
+			$return->update_success = false;
+		}
+		
+		echo json_encode($return);
+	}
 }
 ?>
