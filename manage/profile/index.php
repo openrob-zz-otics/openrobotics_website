@@ -19,6 +19,12 @@
 				<input type="submit" name="submit" value="Upload" class="btn btn-default">
 			</form>
 			<hr>
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
 			<p class="text-error" id="error_message"></p>
 			
 				<div class="form-group" id="control_first_name">
@@ -67,6 +73,28 @@
 				</div>
 				
 				<button class="btn btn-default" id="form_submit">Update</button>
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+	<div class="row"> 
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<h3>Change Password</h3>
+			
+			<p class="text-error" id="password_error_message"></p>
+			<div class="form-group" id="control_old_password">
+				<label for="form_old_password">Old Password</label>
+				<input type="password" class="form-control" placeholder="Old Password" id="form_old_password">
+			</div>	
+			<div class="form-group" id="control_password">
+				<label for="form_password">New Password</label>
+				<input type="password" class="form-control" placeholder="New Password" id="form_password">
+			</div>		
+			<div class="form-group" id="control_password_check">
+				<label for="form_password_check">New Password Again</label>
+				<input type="password" class="form-control" placeholder="New Password" id="form_password_check">
+			</div>	
+			<button class="btn btn-default" id="change_password">Change</button>
 		</div>
 		<div class="col-md-4"></div>
 	</div>
