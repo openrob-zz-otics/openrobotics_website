@@ -23,7 +23,7 @@
 		margin-top: 155px;
 	}
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 	.navbar-brand {
 		padding-top: 5px;
 	}
@@ -60,7 +60,7 @@
 
 #cred_navbar>ul>li {
 	height: 35px;
-	padding-top:5px;
+	padding-top:7px;
 	padding-right:15px;
 	color: #fff!important;
 	font-size: initial!important;
@@ -77,7 +77,7 @@
 	margin-top:0px;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 767px) {
 	.right-override {
 		padding-top: 7px;
 	}
