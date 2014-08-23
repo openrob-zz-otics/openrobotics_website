@@ -77,7 +77,13 @@
 				<li <?php if(PAGE_TITLE == "blog") echo CLASS_ACTIVE;?>><a href="/blog/">Blog</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li <?php if(PAGE_TITLE == "tech") echo CLASS_ACTIVE;?>><a href="/tech/">Tech</a></li>
+				<li <?php if(PAGE_TITLE == "tech") echo CLASS_ACTIVE;?>>
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tech<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/training/">Training</a></li>
+						<li><a href="//wiki.<?php echo $_SERVER['SERVER_NAME'].($_SERVER['SERVER_PORT']=='80' ? '' : ':'.$_SERVER['SERVER_PORT']); ?>">wiki</a></li>
+					</ul>			
+				</li>
 				<li <?php if(PAGE_TITLE == "contact") echo CLASS_ACTIVE;?> class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">

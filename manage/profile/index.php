@@ -73,6 +73,7 @@
 				</div>
 				
 				<button class="btn btn-default" id="form_submit">Update</button>
+				<hr>
 		</div>
 		<div class="col-md-4"></div>
 	</div>
