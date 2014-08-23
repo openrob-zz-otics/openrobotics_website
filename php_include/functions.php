@@ -120,5 +120,13 @@ function print_footnote() {
 	include("footnote.php");
 }
 
-
+/* Send a message with good headers */
+function myMail($to, $subject, $message) {
+	$headers = "From: doNotReply@openrobotics.ca\r\n";
+	$headers .= "Reply-To: doNotReply@openrobotics\r\n";
+	$headers .= "MIME-Version: 1.0\r\n";
+	$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+	
+	return mail($to, $subject, $message, $headers);
+}
 ?>

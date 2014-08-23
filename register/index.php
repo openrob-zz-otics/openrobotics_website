@@ -69,7 +69,7 @@
 										if($result = $mysqli->query($insert) && $mysqli->affected_rows == 1 ) {
 											
 											$success = "Congratulations! You have sucessfully registered.";
-											header("Location: post_register.php");
+											myMail($email, "Thank you for registering.", "Thank you for registering for UBC Open Robotics!");
 										} else {
 											$errors = "There were errors during registration. Please consult admin.";
 										}
