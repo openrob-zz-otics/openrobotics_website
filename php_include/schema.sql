@@ -68,7 +68,6 @@ CREATE TABLE IF NOT EXISTS `projects` (
 	CONSTRAINT `projects.fk_user`
 		FOREIGN KEY (`created_by`)
 		REFERENCES `users`(`id`)
-		ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `blog_posts` (
@@ -83,5 +82,4 @@ CREATE TABLE IF NOT EXISTS `blog_posts` (
 	CONSTRAINT `blog_posts.fk_user`
 		FOREIGN KEY (`created_by`)
 		REFERENCES `users`(`id`)
-		ON DELETE CASCADE
 );
