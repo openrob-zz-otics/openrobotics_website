@@ -18,7 +18,6 @@
 
 			<h2>Register</h2>
 			
-			<pre>
 			<?php 
 				if(isset($_POST["submit"])) {
 
@@ -84,7 +83,6 @@
 					}
 				}
 			?>
-			</pre>
 			
 			<?php 
 				if(isset($errors)) {
