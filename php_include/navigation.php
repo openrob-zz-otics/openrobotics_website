@@ -46,7 +46,7 @@
 		<ul class="nav navbar-nav navbar-right right-override">
 			<?php 
 			if (isset($GLOBALS['logged_in']) && $GLOBALS['logged_in']) {
-				echo '<li class="nav_float_fix">Welcome, '.$GLOBALS['user_first_name'].'</li>'
+				echo '<li class="nav_float_fix heading-text">Welcome, '.$GLOBALS['user_first_name'].'</li>'
 					. '<li class="nav_float_fix"><a class="nav_float_fix" href="/logout">Logout</a></li>';
 			} else {
 				echo '<li class="nav_float_fix"><a class="nav_float_fix" href="/login">Login</a></li>'
@@ -80,28 +80,30 @@
 				<li <?php if(PAGE_TITLE == "tech") echo CLASS_ACTIVE;?>>
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tech<span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="/training/">Training</a></li>
-						<li><a href="//wiki.<?php echo $_SERVER['SERVER_NAME'].($_SERVER['SERVER_PORT']=='80' ? '' : ':'.$_SERVER['SERVER_PORT']); ?>">wiki</a></li>
+						<li><a class='heading-text' href="/training/">Training</a></li>
+						<li><a class='heading-text' href="//wiki.<?php echo $_SERVER['SERVER_NAME'].($_SERVER['SERVER_PORT']=='80' ? '' : ':'.$_SERVER['SERVER_PORT']); ?>">wiki</a></li>
 					</ul>			
 				</li>
 				<li <?php if(PAGE_TITLE == "contact") echo CLASS_ACTIVE;?> class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="/contact/">Contact Form</a></li>
-						<li class="divider"></li>
-						<li class="dropdown-header">Member Pages</li>
+						<li><a class='heading-text' href="/contact/">Contact Form</a></li>
+						<li><a class='heading-text' href="/contact/key_users">Key People</a></li>
+						<!--<li class="divider"></li>-->
+						<!--<li class="dropdown-header" class='heading-text'>Member Pages</li>-->
 						<?php
+							/*
 							if ($db = get_db()) {
 								$query = "SELECT * FROM `user_info` WHERE `id` in (SELECT `id` FROM `user_permissions` WHERE `in_contact_list`='1');";
 								if ($result = $db->query($query)) {
 									while ($row = $result->fetch_assoc()) {
-										echo "<li><a href='/contact/user?id=".$row['id']."'>";
+										echo "<li><a class='heading-text' href='/contact/user?id=".$row['id']."'>";
 										echo $row['first_name']." ".$row['last_name'];
 										echo "</a></li>";
 									}
 								}	
 								$db->close();
-							}
+							}*/
 						?>
 					</ul>
 				

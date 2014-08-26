@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS `user_info` (
 	`first_name` TEXT NOT NULL,
 	`middle_name` TEXT NOT NULL,
 	`last_name` TEXT NOT NULL,
+	`ubc_student_number` INT(10) UNSIGNED NOT NULL,
 	`contact_email` TEXT NOT NULL,
 	`linkedin` TEXT NOT NULL,
 	`personal_site` TEXT NOT NULL,
@@ -70,6 +71,21 @@ CREATE TABLE IF NOT EXISTS `projects` (
 		REFERENCES `users`(`id`)
 );
 
+CREATE TABLE IF NOT EXISTS `project_contributors` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`user_id` BIGINT(20) UNSIGNED NOT NULL,
+	`project_id` BIGINT(20) UNSIGNED NOT NULL,
+	PRIMARY KEY(`id`),
+	CONSTRAINT `project_contributors.fk_user`
+		FOREIGN KEY (`user_id`)
+		REFERENCES `users`(`id`)
+		ON DELETE CASCADE,
+	CONSTRAINT `project_contributors.fk_project`
+		FOREIGN KEY (`project_id`)
+		REFERENCES `projects`(`id`)
+		ON DELETE CASCADE	
+);
+
 CREATE TABLE IF NOT EXISTS `blog_posts` (
 	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`visible` TINYINT(1) UNSIGNED NOT NULL,
@@ -82,4 +98,20 @@ CREATE TABLE IF NOT EXISTS `blog_posts` (
 	CONSTRAINT `blog_posts.fk_user`
 		FOREIGN KEY (`created_by`)
 		REFERENCES `users`(`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `mailing_list_recipients` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`email` TEXT NOT NULL,
+	`registration_time` DATETIME NOT NULL,
+	`registration_ip` TEXT NOT NULL,
+	PRIMARY KEY(`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `contact_form_messages` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`email` TEXT NOT NULL,
+	`name` TEXT NOT NULL,
+	`message` TEXT NOT NULL,
+	PRIMARY KEY(`id`)
 );

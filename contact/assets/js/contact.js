@@ -67,7 +67,7 @@ $(function() {
 	{
 		validate_form();
 	});
-
+/*
 	$("#form_submit").click(function() {
 		//submit form
 		if (validate_form()) {
@@ -76,13 +76,14 @@ $(function() {
 			var email = $("#form_email").val();
 			$("#form_control").slideUp();
 			
-			/*
+			
 			$.ajax({
 				
 			}).done(function()
 			
 			});
-			*/
+			
 		}
 	});
+*/
 });

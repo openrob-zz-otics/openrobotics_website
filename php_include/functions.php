@@ -64,6 +64,10 @@ function check_login() {
 	}
 }
 
+function isLoggedIn() {
+	return $GLOBALS['logged_in'];
+}
+
 function canManageUsers() {
 	return $GLOBALS['manage_users'];
 }
@@ -129,4 +133,14 @@ function myMail($to, $subject, $message) {
 	
 	return mail($to, $subject, $message, $headers);
 }
+
+function myMailFrom($to, $subject, $message, $from) {
+	$headers = "From: $from\r\n";
+	$headers .= "Reply-To: $from\r\n";
+	$headers .= "MIME-Version: 1.0\r\n";
+	$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+	
+	return mail($to, $subject, $message, $headers);
+}
+
 ?>
