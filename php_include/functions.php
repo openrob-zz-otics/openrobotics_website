@@ -64,6 +64,10 @@ function check_login() {
 	}
 }
 
+function isLoggedIn() {
+	return $GLOBALS['logged_in'];
+}
+
 function canManageUsers() {
 	return $GLOBALS['manage_users'];
 }
@@ -120,5 +124,23 @@ function print_footnote() {
 	include("footnote.php");
 }
 
+/* Send a message with good headers */
+function myMail($to, $subject, $message) {
+	$headers = "From: doNotReply@openrobotics.ca\r\n";
+	$headers .= "Reply-To: doNotReply@openrobotics\r\n";
+	$headers .= "MIME-Version: 1.0\r\n";
+	$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+	
+	return mail($to, $subject, $message, $headers);
+}
+
+function myMailFrom($to, $subject, $message, $from) {
+	$headers = "From: $from\r\n";
+	$headers .= "Reply-To: $from\r\n";
+	$headers .= "MIME-Version: 1.0\r\n";
+	$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+	
+	return mail($to, $subject, $message, $headers);
+}
 
 ?>

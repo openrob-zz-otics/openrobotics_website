@@ -5,11 +5,13 @@
 	print_header($page_name);
 	print_navbar();
 ?>
-<div class="container">
+<div class="container" id="div_container">
 
 	<h2>About</h2>
 	
-	<p>abooooooout turn.</p>
+	<p>Take a look at our brochure</p>
+	
+	<div data-configid="0/9041205" style="width: 1170px; height: 550px;" class="issuuembed" id="issu_doc"></div><script type="text/javascript" src="//e.issuu.com/embed.js" async="true"></script>
 	
 	<?php
 		print_footnote();

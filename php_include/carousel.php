@@ -9,7 +9,7 @@
 	</ol>
 	
 	<div id="carousel-overlay">
-		<p>Welcome to UBC Open Robotics</p>
+		<p style="font-family:'klinic-slab-book';">Creating Robots, Improving Humans.</p>
 	</div>
 	
 	<div class="carousel-inner">
@@ -61,9 +61,9 @@
 			<img src="/assets/images/carousel/4.jpg" class="carousel_resize">
 			<div class="container">
 				<div class="carousel-caption">
-					<button type="button" class="btn btn-default btn-lg transparent-button">
-						<a href="/projects/">View Projects</a>
-					</button>
+					<a href="/projects/">
+						<button type="button" class="btn btn-default btn-lg transparent-button">View Projects</button>
+					</a>					
 				</div>
 			</div>
 		</div>

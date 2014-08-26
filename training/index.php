@@ -1,15 +1,15 @@
 <?php
 	//include our library and start drawing the page
 	require_once("../php_include/functions.php");
-	$page_name = "tech";
+	$page_name = "training";
 	print_header($page_name);
 	print_navbar();
 ?>
 <div class="container">
 
-	<h2>Tech</h2>
+	<h2>Training</h2>
 	
-	<p>What is supposed to go here?.</p>
+	<p>Check back later for training content!</p>
 	
 	<?php
 		print_footnote();

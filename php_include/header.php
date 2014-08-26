@@ -12,8 +12,14 @@
 
 		<!-- set the page title -->
 		<title>
-			<?php echo "Open Robotics | " . ucwords(PAGE_TITLE); ?>
+			<?php echo "Open Robotics | " . ucwords(str_replace('_', ' ', PAGE_TITLE)); ?>
 		</title>
+		
+		<!-- Adobe TypeKit -->
+		<!--
+		<script type="text/javascript" src="//use.typekit.net/tee1lue.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+		-->
 		
 		<!-- Bootstrap core CSS -->
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">

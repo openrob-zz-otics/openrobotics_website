@@ -3,7 +3,10 @@
 	require_once("../../php_include/functions.php");
 	$page_name = "profile";
 	print_header($page_name);
-	print_navbar();
+	print_navbar();	
+	if (!isLoggedIn()) {
+		header("Location: /");
+	}
 ?>
 
 <div class="container">
@@ -73,6 +76,7 @@
 				</div>
 				
 				<button class="btn btn-default" id="form_submit">Update</button>
+				<hr>
 		</div>
 		<div class="col-md-4"></div>
 	</div>
