@@ -20,6 +20,7 @@ $(function() {
 		var add_blog_post = $("#"+id+"_add_blog_post").prop("checked");
 		var manage_all_blog_posts = $("#"+id+"_manage_all_blog_posts").prop("checked");
 		var in_contact_list = $("#"+id+"_in_contact_list").prop("checked");
+		var send_email = $("#"+id+"_send_email").prop("checked");
 		
 		$.ajax({
 			type: "POST",
@@ -32,7 +33,8 @@ $(function() {
 				manage_all_projects: manage_all_projects,
 				add_blog_post: add_blog_post,
 				manage_all_blog_posts: manage_all_blog_posts,
-				in_contact_list: in_contact_list
+				in_contact_list: in_contact_list,
+				send_email: send_email
 			}	
 		}).done(function(data) {
 			if (data.update_success) {

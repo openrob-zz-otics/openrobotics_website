@@ -23,7 +23,6 @@
 				if(isset($_POST["submit"])) {
 					$subject = $_POST["subject"];
 					$message = $_POST["message"];
-					$from = "admin@openrobotics.com";
 
 					// simplest validate
 					if(isset($subject) && isset($subject)) {
@@ -32,7 +31,7 @@
 						$query  = "SELECT ALL `email` FROM `mailing_list_recipients` WHERE `id` >= 1;";
 						if ($result = $mysqli->query($query)) {
 							while($email = $result->fetch_assoc()){
-								myMailFrom($email["email"], $subject, $message, $from);
+								myMail($email["email"], $subject, $message);
 							}
 							$success = "Emails were sent Successfully.";
 						}
@@ -68,7 +67,7 @@
 							echo "</div>";	
 
 							echo "<div class=\"form-group\">";
-								echo "<button type=\"submit\" class=\"btn btn-default\" id=\"form_submit\" name=\"submit\" >Register</button>";
+								echo "<button type=\"submit\" class=\"btn btn-default\" id=\"form_submit\" name=\"submit\" >Send</button>";
 							echo "</div>";
 						echo "</form>";	
 					}

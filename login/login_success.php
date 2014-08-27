@@ -10,7 +10,7 @@
 	<div class="row">
 		<div class="row-lg-2"></div>
 		<div class="row-lg-8">
-			<h2>Login Success</h2>	
+			<h2>Login Success</h2>
 		</div>
 		<div class="row-lg-2"></div>
 	</div>
