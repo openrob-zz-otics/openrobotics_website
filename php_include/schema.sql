@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS `user_permissions` (
 	`add_blog_post` TINYINT(1) UNSIGNED NOT NULL,
 	`manage_all_blog_posts` TINYINT(1) UNSIGNED NOT NULL,
 	`in_contact_list` TINYINT(1) UNSIGNED NOT NULL,
+	`send_email` TINYINT(1) UNSIGNED NOT NULL,
 	PRIMARY KEY(`id`),
 	CONSTRAINT `user_permissions.fk_user`
 		FOREIGN KEY (`id`)

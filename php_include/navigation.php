@@ -22,6 +22,8 @@
 				echo '<li><a href="/manage/blog">Manage Blog</a></li>';
 			if (canManageUsers())
 				echo '<li><a href="/manage/users">Manage Users</a></li>';
+			if (canSendEmail())
+				echo '<li><a href="/email/send_email">Email</a></li>';	
 		
 		
 			echo '</ul>'
@@ -36,6 +38,9 @@
 				echo '<li><a href="/manage/blog">Manage Blog</a></li>';
 			if (canManageUsers())
 				echo '<li><a href="/manage/users">Manage Users</a></li>';
+			if (canSendEmail())
+				echo '<li><a href="/email/send_email">Email</a></li>';	
+
 		
 				
 			echo '</ul>'
