@@ -16,6 +16,13 @@ $(function() {
 			isValidate = false;
 		}
 		
+		if(validateEmail(email)) {
+			setSuccess("#control_email");
+		} else {
+			setError("#control_email", "Invalid Email");
+			isValidate = false;
+		}
+		
 		if(first_name.length >=2) {
 			setSuccess("#control_first_name");
 		} else {
@@ -58,6 +65,15 @@ $(function() {
 		$(control).removeClass("has-success");
 		$(control).addClass("has-error");
 		$(control+">.help-block").html(error);
+	}
+	
+	function validateEmail(email) {
+		var emailReg = new RegExp("[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}");
+		if(emailReg.test(email)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	$("#form_last_name").on('input', function() {validate();});
