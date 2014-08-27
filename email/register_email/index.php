@@ -6,7 +6,7 @@
 	require_once('../../php_include/recaptchalib.php');
 
 	$page_name = "register_email";
-	print_header($page_name);
+	print_header($page_name, false);
 	print_navbar();
 ?>
 
