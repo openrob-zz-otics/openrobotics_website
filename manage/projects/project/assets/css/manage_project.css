@@ -1,0 +1,20 @@
+@media (min-width: 992px) {	
+	#contributor-right {
+		height: 50px;
+	}
+	#contributor-left {
+		margin-top:120px;
+		height: 50px;
+	}
+}
+@media (max-width: 991px) {
+	#contributor-right {
+		height: 50px;
+		margin-top:5px;
+	}
+	#contributor-left {
+		height: 50px;	
+		margin-top:15px;
+		margin-bottom:5px;
+	}
+}

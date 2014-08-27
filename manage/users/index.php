@@ -2,7 +2,7 @@
 	//include our library and start drawing the page
 	require_once("../../php_include/functions.php");
 	$page_name = "users";
-	print_header($page_name);
+	print_header($page_name, true);
 	print_navbar();
 	if (!isLoggedIn()) {
 		header("Location: /");
@@ -17,7 +17,7 @@
 			
 			<?php
 				if (!canManageUsers()) {
-					echo '<p>You do not have permissions to be here</p>';
+					echo '<h3>You do not have permissions to be here</h3>';
 				} else {			
 					if ($db = get_db()) {
 						$query = "SELECT `id`, `email` FROM `users`;";

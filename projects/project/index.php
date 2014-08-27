@@ -2,7 +2,7 @@
 	//include our library and start drawing the page
 	require_once("../../php_include/functions.php");
 	$page_name = "project";
-	print_header($page_name);
+	print_header($page_name, false);
 	print_navbar();
 ?>
 <div class="container">
@@ -18,28 +18,33 @@
 		?>
 		<div class="row">
 			<div class="col-md-12">
-				<h2>
+				<h1>
 		<?php
 						echo $row['name'];
 		?>
-				</h2>
+				</h1>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-4">
 		<?php
-						$query = "SELECT `first_name`, `last_name` FROM `user_info` WHERE `id`='".$row['created_by']."';";
+						$query = "SELECT `id`, `first_name`, `last_name` FROM `user_info` WHERE `id`='".$row['created_by']."' OR `id` IN (SELECT `user_id` FROM `project_contributors` WHERE `project_id`='$project_id');";
+						//echo $query;
 						if ($result2 = $db->query($query)) {
-							if ($row2 = $result2->fetch_assoc()) {
-								echo "<p><a href='/contact/user?id='".$row['created_by']."' >";
-								echo $row2['first_name'].' '.$row2['last_name']."</a></p>";
+							echo "<h4>Contributors:</h4><ul class='list'>";
+							while ($row2 = $result2->fetch_assoc()) {
+								echo "<li><a href='/contact/user?id=".$row2['id']."' >";
+								echo $row2['first_name'].' '.$row2['last_name']."</a></li>";
 							}
+							echo "</ul>";
 						}
+						
+
 						echo "<p>Started: ".$row['start_time']."<br />";
 						if (isset($row['finish_time'])) {
 							echo "Finished: ".$row['finish_time']."</p>";
 						} else {
-							echo "Ongoing project</p>";
+							echo "Ongoing project</p><hr>";
 						}
 						
 						echo "<p>".$row['description']."</p>";
@@ -54,9 +59,9 @@
 			if (file_exists("../../upload_content/project_images/".$project_id."/")) {
 				$array = scandir("../../upload_content/project_images/".$project_id."/");
 				foreach ($array as $val) {
-					$ext = array_pop(explode('.', $val));
+					$ext = strtolower(array_pop(explode('.', $val)));
 					if ($ext == "png" || $ext == "jpg") {
-						echo "<img style='max-width:500px;' src='/upload_content/project_images/".$project_id."/$val'>";
+						echo "<img class='img-responsive img-thumbnail' src='/upload_content/project_images/".$project_id."/$val'>";
 					}
 				}
 			}

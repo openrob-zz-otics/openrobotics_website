@@ -2,11 +2,8 @@
 	//include our library and start drawing the page
 	require_once("../../php_include/functions.php");
 	$page_name = "profile";
-	print_header($page_name);
+	print_header($page_name, true);
 	print_navbar();	
-	if (!isLoggedIn()) {
-		header("Location: /");
-	}
 ?>
 
 <div class="container">

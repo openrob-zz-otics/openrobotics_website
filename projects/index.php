@@ -2,7 +2,7 @@
 	//include our library and start drawing the page
 	require_once("../php_include/functions.php");
 	$page_name = "projects";
-	print_header($page_name);
+	print_header($page_name, false);
 	print_navbar();
 ?>
 	<?php

@@ -2,14 +2,9 @@
 	//include our library and start drawing the page
 	require_once("../../php_include/functions.php");
 	$page_name = "blog";
-	print_header($page_name);
+	print_header($page_name, true);
 	print_navbar();
-	if (!isLoggedIn()) {
-		header("Location: /");
-	}
 ?>
-
-<!-- REMEMBER TO LOCK VIA PERMISSONS -->
 
 <div class="container">
 	<div class="row">
@@ -17,7 +12,11 @@
 			<h2>Manage Blog</h2>
 		<div>
 	</div>
-	<div class="row">
+<?php
+if (!canAddBlogPost() && !canManageAllBlogPosts()) {
+	echo '<div class="row"><div class="col-md-12"><h3>You do not have permission to be here</h3></div></div>';
+} else {
+	echo '<div class="row">
 		<div class="col-md-8">
 			<p class="text-danger" id="status_message"></p>
 			<div class="form-group">
@@ -39,8 +38,7 @@
 		</div>
 		<div class="col-md-4">
 			<p>Edit Past Posts (refresh page to see newly added)</p>
-			<ul class="list">
-			<?php
+			<ul class="list">';
 				if ($db = get_db()) {
 					$query;
 					if (canManageAllBlogPosts()) {
@@ -57,14 +55,14 @@
 					}
 					$db->close();
 				}
-			?>
+			echo '
 			</ul>
 		</div>
-	</div>
+	</div>';
 
-	<?php
-		print_footnote();
-	?>
+}
+print_footnote();
+?>
 
 </div><!-- /.container -->
 

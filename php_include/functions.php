@@ -95,10 +95,13 @@ function canManageAllBlogPosts() {
  * takes one argument, which is the title of the page,
  * which goes between <title></title>
  */
-function print_header($page_title) {
+function print_header($page_title, $is_locked_page) {
 	define("PAGE_TITLE", $page_title);
 	@session_start();
 	check_login();
+	if ($is_locked_page && !isLoggedIn()) {
+		header("Location: /");
+	}
 	include("header.php");
 }
 

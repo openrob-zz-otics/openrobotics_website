@@ -61,14 +61,15 @@ CREATE TABLE IF NOT EXISTS `projects` (
 	`created_by` BIGINT(20) UNSIGNED NOT NULL,
 	`visible` TINYINT(1) UNSIGNED NOT NULL,
 	`is_featured` TINYINT(1) UNSIGNED NOT NULL,
-	`start_time` DATETIME NOT NULL,
-	`finish_time` DATETIME,
+	`start_time` DATE NOT NULL,
+	`finish_time` DATE,
 	`name` TEXT NOT NULL,
 	`description` TEXT NOT NULL,
 	PRIMARY KEY(`id`),
 	CONSTRAINT `projects.fk_user`
 		FOREIGN KEY (`created_by`)
 		REFERENCES `users`(`id`)
+		ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `project_contributors` (
@@ -98,6 +99,7 @@ CREATE TABLE IF NOT EXISTS `blog_posts` (
 	CONSTRAINT `blog_posts.fk_user`
 		FOREIGN KEY (`created_by`)
 		REFERENCES `users`(`id`)
+		ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `mailing_list_recipients` (
@@ -115,3 +117,7 @@ CREATE TABLE IF NOT EXISTS `contact_form_messages` (
 	`message` TEXT NOT NULL,
 	PRIMARY KEY(`id`)
 );
+
+INSERT INTO `users` VALUES ('1', 'intelligence@openrobotics.ca', '6c527bf7ce0349c332f828ec79fa1eac', '0', '0');
+INSERT INTO `user_info` (`id`, `first_name`, `last_name`) VALUES ('1', 'Open', 'Robotics');
+INSERT INTO `user_permissions` VALUES ('1', '1', '1', '1', '1', '1', '1');
