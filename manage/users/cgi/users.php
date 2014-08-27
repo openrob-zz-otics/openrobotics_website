@@ -26,18 +26,12 @@
 		$add_blog_post = @($_POST['add_blog_post'] == "true" ? 1 : 0);
 		$manage_all_blog_posts = @($_POST['manage_all_blog_posts'] == "true" ? 1 : 0);
 		$in_contact_list = @($_POST['in_contact_list'] == "true" ? 1 : 0);
+		$send_email = @($_POST['send_email'] == "true" ? 1 : 0);
 		
 		if ($db = get_db()) {
-			$manage_users = $db->real_escape_string($manage_users);
-			$add_projects = $db->real_escape_string($add_projects);
-			$manage_all_projects = $db->real_escape_string($manage_all_projects);
-			$add_blog_post = $db->real_escape_string($add_blog_post);
-			$manage_all_blog_posts = $db->real_escape_string($manage_all_blog_posts);
-			$in_contact_list = $db->real_escape_string($in_contact_list);
-		
 			$query = "UPDATE `user_permissions` SET `manage_users`='$manage_users', `add_projects`='$add_projects', ";
 			$query .= "`manage_all_projects`='$manage_all_projects', `add_blog_post`='$add_blog_post', ";
-			$query .= "`manage_all_blog_posts`='$manage_all_blog_posts', `in_contact_list`='$in_contact_list' ";
+			$query .= "`manage_all_blog_posts`='$manage_all_blog_posts', `in_contact_list`='$in_contact_list', `send_email`='$send_email' ";
 			$query .= "WHERE `id`='$manage_user_id';";
 			
 			if (!$db->query($query)) {

@@ -27,7 +27,7 @@
 							echo '<thead>';
 							echo '<tr><th>Email</th><th>Name</th><th>Manage Users</th><th>Add Projects</th>';
 							echo '<th>Manage All Projects</th><th>Add Blog Posts</th><th>Manage All Blog Posts</th>';
-							echo '<th>In Contact List</th><th>Update</th></tr>';
+							echo '<th>In Contact List</th><th>Send Email</th><th>Update</th></tr>';
 							echo '</thead>';
 							echo '<tbody>';
 							while ($row = $result->fetch_assoc()) {
@@ -45,6 +45,7 @@
 								echo '<td><input type="checkbox"'.($permissions['add_blog_post']?'checked':'').' id="'.$id.'_add_blog_post" /></td>';
 								echo '<td><input type="checkbox"'.($permissions['manage_all_blog_posts']?'checked':'').' id="'.$id.'_manage_all_blog_posts" /></td>';
 								echo '<td><input type="checkbox"'.($permissions['in_contact_list']?'checked':'').' id="'.$id.'_in_contact_list" /></td>';
+								echo '<td><input type="checkbox"'.($permissions['send_email']?'checked':'').' id="'.$id.'_send_email" /></td>';
 								echo '<td><button class="btn btn-default update_perms" data-id="'.$id.'">Update</button></td>';
 								echo '</tr>';
 								echo '<tr id="'.$id.'_row" style="display:none;"><td colspan="9">';
