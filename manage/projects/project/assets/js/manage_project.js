@@ -17,4 +17,7 @@ $(function() {
 	$("#form_finish_time").datepicker({
 		format: 'yyyy-mm-dd'
 	});
+	
+	
+	
 });

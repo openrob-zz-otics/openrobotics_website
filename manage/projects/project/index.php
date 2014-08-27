@@ -5,6 +5,7 @@
 	print_header($page_name, true);
 	print_navbar();
 ?>
+
 <!-- REMEMBER TO LOCK VIA PERMISSONS -->
 
 <div class="container">
@@ -66,10 +67,10 @@
 				<textarea rows="10" class="form-control" id="form_description" placeholder="Description"><?php echo $project_data['description'];?></textarea>
 			</div>
 			<button class="btn btn-default" id="form_submit">Update</button>
-			<button class="btn btn-default" id="form_delete">Delete</button>
+			<button class="btn btn-default" id="form_delete">Delete</button><br /><br />
 		</div>		
 		<div class="col-md-6">
-			<p>Contributors</p>
+			<p>Contributors<br />All Users are listed on the left. Add those who are involved in this project to the right.</p>
 			<div class="row">
 				<div class="col-md-4">
 					<select multiple class="form-control" style="height:250px">
@@ -105,13 +106,14 @@
 					</select>
 				</div>
 			</div>
-			<form action="/manage/projects/project/assets/cgi/project?task=????" method="POST" enctype="multipart/form-data">
+			<br />
+			<form action="/manage/projects/project/assets/cgi/project.php?task=????" method="POST" enctype="multipart/form-data">
 				<label for="file">Main Picture:</label>
 				<input type="file" name="file" id="file" class="form-control"><br>
 				<input type="submit" name="submit" value="Upload" class="btn btn-default">
 			</form><br />
-			<form action="/manage/projects/project/assets/cgi/project?task=????" method="POST" enctype="multipart/form-data">
-				<label for="file">Addition Pictures:</label>
+			<form action="/manage/projects/project/assets/cgi/project.php?task=????" method="POST" enctype="multipart/form-data">
+				<label for="file">Addition Pictures: (You can add multiple)</label>
 				<input type="file" name="file" id="file" class="form-control" multiple><br>
 				<input type="submit" name="submit" value="Upload" class="btn btn-default">
 			</form>

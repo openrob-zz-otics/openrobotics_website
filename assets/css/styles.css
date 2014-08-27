@@ -178,3 +178,7 @@ body {
 th {
 	font-family: "klinic-slab-book";
 }
+
+hr {
+	/*border-top-color: #BDBDBD;*/
+}
