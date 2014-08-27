@@ -32,6 +32,7 @@ $add_projects = false;
 $manage_all_projects = false;
 $add_blog_post = false;
 $manage_all_blog_posts = false;
+$send_email = false;
 
 function check_login() {
 	if (isset($_SESSION['email']) && isset($_SESSION['session_id'])) {
@@ -54,7 +55,8 @@ function check_login() {
 						$GLOBALS['add_projects'] = $row['add_projects'];
 						$GLOBALS['manage_all_projects'] = $row['manage_all_projects'];
 						$GLOBALS['add_blog_post'] = $row['add_blog_post'];
-						$GLOBALS['manage_all_blog_posts'] = $row['manage_all_blog_posts'];					
+						$GLOBALS['manage_all_blog_posts'] = $row['manage_all_blog_posts'];
+						$GLOBALS['send_email'] = $row['send_email'];					
 					}
 				}
 				$db->close();
@@ -87,7 +89,11 @@ function canAddBlogPost() {
 function canManageAllBlogPosts() {
 	return $GLOBALS['manage_all_blog_posts'];
 }
- 
+
+function canSendEmail() {
+	return $GLOBALS['send_email'];
+}
+
 /* --- Page Building functions --- */
 
 /*
