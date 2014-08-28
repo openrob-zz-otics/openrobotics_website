@@ -31,7 +31,7 @@
 						$query  = "SELECT ALL `email` FROM `mailing_list_recipients` WHERE `id` >= 1;";
 						if ($result = $mysqli->query($query)) {
 							while($email = $result->fetch_assoc()){
-								myMail($email["email"], $subject, $message);
+								echo myMailFrom($email["email"], $subject, $message, "donotreply@openrobotics.ca");
 							}
 							$success = "Emails were sent Successfully.";
 						}

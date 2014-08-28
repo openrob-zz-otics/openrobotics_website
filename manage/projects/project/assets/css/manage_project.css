@@ -6,6 +6,13 @@
 		margin-top:120px;
 		height: 50px;
 	}
+	#select-left {
+		height: 250px;
+	}
+	#select-right {
+		height: 250px;
+	}
+	
 }
 @media (max-width: 991px) {
 	#contributor-right {
@@ -17,4 +24,14 @@
 		margin-top:15px;
 		margin-bottom:5px;
 	}
+	#select-left {
+		height: 100px;
+	}
+	#select-right {
+		height: 100px;
+	}
+}
+
+.progress-bar {
+	background-color: #CECECE;
 }

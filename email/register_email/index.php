@@ -49,7 +49,7 @@
 								$query  = "SELECT `id` FROM `mailing_list_recipients` WHERE `email`='{$email}';";
 								
 								if ($result = $mysqli->query($query) && $mysqli->affected_rows >= 1 ) {
-									$errors = "Email already in use. Please register using another email.";
+									$errors = "This email is already in the mailing list. Lucky you.";
 								} else {
 									$time = date("Y-m-d H:i:s");
 									$ip = getClientIP(); 
@@ -60,7 +60,7 @@
 									$insert .= "  '{$email}', '{$time}', '{$ip}'";
 									$insert .= ");";
 									if ($result = $mysqli->query($insert) && $mysqli->affected_rows <= 1 ) {
-										$success = "Congratulations! You have sucessfully registered.";
+										$success = "Congratulations! You have successfully registered.";
 									} else {
 										$errors = "Registration failed. Please consult admin.";
 									}

@@ -121,4 +121,4 @@ CREATE TABLE IF NOT EXISTS `contact_form_messages` (
 
 INSERT INTO `users` VALUES ('1', 'intelligence@openrobotics.ca', '6c527bf7ce0349c332f828ec79fa1eac', '0', '0');
 INSERT INTO `user_info` (`id`, `first_name`, `last_name`) VALUES ('1', 'Open', 'Robotics');
-INSERT INTO `user_permissions` VALUES ('1', '1', '1', '1', '1', '1', '1');
+INSERT INTO `user_permissions` VALUES ('1', '1', '1', '1', '1', '1', '1', '1');

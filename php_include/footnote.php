@@ -14,5 +14,5 @@
 			<img src="/assets/images/mail-icon.png">
 		</a>
 	</p>
-	<p style="padding-top:12px;">&copy; 2014 UBC Open Robotics</p>
+	<p style="padding-top:12px;">&copy; 2014 UBC Open Robotics <a href="/email/register_email">Subscribe To Mailing List</a></p>
 </footer>

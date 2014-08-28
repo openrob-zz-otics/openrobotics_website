@@ -13,4 +13,17 @@ $(function() {
 	});
 	
 	$(window).trigger("resize");
+	
+	$("#nav_container").popover({
+		trigger: 'manual',
+		html: 'true',
+		content: '<span id="popover_span"><center><p>Welcome! Have you considered signing up for our mailing list? Click on this text bubble to dismiss it, we won\'t bug you again!</p><a href="/email/register_email"><button class="btn btn-danger">Click here...</button></a></center></span>',
+		placement: 'bottom'
+	});
+	
+	$("#nav_container").on('shown.bs.popover', function() {
+		$("#popover_span").click(function() {
+			$("#nav_container").popover('destroy');
+		});
+	});
 });

@@ -7,12 +7,21 @@
 	<?php 
 		if (PAGE_TITLE == "manage_project") {
 			echo '<link rel="stylesheet" href="assets/css/datepicker3.css">
-			<script src="assets/js/bootstrap-datepicker.js"></script>';
+			<link rel="stylesheet" href="/assets/css/jquery.fileupload.css">
+			<script src="assets/js/bootstrap-datepicker.js"></script>
+			<script src="/assets/js/jquery.ui.widget.js"></script>
+			<script src="/assets/js/jquery.iframe-transport.js"></script>
+			<script src="/assets/js/jquery.fileupload.js"></script>';
 		}
 	?>
 	<!-- include unique page js -->
-	<script src="assets/js/<?php echo PAGE_TITLE;?>.js"></script>
+	<script src="assets/js/<?php echo PAGE_TITLE;?>.js"></script>		
 	<!-- include general js -->
 	<script src="/assets/js/global.js"></script>
+	<?php
+	if (!@seen_popup) {
+		echo '<script>$(function() {$("#nav_container").popover("show");});</script>';
+	}
+	?>
   </body>
 </html>
