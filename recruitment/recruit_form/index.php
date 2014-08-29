@@ -77,7 +77,6 @@
 			it's just for our interest. If we don't accept you we will give advice 
 			on how to change our minds next time.
 			
-			<pre>
 			<?php 
 			
 				$recaptcha_enabled = false;
@@ -152,7 +151,7 @@
 					}
 				}
 			?>
-			</pre>
+			
 			<?php 
 				if(isset($errors)) {
 					echo "<p class=\"bg-danger\">".$errors."</p>";

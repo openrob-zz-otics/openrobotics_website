@@ -68,7 +68,7 @@
 				</div>
 				
 				<div class="form-group" id="control_bio">
-					<label for="form_bio">Bio</label>
+					<label for="form_bio">Bio (You can use html here)</label>
 					<textarea class="form-control" rows="5" id="form_bio"></textarea>
 				</div>
 				

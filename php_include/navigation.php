@@ -94,6 +94,7 @@
 					<ul class="dropdown-menu" role="menu">
 						<li><a class='heading-text' href="/contact/">Contact Form</a></li>
 						<li><a class='heading-text' href="/contact/key_users">Key People</a></li>
+						<li><a class='heading-text' href="/contact/all_users">User Index</a></li>
 						<!--<li class="divider"></li>-->
 						<!--<li class="dropdown-header" class='heading-text'>Member Pages</li>-->
 						<?php

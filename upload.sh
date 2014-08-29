@@ -14,11 +14,11 @@ echo "Compressing target directory"
 tar -zcf target.tar.gz target/*
 
 echo "Uploading target directory"
-scp target.tar.gz server@192.168.1.5:/var/www
-#scp -i aws-or1.pem target.tar.gz ubuntu@54.213.130.118:/var/www/openrobotics 
+#scp target.tar.gz server@192.168.1.5:/var/www
+scp -i aws-or1.pem target.tar.gz ubuntu@54.213.130.118:/var/www/openrobotics 
 echo "Decompress target directory on server"
-#ssh -i aws-or1.pem ubuntu@54.213.130.118 'cd /var/www/openrobotics && tar -xf target.tar.gz && cp -r target/* . && rm -rf target && rm target.tar.gz && chmod 777 -R upload_content > /dev/null 2>&1' 
-ssh server@192.168.1.5 'cd /var/www && tar -xf target.tar.gz && cp -r target/* . && rm -rf target && rm target.tar.gz && chmod 777 -R upload_content > /dev/null 2>&1'
+ssh -i aws-or1.pem ubuntu@54.213.130.118 'cd /var/www/openrobotics && tar -xf target.tar.gz && cp -r target/* . && rm -rf target && rm target.tar.gz && chmod 777 -R upload_content > /dev/null 2>&1' 
+#ssh server@192.168.1.5 'cd /var/www && tar -xf target.tar.gz && cp -r target/* . && rm -rf target && rm target.tar.gz && chmod 777 -R upload_content > /dev/null 2>&1'
 
 #scp target.tar.gz jono@animecommandcenter.tk:/opt/wwwor1
 #ssh jono@animecommandcenter.tk 'cd /opt/wwwor1 && tar -xf target.tar.gz && cp -r target/* . && rm -rf target && rm target.tar.gz'
