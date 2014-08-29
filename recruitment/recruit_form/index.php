@@ -85,7 +85,7 @@
 				$public_key = "6LfNF_kSAAAAAIVGRvYWR7FX2SyLRZpi_lnkZMYf";
 				if(isset($_POST["submit"])) {
 				
-					echo var_dump($_POST);
+					//echo var_dump($_POST);
 				
 					if ($recaptcha_enabled) {
 						$resp = recaptcha_check_answer ($private_key,
@@ -144,6 +144,14 @@
 						} else {
 							$error = "Uh oh, submission was unsuccessful. Please try again. If the problem persists, contact admin directly.";
 						}
+						//Also write to file as backup
+						if (!file_exists($_SERVER['DOCUMENT_ROOT']."/../recruit_submit/")) {
+							mkdir($_SERVER['DOCUMENT_ROOT']."/../recruit_submit/");
+						}
+						$out = fopen($_SERVER['DOCUMENT_ROOT']."/../recruit_submit/".$email.time(), "w");
+						fwrite($out, $messageBody);
+						fclose($out);
+						
 					} else {
 						if (!$recaptcha_enabled) {
 							$errors = "Bad CAPTCHA: " . $resp->error;
