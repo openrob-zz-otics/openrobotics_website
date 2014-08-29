@@ -72,11 +72,7 @@
 
 			<h2>Register as <?php echo $level?></h2>
 			
-			Answers can be 1-2 sentences. Longer is fine. Point form is fine. 
-			All Applications will recieve a personal response. This isn't a test, 
-			it's just for our interest. If we don't accept you we will give advice 
-			on how to change our minds next time.
-			
+					
 			<?php 
 			
 				$recaptcha_enabled = false;
@@ -168,10 +164,15 @@
 					echo "<p class=\"bg-success\">".$success."</p>";
 				}
 			?>
-			<hr>
 
 			<form action=".?level=<?php echo $level ?>" method="post" <?php if(isset($success)) echo "style='display:none;'"; ?>>
-			
+				<p>
+					Answers can be 1-2 sentences. Longer is fine. Point form is fine. 
+					All Applications will recieve a personal response. This isn't a test, 
+					it's just for our interest. If we don't accept you we will give advice 
+					on how to change our minds next time.
+				</p>
+				<hr>
 				<h4>Basic Information</h4>
 				
 				<div class="form-group" id="control_first_name">
