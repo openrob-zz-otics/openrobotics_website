@@ -17,7 +17,7 @@ $(function() {
 	$("#nav_container").popover({
 		trigger: 'manual',
 		html: 'true',
-		content: '<span id="popover_span" style="float:right; position:fixed;" class="glyphicon glyphicon-remove"></span><center><p>Welcome! Have you considered signing up for our mailing list? Click on the x to dismiss this message, we won\'t bug you again!</p><a href="/email/register_email"><button class="btn btn-danger">Click here...</button></a></center>',
+		content: '<span id="popover_span" style="float:right;" class="glyphicon glyphicon-remove"></span><center><p>Welcome! Have you considered signing up for our mailing list? Click on the x to dismiss this message, we won\'t bug you again!</p><a href="/email/register_email"><button class="btn btn-danger">Click here...</button></a></center>',
 		placement: 'bottom'
 	});
 	

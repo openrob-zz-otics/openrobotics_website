@@ -151,7 +151,8 @@ div.line{
 
 @font-face {
 	font-family: "klinic-slab-book";
-	src: url("/assets/fonts/KlinicSlabBook.otf") format("opentype");
+	src: url("/assets/fonts/KlinicSlabBook.svg") format("svg"), 
+		 url("/assets/fonts/KlinicSlabBook.otf") format("opentype");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -162,7 +163,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @font-face {
 	font-family: "proxima-nova";
-	src: url("/assets/fonts/ProximaNovaRegular.otf") format("opentype");
+	src: url("/assets/fonts/ProximaNovaRegular.svg") format("svg"),
+		 url("/assets/fonts/ProximaNovaRegular.otf") format("opentype");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -172,7 +174,7 @@ body {
 }
 
 .heading-text {
-	font-family: "klinic-slab-book";
+	font-family: "proxima-nova";
 }
 
 th {

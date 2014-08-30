@@ -4,10 +4,9 @@ mkdir target
 cp -r !(resources|Templates|*.sh|*.jar|target|schema|npp_workspace*|npp|*.pem|*.sql) target/
 cp .htaccess target/
 cd target
-#find . -type f -name '*.css' -size +0 -exec java -jar ../yuicompressor-2.4.8.jar {} -o {} \; -exec echo "Compressing '{}'" \;
-#find . -type f -name '*.js' -size +0 -exec java -jar ../yuicompressor-2.4.8.jar {} -o {} \; -exec echo "Compressing '{}'" \;
-#find a way to compress php files ...
-#find . -type f -name '*.php' -size +0 -exec java -jar ../htmlcompressor-1.5.3.jar {} -o {} --preserve-php \; -exec echo "Compressing '{}'" \;
+find . -type f -name '*.css' -size +0 -exec java -jar ../yuicompressor-2.4.8.jar {} -o {} \; -exec echo "Compressing '{}'" \;
+find . -type f -name '*.js' -size +0 -exec java -jar ../yuicompressor-2.4.8.jar {} -o {} \; -exec echo "Compressing '{}'" \;
+find . -type f -name '*.php' -size +0 -exec java -jar ../htmlcompressor-1.5.3.jar {} -o {} --preserve-php \; -exec echo "Compressing '{}'" \;
 
 cd ..
 echo "Compressing target directory"

@@ -13,14 +13,14 @@
 		We'll post suggestions soon!</span></p>
 	<div class="row">
 		<div class="col-sm-4">
-			<img class="img-responsive center-block" src="assets/images/wrench1.png" alt="Beginner Wrench" style="width: 50px; height: auto; margin: auto; margin-top: 60px; vertical-align: middle;">
+			<img class="img-responsive center-block" src="assets/images/wrench1.png" alt="Beginner Wrench" style="height: 150px; margin: auto; margin-top: 50px; vertical-align: middle;">
 			<br />
 			<h2>Beginner</h2>
 			<p>You're probably a first or second year student with a passion for technology and a desire to develop your hands on skills. You're ready to put some time into it, but you don't know much about robotics... yet. What we're looking for: Enthusiasm, some basic hands on skills, demonstrated commitment. Don't forget you'll only get out what you put in.</p>
 			<p><a class="btn btn-default" href="/recruitment/recruit_form?level=Beginner" role="button">Register &raquo;</a></p>
 		</div><!-- /.col-lg-4 -->
 		<div class="col-sm-4">
-			<img class="img-responsive" src="assets/images/wrench2.png" alt="Intermediate Wrench" style="width: 140px; height: auto; margin: auto; margin-top: 50px;vertical-align: middle;">
+			<img class="img-responsive" src="assets/images/wrench2.png" alt="Intermediate Wrench" style="height: 150px; margin: auto; margin-top: 50px;vertical-align: middle;">
 			<br />
 			<h2>Intermediate</h2>
 			<p>You're probably a second or third year student who has done some mechanical design, electrical design, or coding already. You're getting more comfortable with your skills but you want to take them to the next level.
@@ -28,7 +28,7 @@
 			<p><a class="btn btn-default" href="/recruitment/recruit_form?level=Intermediate" role="button">Register &raquo;</a></p>
 		</div><!-- /.col-lg-4 -->
 		<div class="col-sm-4">
-			<img class="img-responsive" src="assets/images/wrench3.png" alt="Advanced Wrench" style="width: 170px; height: auto; margin: auto; margin-top: 10px;vertical-align: middle;">
+			<img class="img-responsive" src="assets/images/wrench3.png" alt="Advanced Wrench" style="height: 150px; margin: auto; margin-top: 50px;vertical-align: middle;">
 			<br />
 			<h2>Advanced</h2>
 			<p>You're probably a fourth year to graduate student who has significant experience in mechanical design, control, software, or robotics. We know how busy you are and we appreciate whatever you can put into the team. You are the mentors, and the most important contributors to our training program. </p>

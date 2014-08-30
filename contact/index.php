@@ -6,7 +6,7 @@
 	print_navbar();
 ?>
 <div class="container">
-	<div class="row">		
+	<!--<div class="row">		
 		<div class="col-lg-2"></div>
 		<div class="col-lg-8">
 			<h3>Here is some contact information:</h3>
@@ -17,7 +17,7 @@
 			</p>
 		</div>
 		<div class="col-lg-2"></div>
-	</div>
+	</div>-->
 	
 	<?php
 		if (isset($_POST['submit'])) {
@@ -25,7 +25,7 @@
 			$name = @$_POST['name'];
 			$message = @$_POST['message'];
 			
-			myMailFrom("intelligence@openrobotics.ca", "Message From $name", $message, $email);
+			myMailFrom("intelligence@openrobotics.ca", "[Website] Message From $name", $message, $email);
 			myMail($email, "Your recent message to Open Robotics", "Hello $name,\nWe recently received a message from you. We will attempt to reply to as soon as we can. Thank you for your patience.\n\nYour message was as follows:\n$message");
 			
 			if ($db = get_db()) {

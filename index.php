@@ -26,19 +26,19 @@
 	<!-- Three columns of text below the carousel -->
 	<div class="row">
 		<div class="col-sm-4">
-			<img class="img-circle" src="/assets/images/icon1.png" style="width: 140px; height: 140px;">
+			<center><img class="img-circle" src="/assets/images/icon1.png" style="width: 140px; height: 140px;"></center>
 			<h2>@home</h2>
-			<p>Our philosophy...</p>
+			<p>We aim to complete our electromechanical platform by summer 2015, and compete at RoboCup<a href="http://www.robocupathome.org/">@home</a> 2016 in Germany.</p>
 			<!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
 		</div><!-- /.col-lg-4 -->
 		<div class="col-sm-4">
-			<img class="img-circle" src="/assets/images/icon2.png" style="width: 140px; height: 140px;">
+			<center><img class="img-circle" src="/assets/images/icon2.png" style="width: 140px; height: 140px;"></center>
 			<h2>Featured Projects</h2>
 			<p>Our members have already worked on various projects. All of the projects are documented here on the website.</p>
 			<p><a class="btn btn-default" href="/projects" role="button">View projects &raquo;</a></p>
 		</div><!-- /.col-lg-4 -->
 		<div class="col-sm-4">
-			<img class="img-circle" src="/assets/images/icon3.png" style="width: 140px; height: 140px;">
+			<center><img class="img-circle" src="/assets/images/icon3.png" style="width: 140px; height: 140px;"></center>
 			<h2>Get Involved</h2>
 			<p>All UBC students are welcome to check us out and work on projects.</p>
 			<p><a class="btn btn-default" href="/recruitment" role="button">View details &raquo;</a></p>

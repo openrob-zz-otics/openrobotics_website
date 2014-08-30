@@ -135,7 +135,7 @@
 							$interest_2_text."\n".$interest_2."\n".
 							$interest_3_text."\n".$interest_3;
 						
-						if(myMailFrom("intelligence@openrobotics.ca", "New Registration", $messageBody, $email)) {
+						if(myMail("intelligence@openrobotics.ca", "New Registration", $messageBody)) {
 							$success = "Submission Successful! Will be processed within 24 hours.";
 						} else {
 							$error = "Uh oh, submission was unsuccessful. Please try again. If the problem persists, contact admin directly.";
