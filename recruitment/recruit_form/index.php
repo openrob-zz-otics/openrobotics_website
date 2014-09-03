@@ -116,25 +116,26 @@
 						$interest_3 = @$_POST["interest_3"];
 						
 						$messageBody = 
-							"Name: ".$first_name." ".$middle_name." ".$last_name."\n".
-							"Email: ".$email."\n".
-							"Phone: ".$phone_number."\n\n".
-							"Qualities: \n".
-							$qualities_1_text."\n".$qualities_1."\n".
-							$qualities_2_text."\n".$qualities_2."\n".
-							$qualities_3_text."\n".$qualities_3."\n\n".
-							"Academics: \n".
-							$academics_1_text."\n".$academics_1."\n".
-							$academics_2_text."\n".$academics_2."\n".
-							$academics_3_text."\n".$academics_3."\n\n".
-							"Commitment: \n".
-							$commitment_1_text."\n".$commitment_1."\n".
-							$commitment_2_text."\n".$commitment_2."\n".
-							$commitment_3_text."\n".$commitment_3."\n\n".
-							"Interest: \n".
-							$interest_1_text."\n".$interest_1."\n".
-							$interest_2_text."\n".$interest_2."\n".
-							$interest_3_text."\n".$interest_3;
+							"Applying for level: $level.\r\r\n".
+							"Name: ".$first_name." ".$middle_name." ".$last_name."\r\n".
+							"Email: ".$email."\r\n".
+							"Phone: ".$phone_number."\r\n\r\n".
+							"Qualities: \r\n".
+							$qualities_1_text."\r\n".$qualities_1."\r\n\r\n".
+							$qualities_2_text."\r\n".$qualities_2."\r\n\r\n".
+							$qualities_3_text."\r\n".$qualities_3."\r\n\r\n".
+							"Academics: \r\n".
+							$academics_1_text."\r\n".$academics_1."\r\n\r\n".
+							$academics_2_text."\r\n".$academics_2."\r\n\r\n".
+							$academics_3_text."\r\n".$academics_3."\r\n\r\n".
+							"Commitment: \r\n".
+							$commitment_1_text."\r\n".$commitment_1."\r\n\r\n".
+							$commitment_2_text."\r\n".$commitment_2."\r\n\r\n".
+							$commitment_3_text."\r\n".$commitment_3."\r\n\r\n".
+							"Interest: \r\n".
+							$interest_1_text."\r\n".$interest_1."\r\n\r\n".
+							$interest_2_text."\r\n".$interest_2."\r\n\r\n".
+							$interest_3_text."\r\n".$interest_3;
 						
 						if(myMail("intelligence@openrobotics.ca", "New Registration", $messageBody)) {
 							$success = "Submission Successful! Will be processed within 24 hours.";
