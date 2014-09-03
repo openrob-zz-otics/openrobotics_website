@@ -49,7 +49,8 @@
 								echo '<td><button class="btn btn-default update_perms" data-id="'.$id.'">Update</button></td>';
 								echo '</tr>';
 								echo '<tr id="'.$id.'_row" style="display:none;"><td colspan="9">';
-								echo '<div class="form-group" id="control_first_name">
+								echo '<form data-id="'.$id.'" action="javascript:void(0)">
+								<div class="form-group" id="control_first_name">
 									<label for="form_first_name">First Name</label>
 									<input type="text" class="form-control" placeholder="John" id="'.$id.'_form_first_name" value="'.$info['first_name'].'">
 								</div>		
@@ -108,8 +109,8 @@
 									<input type="password" class="form-control" placeholder="********" id="'.$id.'_form_password">
 								</div>
 								
-								<button class="btn btn-default form_update_password" data-id="'.$id.'">Change Password</button>
-								
+								<button type="submit" class="btn btn-default form_update_password" data-id="'.$id.'">Change Password</button>
+								</form>
 								<hr>
 								<div class="form-inline">
 									<div class="form-group">
@@ -117,7 +118,7 @@
 									</div>
 									<button class="btn btn-default form_delete_user" data-id="'.$id.'">Delete User</button>
 								</div>';
-									
+								
 								echo '</td></tr>';
 							}
 							echo '</tbody></table>';

@@ -77,7 +77,7 @@
 		
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li <?php if(PAGE_TITLE == "recruitment") echo CLASS_ACTIVE;?>><a style="padding-left:0px;" href="/recruitment/">Recruitment</a></li>
+				<li <?php if(PAGE_TITLE == "recruitment") echo CLASS_ACTIVE;?>><a href="/recruitment/">Recruitment</a></li>
 				<li <?php if(PAGE_TITLE == "projects") echo CLASS_ACTIVE;?>><a href="/projects/">Projects</a></li>
 				<li <?php if(PAGE_TITLE == "blog") echo CLASS_ACTIVE;?>><a href="/blog/">Blog</a></li>
 			</ul>

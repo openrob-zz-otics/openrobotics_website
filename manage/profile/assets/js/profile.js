@@ -62,7 +62,7 @@ $(function() {
 		return success;
 	}
 	
-	$("#form_submit").click(function() {
+	$("#form").submit(function() {
 		if (verify()) {
 			$.ajax({
 				type: "POST",
@@ -82,14 +82,18 @@ $(function() {
 			}).done(function(data) {
 				if (data.update_success == false) {
 					$("#error_message").html("Failed to update.");
-					$("#error_message").addClass("text-error");
+					$("#error_message").addClass("bg-danger");
+					$("#error_message").removeClass("bg-success");
 				} else {
 					$("#error_message").html("Update Successful.");	
-					$("#error_message").removeClass("text-error");				
+					$("#error_message").removeClass("bg-danger");	
+					$("#error_message").addClass("bg-success");				
 				}
 			});
 		}
 	});
+	
+	//$("#form").submit(function() {$("#form_submit").trigger("click");});
 	
 	$("#form_first_name").on("input",function() {verify();});
 	$("#form_last_name").on("input",function() {verify();});
@@ -114,13 +118,13 @@ $(function() {
 			$("#control_password_check").removeClass("has-success");
 			$("#control_password_check").addClass("has-error");
 			$("#password_error_message").html("Passwords do not match.");
-			$("#password_error_message").addClass("text-error");
+			$("#password_error_message").addClass("text-danger");
 			ok = false;
 		} else {
 			$("#control_password_check").addClass("has-success");
 			$("#control_password_check").removeClass("has-error");
 			$("#password_error_message").html("");
-			$("#password_error_message").removeClass("text-error");
+			$("#password_error_message").removeClass("text-danger");
 			
 		}
 		
@@ -144,13 +148,13 @@ $(function() {
 				*/
 				if (data.update_success) {
 					$("#password_error_message").html("Password Successfully Changed");
-					$("#password_error_message").removeClass("text-error");
+					$("#password_error_message").removeClass("text-danger");
 				} else if (data.db_error) {
 					$("#password_error_message").html("DB Error");
-					$("#password_error_message").addClass("text-error");
+					$("#password_error_message").addClass("text-danger");
 				} else if (!data.old_password_ok) {
 					$("#password_error_message").html("Incorrect Old Password");
-					$("#password_error_message").addClass("text-error");
+					$("#password_error_message").addClass("text-danger");
 				}
 			});		
 		}

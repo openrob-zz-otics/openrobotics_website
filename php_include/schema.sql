@@ -23,13 +23,13 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 
 CREATE TABLE IF NOT EXISTS `user_permissions` (
 	`id` BIGINT(20) UNSIGNED NOT NULL,
-	`manage_users` TINYINT(1) UNSIGNED NOT NULL,
-	`add_projects` TINYINT(1) UNSIGNED NOT NULL,
-	`manage_all_projects` TINYINT(1) UNSIGNED NOT NULL,
-	`add_blog_post` TINYINT(1) UNSIGNED NOT NULL,
-	`manage_all_blog_posts` TINYINT(1) UNSIGNED NOT NULL,
-	`in_contact_list` TINYINT(1) UNSIGNED NOT NULL,
-	`send_email` TINYINT(1) UNSIGNED NOT NULL,
+	`manage_users` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+	`add_projects` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+	`manage_all_projects` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+	`add_blog_post` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+	`manage_all_blog_posts` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+	`in_contact_list` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+	`send_email` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 	PRIMARY KEY(`id`),
 	CONSTRAINT `user_permissions.fk_user`
 		FOREIGN KEY (`id`)
@@ -108,6 +108,8 @@ CREATE TABLE IF NOT EXISTS `mailing_list_recipients` (
 	`email` TEXT NOT NULL,
 	`registration_time` DATETIME NOT NULL,
 	`registration_ip` TEXT NOT NULL,
+	`is_enabled` TINYINT(1) NOT NULL DEFAULT '0',
+	`verification_key` TEXT NOT NULL,
 	PRIMARY KEY(`id`)
 );
 

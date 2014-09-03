@@ -27,7 +27,7 @@
 					echo '		<h4>'.$row['sub_title'].'</h4>';
 					echo '		<h5>Published At '.$row['publish_time']. ', By <a href="/contact/user?id='.$row['created_by'].'">'.$name.'</a></h5>';
 					echo '		<hr>';
-					echo '		<p>'.$row['content'].'</p>';
+					echo '		<span id="disp-content">'.$row['content'].'</span>';
 					echo '	</div>';
 					echo '</div>';
 					$index++;

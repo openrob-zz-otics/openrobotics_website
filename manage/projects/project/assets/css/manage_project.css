@@ -35,3 +35,7 @@
 .progress-bar {
 	background-color: #CECECE;
 }
+
+select {
+	font-family: "Helvetica";
+}

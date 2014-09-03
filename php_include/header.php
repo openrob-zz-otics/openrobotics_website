@@ -39,6 +39,12 @@
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 		
+		<script type="text/javascript">
+			var RecaptchaOptions = {
+				theme : 'white'
+			};
+		</script>
+		
 	</head>
 	<body>
 	<!-- page content goes here -->

@@ -47,7 +47,7 @@ $(function() {
 		});
 	});
 	
-	$('button[class~="form_submit"]').click(function() {
+	$('form').submit(function() {
 		var id = $(this).data("id");
 		var first_name = $("#"+id+"_form_first_name").val();
 		var middle_name = $("#"+id+"_form_middle_name").val();

@@ -52,8 +52,9 @@
 						<img src="/upload_content/project_images/'.$row['id'].'/0.png" class="carousel_resize">
 						<div class="container">
 						<div class="carousel-caption">
-						<p style="font-size:xx-large;">'.$row['name'].'</p>
-						<a href="project?id='.$row['id'].'"><button type="button" class="btn btn-default btn-lg transparent-button">View Project</button></a>
+							<p style="font-size:xx-large;" class="hidden-xs">'.$row['name'].'</p>
+							<p style="font-size:large;" class="visible-xs">'.$row['name'].'</p>
+							<a href="project?id='.$row['id'].'"><button type="button" class="btn btn-default transparent-button">View Project</button></a>
 						</div></div></div>';
 				$i++;
 			}	

@@ -21,10 +21,10 @@
 			
 			<?php 
 			
-				$recaptcha_enabled = false;
+				$recaptcha_enabled = true;
 			
-				$private_key = "6LfNF_kSAAAAANXBwd3gJ7qqbJ1NLgRFx5jCi9Gz";
-				$public_key = "6LfNF_kSAAAAAIVGRvYWR7FX2SyLRZpi_lnkZMYf";
+				$public_key = "6LfNF_kSAAAAANXBwd3gJ7qqbJ1NLgRFx5jCi9Gz";
+				$private_key = "6LfNF_kSAAAAAIVGRvYWR7FX2SyLRZpi_lnkZMYf";
 				if(isset($_POST["submit"])) {
 				
 					if ($recaptcha_enabled) {
@@ -82,7 +82,7 @@
 
 											if($result = $mysqli->query($insert) && $mysqli->affected_rows == 1 ) {
 												
-												$success = "Congratulations! You have sucessfully registered.";
+												$success = "Congratulations! You have successfully registered.";
 												myMail($email, "Thank you for registering.", "Thank you for registering for UBC Open Robotics!");
 											} else {
 												$errors = "There were errors during registration. Please consult admin.";
@@ -97,8 +97,8 @@
 							}
 						}
 					} else {
-						if (!$recaptcha_enabled) {
-							$errors = "Bad CAPTCHA: " . $resp->error;
+						if ($recaptcha_enabled) {
+							$errors = "Incorrect CAPTCHA";// . $resp->error;
 						}
 					}
 				}
@@ -155,7 +155,7 @@
 						echo recaptcha_get_html($public_key);
 					}
 				?>
-
+				<br />
 				<div class="form-group">
 					<button type="submit" class="btn btn-default" id="form_submit" name="submit" disabled>Register</button>
 				</div>

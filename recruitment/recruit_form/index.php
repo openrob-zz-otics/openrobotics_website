@@ -58,6 +58,7 @@
 <?php
 	//include our library and start drawing the page
 	require_once("../../php_include/functions.php");
+	require_once('../../php_include/recaptchalib.php');
 	$page_name = "recruit_form";
 	print_header($page_name, false);
 	print_navbar();
@@ -75,10 +76,10 @@
 					
 			<?php 
 			
-				$recaptcha_enabled = false;
-			
-				$private_key = "6LfNF_kSAAAAANXBwd3gJ7qqbJ1NLgRFx5jCi9Gz";
-				$public_key = "6LfNF_kSAAAAAIVGRvYWR7FX2SyLRZpi_lnkZMYf";
+				$recaptcha_enabled = true;
+							
+				$public_key = "6LfNF_kSAAAAANXBwd3gJ7qqbJ1NLgRFx5jCi9Gz";
+				$private_key = "6LfNF_kSAAAAAIVGRvYWR7FX2SyLRZpi_lnkZMYf";
 				if(isset($_POST["submit"])) {
 				
 					//echo var_dump($_POST);
@@ -149,8 +150,8 @@
 						fclose($out);
 						
 					} else {
-						if (!$recaptcha_enabled) {
-							$errors = "Bad CAPTCHA: " . $resp->error;
+						if ($recaptcha_enabled) {
+							$errors = "Invalid CAPTCHA";// . $resp->error;
 						}
 					}
 				}
@@ -168,7 +169,7 @@
 			<form action=".?level=<?php echo $level ?>" method="post" <?php if(isset($success)) echo "style='display:none;'"; ?>>
 				<p>
 					Answers can be 1-2 sentences. Longer is fine. Point form is fine. 
-					All Applications will recieve a personal response. This isn't a test, 
+					All Applications will receive a personal response. This isn't a test, 
 					it's just for our interest. If we don't accept you we will give advice 
 					on how to change our minds next time.
 				</p>
@@ -204,13 +205,9 @@
 					<span class="help-block with-errors"></span>
 				</div> 
 
-				<?php 
-					if ($recaptcha_enabled) {
-						echo recaptcha_get_html($public_key);
-					}
-				?>
-				
-				<br/>
+				<br />
+				<p class="text-warning">Click on the headings below to reveal more parts of the form. Neglecting to complete these parts of the form will reflect poorly on your applications.</p>
+				<br />
 				
 				<h4 class="expand_tr" data-id="Qualities" data-down="0" id="Qualities_Control">Qualities<span id="Qualities_Icon" style="float:right;" class="glyphicon glyphicon-chevron-down"></span><br/><br/></h4>
 				
@@ -299,7 +296,13 @@
 						<span class="help-block with-errors"></span>
 					</div>
 				</div><br/>
-
+				
+				<?php 
+					if ($recaptcha_enabled) {
+						echo recaptcha_get_html($public_key);
+					}
+				?><br />
+				
 				<div class="form-group">
 					<button type="submit" class="btn btn-default" id="form_submit" name="submit" disabled>Submit</button>
 				</div>

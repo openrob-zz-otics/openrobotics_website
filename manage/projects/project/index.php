@@ -100,13 +100,13 @@
 		</div>		
 		<div class="col-md-6">
 			<p class="visible-lg visible-md">Contributors<br />All Users are listed on the left. Add those who are involved in this project to the right.</p>
-			<p class="hidden-lg hidden-md">Contributors<br />All Users are listed on the top. Add those who are involved in this project to the bottom. (On Mobile, tap to bring up selection), then press the arrows.</p>
+			<p class="hidden-lg hidden-md">Contributors<br />All Users are listed on the top. Add those who are involved in this project to the bottom. (On mobiles, tap to bring up selection), then press the arrows.</p>
 			<div class="row">
 				<div class="col-md-4">
 					<select multiple class="form-control" id="select-left">
 					<?php
 						if ($db) {
-							$query = "SELECT `id`, `first_name`, `last_name` FROM `user_info` WHERE `id`!='$user_id' AND `id` NOT IN (SELECT `user_id` FROM `project_contributors` WHERE `project_id`='$project_id');";
+							$query = "SELECT `id`, `first_name`, `last_name` FROM `user_info` WHERE `id`!='1' AND `id`!='$user_id' AND `id` NOT IN (SELECT `user_id` FROM `project_contributors` WHERE `project_id`='$project_id');";
 							if ($result = $db->query($query)) {
 								while ($row = $result->fetch_assoc()) {
 									echo "<option value='".$row['id']."'>".$row['first_name'].' '.$row['last_name']."</option>";

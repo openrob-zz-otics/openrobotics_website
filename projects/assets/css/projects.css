@@ -32,30 +32,30 @@
 
 /* Carousel base class */
 .carousel {
-  height: 1296px;
-  margin-bottom: 60px;
-  width: 1920px;
-  margin-left: auto;
-  margin-right: auto;  
+	height: 1296px;
+	margin-bottom: 60px;
+	width: 1920px;
+	margin-left: auto;
+	margin-right: auto;  
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
-  z-index: 10;
+	z-index: 10;
 }
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 1296px;
-  background-color: #777;
-  margin-left:auto;
-  margin-right:auto;
+	height: 1296px;
+	background-color: #777;
+	margin-left:auto;
+	margin-right:auto;
 }
 
 .carousel-inner > .item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 1296px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 1296px;
 }
 
 .carousel-caption  > button > a {

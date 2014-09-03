@@ -47,7 +47,7 @@
 							echo "Ongoing project</p><hr>";
 						}
 						
-						echo "<p>".$row['description']."</p>";
+						echo "<span class='disp-content'>".$row['description']."</span>";
 					}
 				}
 				$db->close();

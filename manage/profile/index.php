@@ -8,25 +8,25 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-4"></div>
-		<div class="col-md-4">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
 			<h2>Manage Profile</h2>	
 			
 			<form action="/manage/profile/assets/cgi/profile.php?task=2" method="POST" enctype="multipart/form-data">
 				<label for="file">Profile Picture:</label>
-				<?php echo '<img src="/upload_content/user_images/'.$user_id.'.png" class="img-responsive img-thumbnail">'; ?>
+				<?php echo '<img src="/upload_content/user_images/'.$user_id.'.png" style="max-height:250px" class="img-responsive img-thumbnail">'; ?>
 				<input type="file" name="file" id="file" class="btn btn-default"><br>
 				<input type="submit" name="submit" value="Upload" class="btn btn-default">
 			</form>
 			<hr>
 		</div>
-		<div class="col-md-4"></div>
+		<div class="col-sm-3"></div>
 	</div>
 	<div class="row">
-		<div class="col-md-4"></div>
-		<div class="col-md-4">
-			<p class="text-error" id="error_message"></p>
-			
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<p id="error_message"></p>
+			<form id="form" action="javascript:void(0);">
 				<div class="form-group" id="control_first_name">
 					<label for="form_first_name">First Name</label>
 					<input type="text" class="form-control" placeholder="John" id="form_first_name">
@@ -72,14 +72,15 @@
 					<textarea class="form-control" rows="5" id="form_bio"></textarea>
 				</div>
 				
-				<button class="btn btn-default" id="form_submit">Update</button>
-				<hr>
+				<button type="submit" class="btn btn-default" id="form_submit">Update</button>
+			</form>
+			<hr>
 		</div>
-		<div class="col-md-4"></div>
+		<div class="col-sm-3"></div>
 	</div>
 	<div class="row"> 
-		<div class="col-md-4"></div>
-		<div class="col-md-4">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
 			<h3>Change Password</h3>
 			
 			<p class="text-error" id="password_error_message"></p>
@@ -97,7 +98,7 @@
 			</div>	
 			<button class="btn btn-default" id="change_password">Change</button>
 		</div>
-		<div class="col-md-4"></div>
+		<div class="col-sm-3"></div>
 	</div>
 
 	<?php
