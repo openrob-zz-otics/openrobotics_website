@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 		<meta name="description" content="UBC Open Robotics is an student club initiative to promote robotics interest in undergraduate students...">
+		<meta name="keywords" content="UBC,open,robotics,student,team,club,electrical,mechanical,software,design,learn">
 		<meta name="author" content="UBC Open Robotics">
 		
 		<!-- set favicon -->
