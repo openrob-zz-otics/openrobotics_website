@@ -12,7 +12,7 @@
 	<div class="container navbar-inner navbar-full" id="cred_navbar">
 		<?php
 		if (isset($GLOBALS['logged_in']) && $GLOBALS['logged_in']) {
-			echo '<div class="hidden-xs" id="right_nav">'
+			echo '<div class="hidden-sm hidden-xs" id="right_nav">'
 					.'<ul class="nav navbar-nav">';
 			
 			echo '<li><a href="/manage/profile">Your Profile</a></li>';
@@ -28,8 +28,8 @@
 		
 			echo '</ul>'
 				.'</div>'
-				.'<div class="visible-xs">'
-				.'<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="manage_dropdown_control">Manage<span class="caret"></span></a>'
+				.'<div class="visible-sm visible-xs">'
+				.'<a href="#" class="dropdown-toggle heading-text" data-toggle="dropdown" id="manage_dropdown_control">Manage<span class="caret"></span></a>'
 				.'<ul class="dropdown-menu" role="menu" id="manage_dropdown_menu">';
 			echo '<li><a href="/manage/profile">Your Profile</a></li>';
 			if (canAddProjects() || canManageAllProjects())

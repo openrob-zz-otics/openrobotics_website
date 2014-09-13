@@ -134,6 +134,7 @@
 	padding-top:7px;
 	float:left;
 	color:#fff;
+	font-size: 16px;
 }
 
 #manage_dropdown_menu {
@@ -182,7 +183,7 @@ body {
 }
 
 .heading-text {
-	font-family: "proxima-nova";
+	font-family: "klinic-slab-book";
 }
 
 th {

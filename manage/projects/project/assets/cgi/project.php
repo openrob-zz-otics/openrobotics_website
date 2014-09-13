@@ -96,6 +96,7 @@
 					$db->query($query);					
 					foreach ($project_contributors as $contributor_id) {
 						$query = "INSERT INTO `project_contributors` (`user_id`, `project_id`) VALUES ('$contributor_id', '$id');";
+						$db->query($query);
 					}
 				}
 			}

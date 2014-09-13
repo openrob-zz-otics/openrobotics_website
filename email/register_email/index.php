@@ -60,7 +60,8 @@
 									$insert .= "  '{$email}', '{$time}', '{$ip}'";
 									$insert .= ");";
 									if ($result = $mysqli->query($insert) && $mysqli->affected_rows <= 1 ) {
-										$success = "Congratulations! You have successfully registered.";
+										$success = "Congratulations! You have successfully registered. You should receive an email from listserv@lists.ubc.ca confirming your subscription.";
+										myMailFrom("OPENROBOTICS-ANNOUNCE-subscribe-request@LISTS.UBC.CA","","",$email);
 									} else {
 										$errors = "Registration failed. Please consult admin.";
 									}
