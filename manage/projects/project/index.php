@@ -21,7 +21,7 @@
 		$project_id = intval(@$_GET['id']);
 		
 		if (!(canManageAllProjects() || canAddProjects())) {
-			echo '<div class="row"><div class="col-md-12"><h3>You do not have permission to be here</h3></div></div>';
+			echo '<div class="row"><div class="col-md-12"><h3 class="text-warning">You do not have permission to be here</h3></div></div>';
 				print_footnote();
 				echo "</div>";
 				print_footer();
@@ -41,8 +41,19 @@
 		} else if (!canManageAllProjects()) {
 			$query = "SELECT `id` FROM `project_contributors` WHERE `user_id`='$user_id' AND `project_id`='$project_id';";
 			$db->query($query);
+			$allow = true;
 			if (@$db->num_rows < 1) {
-				echo '<div class="row"><div class="col-md-12"><h3>You do not have permission to be here</h3></div></div>';
+				$allow = false;
+			} else {
+				$query = "SELECT `id` FROM `projects` WHERE `user_id`='$user_id' AND `id`='$project_id';";
+				$db->query($query);				
+				if (@$db->num_rows < 1) {
+					$allow = false;
+				}
+			}
+
+			if (!$allow) {
+				echo '<div class="row"><div class="col-md-12"><h3 class="text-warning">You do not have permission to be here</h3></div></div>';
 				print_footnote();
 				echo "</div>";
 				print_footer();
@@ -54,19 +65,21 @@
 		
 		$result = $db->query($query);
 		$project_data = $result->fetch_assoc();
+
+		if ($result->num_rows < 1) {
+			echo '<div class="row"><div class="col-md-12"><h3 class="text-danger">ID Invalid!</h3></div></div>';
+			print_footnote();
+			echo "</div>";
+			print_footer();
+			exit();
+		}
 	?>
 	<div class="row">
 		<div class="col-md-6">
-			<p class='text-danger' id="error-message">
-			<?php
-				if ($result->num_rows < 1) {
-					echo "Invalid ID!";
-				}
-			?>
-			</p>
+			<p id="error-message"></p>
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" id="form_visible" <?php if($project_data['visible']=='1')echo "checked";?>> Make project visible
+					<input type="checkbox" id="form_visible" <?php if($project_data['visible']=='1')echo "checked";?>> Make Project Visible
 				</label>
 			</div>
 			<div class="checkbox">

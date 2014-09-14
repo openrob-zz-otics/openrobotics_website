@@ -13,7 +13,7 @@
 	</div>
 		<?php
 			if ($db = get_db()) {
-				$query = "SELECT * FROM `users` JOIN `user_info` ON `users`.`id`=`user_info`.`id` WHERE `users`.`id` IN (SELECT `id` FROM `user_permissions` WHERE `in_contact_list`='1')";
+				$query = "SELECT * FROM `users` JOIN `user_info` ON `users`.`id`=`user_info`.`id` WHERE `is_disabled`='0' AND `users`.`id` IN (SELECT `id` FROM `user_permissions` WHERE `in_contact_list`='1')";
 				//Use this line to override the order in key_users page (sorry...)
 				$query .= "ORDER BY CASE `users`.`id` WHEN '2' THEN 0 WHEN '3' THEN 1 ELSE 2 END ASC;";
 				if ($result = $db->query($query)) {

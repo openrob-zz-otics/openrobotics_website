@@ -20,7 +20,7 @@
 					echo '<h3>You do not have permissions to be here</h3>';
 				} else {			
 					if ($db = get_db()) {
-						$query = "SELECT `id`, `email` FROM `users`;";
+						$query = "SELECT `id`, `email` FROM `users` WHERE `is_disabled`='0';";
 						if ($result = $db->query($query)) {
 							echo '<p>Click on a user\'s row to get more settings. Note: Certain changes (eg. deleting users) may not become apparent until the page has been refreshed.</p>';
 							echo '<table class="table table-hover table-bordered table-striped">';

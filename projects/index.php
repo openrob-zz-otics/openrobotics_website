@@ -7,7 +7,7 @@
 ?>
 	<?php
 		if($db = get_db()) {
-			$query = "SELECT * FROM `projects` WHERE `is_featured`='1' AND `visible`='1';";
+			$query = "SELECT * FROM `projects` WHERE `is_featured`='1' AND `visible`='1' AND `is_disabled`='0';";
 			if ($result = $db->query($query)) {
 				/*echo "<ul>";
 				while ($row = $result->fetch_assoc()) {
@@ -71,7 +71,7 @@
 	
 	<?php
 		if($db) {
-			$query = "SELECT * FROM `projects` WHERE `visible`='1';";
+			$query = "SELECT * FROM `projects` WHERE `visible`='1' AND `is_disabled`='0';";
 			if ($result = $db->query($query)) {
 				echo "<ul>";
 				while ($row = $result->fetch_assoc()) {

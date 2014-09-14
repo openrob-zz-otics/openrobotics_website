@@ -12,7 +12,7 @@
 			if (!$project_id) {
 				echo "<h2>Invalid Project ID</h2>";
 			} else if ($db = get_db()) {
-				$query = "SELECT * FROM `projects` WHERE `id`='$project_id';";
+				$query = "SELECT * FROM `projects` WHERE `id`='$project_id' AND `is_disabled`='0';";
 				if ($result = $db->query($query)) {
 					if ($row = $result->fetch_assoc()) {
 		?>

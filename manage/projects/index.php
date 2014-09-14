@@ -27,9 +27,9 @@
 			if ($db = get_db()) {
 				$query;
 				if (canManageAllProjects()) {
-					$query = "SELECT * FROM `projects`;";
+					$query = "SELECT * FROM `projects` WHERE `is_disabled`='0';";
 				} else {
-					$query = "SELECT * FROM `projects` WHERE `created_by`='$user_id` OR `id` IN (SELECT `project_id` FROM `project_contributors` WHERE `user_id`='$user_id');";
+					$query = "SELECT * FROM `projects` WHERE `is_disabled`='0' AND (`created_by`='$user_id' OR `id` IN (SELECT `project_id` FROM `project_contributors` WHERE `user_id`='$user_id'));";
 				}	
 				if ($result = $db->query($query)) {
 					while ($row = $result->fetch_assoc()) {

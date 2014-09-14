@@ -102,7 +102,7 @@
 		$manage_user_id = intval(@$_POST['id']);
 		
 		if ($db = get_db()) {
-			$query = "DELETE FROM `users` WHERE `id`='$manage_user_id' LIMIT 1;";
+			$query = "UPDATE `users` SET `id_diabled`='1' WHERE `id`='$manage_user_id' LIMIT 1;";
 			if (!($db->query($query))) 
 				$return->update_success = false;
 			$db->close();

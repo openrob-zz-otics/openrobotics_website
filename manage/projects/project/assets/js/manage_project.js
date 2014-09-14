@@ -112,7 +112,8 @@ $(function() {
 					location.replace("..");
 				} else {
 					$("#error-message").html("Failed to Delete");
-				$("#error-message").addClass("text-danger");
+					$("#error-message").addClass("bg-danger");					
+					$("#error-message").removeClass("bg-success");
 				}
 			});
 		});
@@ -147,13 +148,13 @@ $(function() {
 			}
 		}).done(function(data) {
 			if (data.success) {
-				$("#error-message").html("Update Successfully");
-				$("#error-message").addClass("text-success");
-				$("#error-message").removeClass("text-danger");
+				$("#error-message").html("Update Successful");
+				$("#error-message").removeClass("bg-danger");					
+				$("#error-message").addClass("bg-success");
 			} else {
 				$("#error-message").html("Update Unsuccessful");
-				$("#error-message").removeClass("text-success");
-				$("#error-message").addClass("text-danger");
+				$("#error-message").addClass("bg-danger");					
+				$("#error-message").removeClass("bg-success");
 			}
 		});
 		
