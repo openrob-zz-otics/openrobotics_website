@@ -108,7 +108,7 @@
 				<label for="form_description">Description/Write Up</label>
 				<textarea rows="10" class="form-control" id="form_description" placeholder="Description"><?php echo $project_data['description'];?></textarea>
 			</div>
-			<button class="btn btn-default" id="form_submit">Update</button>
+			<button class="btn btn-default" id="form_submit">Update</button><br /><br />
 			<button class="btn btn-default" data-container="body" id="delete-popover">Delete</button><br /><br />
 		</div>		
 		<div class="col-md-6">
