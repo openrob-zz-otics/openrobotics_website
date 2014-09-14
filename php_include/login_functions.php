@@ -44,7 +44,7 @@ function validate_login($email, $password) {
 	$email = $db->real_escape_string($email);
 	
 	//Select the user 
-	$query = "SELECT `id`, `password` FROM `users` WHERE `email`='$email';";
+	$query = "SELECT `id`, `password` FROM `users` WHERE `email`='$email' AND `is_disabled`='0';";
 	if (!($result = $db->query($query))) {
 		$return->db_error = true;
 		$return->login_success = false;
@@ -127,7 +127,7 @@ function validate_session($user_email, $session_id) {
 	$email = $db->real_escape_string($user_email);
 	
 	//Select the user 
-	$query = "SELECT `id` FROM `users` WHERE `email`='$email';";
+	$query = "SELECT `id` FROM `users` WHERE `email`='$email' AND `is_disabled`='0';";
 	if (!($result = $db->query($query))) {
 		$return->db_error = true;
 		$return->validate_success = false;

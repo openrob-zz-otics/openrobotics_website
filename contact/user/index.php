@@ -12,7 +12,7 @@
 			if (!$user_id) {
 				echo "<h2>Invalid User ID</h2>";
 			} else if ($db = get_db()) {
-				$query = "SELECT * FROM `user_info` WHERE `id`='$user_id';";
+				$query = "SELECT * FROM `user_info` WHERE `id`='$user_id' AND `is_disabled`='0';";
 				if ($result = $db->query($query)) {
 					if ($row = $result->fetch_assoc()) {
 						echo '<div class="row"><div class="col-md-4"></div><div class="col-md-8"><h3>'.$row['first_name'].' '.$row['middle_name'].' '.$row['last_name'].'</h3></div></div>';

@@ -3,7 +3,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 	`email` VARCHAR(50) NOT NULL,
 	`password` VARCHAR(60) NOT NULL COMMENT '(md5)',
 	`registration_time` DATETIME NOT NULL,
-	`registration_ip` TEXT NOT NULL,
+	`registration_ip` TEXT NOT NULL,	
+	`is_disabled` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 	PRIMARY KEY(`id`)
 );
 
@@ -65,7 +66,8 @@ CREATE TABLE IF NOT EXISTS `projects` (
 	`start_time` DATE NOT NULL,
 	`finish_time` DATE,
 	`name` TEXT NOT NULL,
-	`description` TEXT NOT NULL,
+	`description` TEXT NOT NULL,	
+	`is_disabled` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 	PRIMARY KEY(`id`),
 	CONSTRAINT `projects.fk_user`
 		FOREIGN KEY (`created_by`)
@@ -96,6 +98,7 @@ CREATE TABLE IF NOT EXISTS `blog_posts` (
 	`title` TEXT NOT NULL,
 	`sub_title` TEXT,
 	`content` TEXT NOT NULL,	
+	`is_disabled` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 	PRIMARY KEY(`id`),
 	CONSTRAINT `blog_posts.fk_user`
 		FOREIGN KEY (`created_by`)
@@ -121,6 +124,6 @@ CREATE TABLE IF NOT EXISTS `contact_form_messages` (
 	PRIMARY KEY(`id`)
 );
 
-INSERT INTO `users` VALUES ('1', 'intelligence@openrobotics.ca', '6c527bf7ce0349c332f828ec79fa1eac', '0', '0');
+INSERT INTO `users` VALUES ('1', 'intelligence@openrobotics.ca', '6c527bf7ce0349c332f828ec79fa1eac', '0', '0', '0');
 INSERT INTO `user_info` (`id`, `first_name`, `last_name`) VALUES ('1', 'Open', 'Robotics');
 INSERT INTO `user_permissions` VALUES ('1', '1', '1', '1', '1', '1', '1', '1');

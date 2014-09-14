@@ -11,7 +11,7 @@
 		$limit = 5;
 		$offset = isset($_GET['offset']) ? intval($_GET['offset']) : 0;
 		if ($db = get_db()) {
-			$query = "SELECT * FROM `blog_posts` WHERE `visible`='1' ORDER BY `publish_time` DESC LIMIT $offset,$limit;";
+			$query = "SELECT * FROM `blog_posts` WHERE `visible`='1' AND `is_disabled`='0' ORDER BY `publish_time` DESC LIMIT $offset,$limit;";
 			$index = 0;
 			if ($result = $db->query($query)) {
 				while ($row = $result->fetch_assoc()) {
@@ -23,7 +23,7 @@
 					echo '	<div class="col-lg-8">';
 					if($index > 0) 
 						echo '<hr>';
-					echo '		<h3>'.$row['title'].'</h3>';
+					echo '		<a href="post?id='.$row['id'].'"><h3>'.$row['title'].'</h3></a>';
 					echo '		<h4>'.$row['sub_title'].'</h4>';
 					echo '		<h5>Published At '.$row['publish_time']. ', By <a href="/contact/user?id='.$row['created_by'].'">'.$name.'</a></h5>';
 					echo '		<hr>';

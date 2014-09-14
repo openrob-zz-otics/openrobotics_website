@@ -14,7 +14,7 @@
 		<ul>
 		<?php
 			if ($db = get_db()) {
-				$query = "SELECT `id`, `first_name`, `last_name` FROM `user_info` WHERE `id`!='1'";
+				$query = "SELECT `id`, `first_name`, `last_name` FROM `user_info` WHERE `id`!='1' AND `is_disabled`='0';";
 				//Use this line to override the order in key_users page (sorry...)
 				$query .= " ORDER BY `last_name`;";
 				//echo $query;

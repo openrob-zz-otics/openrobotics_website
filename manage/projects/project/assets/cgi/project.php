@@ -42,7 +42,7 @@
 				}
 			}			
 			if ($return->success) {
-				$query = "DELETE FROM `projects` WHERE `id`='$id';";
+				$query = "UPDATE `projects` SET `is_disabled`='1' WHERE `id`='$id';";
 				if (!($db->query($query))) {
 					$return->sucess = false;
 				}
