@@ -76,7 +76,7 @@
 					
 			<?php 
 			
-				$recaptcha_enabled = true;
+				$recaptcha_enabled = false;
 							
 				$public_key = "6LfNF_kSAAAAANXBwd3gJ7qqbJ1NLgRFx5jCi9Gz";
 				$private_key = "6LfNF_kSAAAAAIVGRvYWR7FX2SyLRZpi_lnkZMYf";
@@ -98,6 +98,8 @@
 						$last_name = @$_POST["last_name"];
 						$email = @$_POST["email"];
 						$phone_number = @$_POST["phone_number"];
+						$year = @$_POST['year'];
+						$major = @$_POST['major'];
 						
 						$qualities_1 = @$_POST["qualities_1"];
 						$qualities_2 = @$_POST["qualities_2"];
@@ -139,17 +141,27 @@
 						
 						if(myMail("intelligence@openrobotics.ca", "New Registration", $messageBody)) {
 							$success = "Submission Successful! Will be processed within 24 hours.";
+
+								//Put into the db, :)
+							$db = get_db();
+							$query = "INSERT INTO `roster` (`name`, `email`, `phone`, `year`, `major`) VALUES ('$first_name $middle_name $last_name', '$email', '$phone_number', '$year', '$major');";
+							//echo $query;
+							$db->query($query);
 						} else {
 							$error = "Uh oh, submission was unsuccessful. Please try again. If the problem persists, contact admin directly.";
 						}
+						
+
+
 						//Also write to file as backup
+						/*
 						if (!file_exists($_SERVER['DOCUMENT_ROOT']."/../recruit_submit/")) {
 							mkdir($_SERVER['DOCUMENT_ROOT']."/../recruit_submit/");
 						}
 						$out = fopen($_SERVER['DOCUMENT_ROOT']."/../recruit_submit/".$email.time(), "w");
 						fwrite($out, $messageBody);
 						fclose($out);
-						
+						*/
 					} else {
 						if ($recaptcha_enabled) {
 							$errors = "Invalid CAPTCHA";// . $resp->error;
@@ -205,6 +217,17 @@
 					<input type="tel" name="phone_number" class="form-control" placeholder="0000000000" id="form_phone_number" value="<?php echo @$phone_number;?>">
 					<span class="help-block with-errors"></span>
 				</div> 
+
+				<div class="form-group" id="control_year">
+					<lavel for="form_year">Year</label>
+					<input type="number" name="year" class="form-control" placeholer="2" id="form_year" value="<?php echo @$year;?>">
+				</div>
+
+				<div class="form-group" id="control_major">
+					<lavel for="form_major">Major</label>
+					<input type="text" name="major" class="form-control" placeholer="Electrial Engineering" id="form_major" value="<?php echo @$major;?>">
+				</div>
+
 
 				<br />
 				<p class="text-warning">Click on the headings below to reveal more parts of the form. Neglecting to complete these parts of the form will reflect poorly on your applications.</p>

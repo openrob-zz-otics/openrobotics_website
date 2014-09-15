@@ -18,7 +18,8 @@
 			<?php
 				if (!canManageUsers()) {
 					echo '<h3>You do not have permissions to be here</h3>';
-				} else {			
+				} else {		
+					echo '<a href="/roster"><button class="btn btn-default">Download Team Roster</button></a>';	
 					if ($db = get_db()) {
 						$query = "SELECT `id`, `email` FROM `users` WHERE `is_disabled`='0';";
 						if ($result = $db->query($query)) {

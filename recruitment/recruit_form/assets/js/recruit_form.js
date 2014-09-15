@@ -20,12 +20,17 @@ $(function() {
 	$("#form_first_name").on('input', function() {validate();});
 	$("#form_email").on('input', function() {validate();});
 	$("#form_phone_number").on('input', function() {validate();});
+	$("#form_year").on('input', function() {validate();});
+	$("#form_major").on('input', function() {validate();});
 	
 	function validate() {
 		var last_name = $("#form_last_name").val();
 		var first_name = $("#form_first_name").val();
 		var email = $("#form_email").val();
 		var phone_number = $("#form_phone_number").val();
+		var year = parseInt($("#form_year").val());
+		var major = $("#form_major").val();	
+
 		
 		var isValidate = true;
 
@@ -54,6 +59,20 @@ $(function() {
 			setSuccess("#control_phone_number");
 		} else {
 			setError("#control_phone_number", "Please enter a 10 digit phone number.");
+			isValidate = false;
+		}
+
+		if (year > 0) {
+			setSuccess("#control_year");
+		} else {
+			setError("#control_year", "Please enter your year of studies.");
+			isValidate = false;
+		}
+
+		if (major.length > 3) {
+			setSuccess("#control_major");
+		} else {
+			setError("#control_major", "Please enter your major.");
 			isValidate = false;
 		}
 		
