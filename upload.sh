@@ -26,7 +26,7 @@ remote_pem=/c/creds/openrobotics/aws-or1.pem
 remote_password=
 
 # will be executed on the server after upload
-extra_commands="chmod 777 -R upload_content > /dev/null 2>&1"
+extra_commands="chmod 777 -R upload_content roster > /dev/null 2>&1"
 ################
 
 echo "Creating target directory"
@@ -42,7 +42,7 @@ if [ "$1" == "remote" ]; then
 		-exec java -jar ../yuicompressor-2.4.8.jar {} -o {} \;
 	find . -type f -name '*.js' -size +0 -exec echo "Compressing '{}'" \; \
 		-exec java -jar ../yuicompressor-2.4.8.jar {} -o {} \;
-	find . -type f -name '*.php' -size +0 -exec echo "Compressing '{}'" \; \
+	find . -type f -name '*.php' -not -path '*Excel*' -not -name '*Excel*' -size +0 -exec echo "Compressing '{}'" \; \
 		-exec java -jar ../htmlcompressor-1.5.3.jar {} -o {} --preserve-php \;
 	find . -type f -name '*.html' -size +0 -exec echo "Compressing '{}'" \; \
 		-exec java -jar ../htmlcompressor-1.5.3.jar {} -o {} \;
