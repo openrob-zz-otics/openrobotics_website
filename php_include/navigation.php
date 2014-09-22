@@ -87,6 +87,7 @@
 					<ul class="dropdown-menu" role="menu">
 						<li><a class='heading-text' href="//wiki.<?php echo $_SERVER['SERVER_NAME'].($_SERVER['SERVER_PORT']=='80' ? '' : ':'.$_SERVER['SERVER_PORT']); ?>">Wiki</a></li>
 						<li><a class='heading-text' href="/calendar/">Calendar</a></li>
+						<li><a class='heading-text' href='http://forum.openrobotics.ca'>Forum</a></li>
 					</ul>			
 				</li>
 				<li <?php if(PAGE_TITLE == "contact") echo CLASS_ACTIVE;?> class="dropdown">
