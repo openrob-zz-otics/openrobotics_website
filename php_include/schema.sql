@@ -106,6 +106,22 @@ CREATE TABLE IF NOT EXISTS `blog_posts` (
 		ON DELETE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS `training_posts` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`visible` TINYINT(1) UNSIGNED NOT NULL,
+	`created_by` BIGINT(20) UNSIGNED NOT NULL,
+	`publish_time` DATETIME NOT NULL,
+	`title` TEXT NOT NULL,
+	`sub_title` TEXT,
+	`content` TEXT NOT NULL,	
+	`is_disabled` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+	PRIMARY KEY(`id`),
+	CONSTRAINT `training_posts.fk_user`
+		FOREIGN KEY (`created_by`)
+		REFERENCES `users`(`id`)
+		ON DELETE CASCADE
+);
+
 CREATE TABLE IF NOT EXISTS `mailing_list_recipients` (
 	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`email` TEXT NOT NULL,
