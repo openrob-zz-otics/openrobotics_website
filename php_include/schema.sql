@@ -150,6 +150,21 @@ CREATE TABLE IF NOT EXISTS `roster` (
 	PRIMARY KEY(`id`)
 );
 
+CREATE TABLE IF NOT EXISTS `training_completion` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`user_id` BIGINT(20) UNSIGNED NOT NULL,
+	`training_id` BIGINT(20) UNSIGNED NOT NULL,
+	PRIMARY KEY(`id`),
+	CONSTRAINT `training_completion.fk_user`
+		FOREIGN KEY (`user_id`)
+		REFERENCES `users`(`id`)
+		ON DELETE CASCADE
+	CONSTRAINT `training_completion.fk_training_posts`
+		FOREIGN KEY (`training_id`)
+		REFERENCES `training_posts`(`id`)
+		ON DELETE CASCADE
+);
+
 INSERT INTO `users` VALUES ('1', 'intelligence@openrobotics.ca', '6c527bf7ce0349c332f828ec79fa1eac', '0', '0', '0');
 INSERT INTO `user_info` (`id`, `first_name`, `last_name`) VALUES ('1', 'Open', 'Robotics');
 INSERT INTO `user_permissions` VALUES ('1', '1', '1', '1', '1', '1', '1', '1');

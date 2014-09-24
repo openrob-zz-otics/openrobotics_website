@@ -1,7 +1,7 @@
 <?php
 	//include our library and start drawing the page
 	require_once("../../php_include/functions.php");
-	$page_name = "training";
+	$page_name = "post";
 	print_header($page_name, false);
 	print_navbar();
 ?>
@@ -25,6 +25,20 @@
 						echo '		<h3>'.$row['title'].'</h3>';
 						echo '		<h4>'.$row['sub_title'].'</h4>';
 						echo '		<h5>Published At '. $row['publish_time']. '</h5>';//, By <a href="/contact/user?id='.$row['created_by'].'">'.$name.'</a></h5>';
+						//echo '		>';
+						if (isLoggedIn()) { 
+							$query = "SELECT * FROM `training_completion` WHERE `user_id`='$user_id' AND `training_id`='$id';";
+							$result = $db->query($query);
+							if ($result->num_rows > 0) 
+								$checked = 'checked';
+							else
+								$checked = '';
+							echo '<div class="checkbox">
+							    <label>
+							    <input type="checkbox" id="check_completed" '.$checked.'> Completed
+							    </label>
+							  	</div>';						
+						}
 						echo '		<hr>';
 						echo '		<span id="disp-content">'.$row['content'].'</span>';
 						echo '	</div>';

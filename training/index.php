@@ -25,9 +25,9 @@
 						echo '<hr>';
 					echo '		<a href="post?id='.$row['id'].'"><h3>'.$row['title'].'</h3></a>';
 					echo '		<h4>'.$row['sub_title'].'</h4>';
-					//echo '		<h5>Published At '.$row['publish_time']. ', By <a href="/contact/user?id='.$row['created_by'].'">'.$name.'</a></h5>';
-					echo '		<hr>';
-					echo '		<span id="disp-content">'.$row['content'].'</span>';
+					echo '		<h5>Published At '.$row['publish_time'].'</h5>';// By <a href="/contact/user?id='.$row['created_by'].'">'.$name.'</a></h5>';
+					//echo '		<hr>';
+					//echo '		<span id="disp-content">'.$row['content'].'</span>';
 					echo '	</div>';
 					echo '</div>';
 					$index++;
