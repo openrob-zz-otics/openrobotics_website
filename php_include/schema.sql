@@ -106,6 +106,22 @@ CREATE TABLE IF NOT EXISTS `blog_posts` (
 		ON DELETE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS `training_posts` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`visible` TINYINT(1) UNSIGNED NOT NULL,
+	`created_by` BIGINT(20) UNSIGNED NOT NULL,
+	`publish_time` DATETIME NOT NULL,
+	`title` TEXT NOT NULL,
+	`sub_title` TEXT,
+	`content` TEXT NOT NULL,	
+	`is_disabled` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+	PRIMARY KEY(`id`),
+	CONSTRAINT `training_posts.fk_user`
+		FOREIGN KEY (`created_by`)
+		REFERENCES `users`(`id`)
+		ON DELETE CASCADE
+);
+
 CREATE TABLE IF NOT EXISTS `mailing_list_recipients` (
 	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`email` TEXT NOT NULL,
@@ -132,6 +148,21 @@ CREATE TABLE IF NOT EXISTS `roster` (
 	`year` TINYINT(1) UNSIGNED NOT NULL,
 	`major` TEXT NOT NULL,
 	PRIMARY KEY(`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `training_completion` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`user_id` BIGINT(20) UNSIGNED NOT NULL,
+	`training_id` BIGINT(20) UNSIGNED NOT NULL,
+	PRIMARY KEY(`id`),
+	CONSTRAINT `training_completion.fk_user`
+		FOREIGN KEY (`user_id`)
+		REFERENCES `users`(`id`)
+		ON DELETE CASCADE
+	CONSTRAINT `training_completion.fk_training_posts`
+		FOREIGN KEY (`training_id`)
+		REFERENCES `training_posts`(`id`)
+		ON DELETE CASCADE
 );
 
 INSERT INTO `users` VALUES ('1', 'intelligence@openrobotics.ca', '6c527bf7ce0349c332f828ec79fa1eac', '0', '0', '0');
