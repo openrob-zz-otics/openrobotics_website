@@ -18,6 +18,7 @@ $(function() {
 		$(this).css("max-height", height+"px");		
 	});
 	
+	/*
 	$(window).resize(function() {
 		console.log("resize");
 		$("#disp-content iframe").each(function() {
@@ -29,7 +30,7 @@ $(function() {
 			$(this).width(newwidth);
 			$(this).height(newheight);
 		});
-	});
+	});*/
 
 	$("#check_completed").change(function() {
 		var checked = false;

@@ -7,17 +7,17 @@
 ?>
 <div class="container">
 		<?php
-			$user_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+			$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 			
-			if (!$user_id) {
+			if (!$id) {
 				echo "<h2>Invalid User ID</h2>";
 			} else if ($db = get_db()) {
-				$query = "SELECT * FROM `user_info` WHERE `id` IN (SELECT `id` FROM `users` WHERE `id`='$user_id' AND `is_disabled`='0');";
+				$query = "SELECT * FROM `user_info` WHERE `id` IN (SELECT `id` FROM `users` WHERE `id`='$id' AND `is_disabled`='0');";
 				if ($result = $db->query($query)) {
 					if ($row = $result->fetch_assoc()) {
-						echo '<div class="row"><div class="col-md-4"></div><div class="col-md-8"><h3>'.$row['first_name'].' '.$row['middle_name'].' '.$row['last_name'].'</h3></div></div>';
+						echo '<div class="row"><div class="col-sm-4"></div><div class="col-sm-8"><h3>'.$row['first_name'].' '.$row['middle_name'].' '.$row['last_name'].'</h3></div></div>';
 						echo '<div class="row">';
-						echo '<div class="col-md-4">';
+						echo '<div class="col-sm-4">';
 						echo '	<img src=';
 						if (file_exists('../../upload_content/user_images/'.$row['id'].'.png')) {
 							echo '"/upload_content/user_images/'.$row['id'].'.png"';
@@ -25,8 +25,8 @@
 							echo '"/assets/images/default_profile.png" width="150"';
 						}
 						echo ' alt="'.$row['first_name'].' '.$row['last_name'].'" class="img-responsive img-thumbnail">';
-						$query = "SELECT `id`, `name` FROM `projects` WHERE `visible`='1' AND (`created_by`='".$row['id']."' OR `id` IN (SELECT `project_id` FROM `project_contributors` WHERE `user_id`='".$row['id']."'));";
-						echo '<br /><br /><p>Involved with the following projects</p><ul>';
+						$query = "SELECT `id`, `name` FROM `projects` WHERE `visible`='1' AND `is_diabled`='0' AND (`created_by`='".$row['id']."' OR `id` IN (SELECT `project_id` FROM `project_contributors` WHERE `user_id`='".$row['id']."'));";
+						echo '<br /><br /><p>Involved with the following projects:</p><ul>';
 						if ($result2 = $db->query($query)) {
 							while ($row2 = $result2->fetch_assoc()) {
 								echo "<li><a href='/projects/project?id=".$row2['id']."'>";
@@ -35,7 +35,7 @@
 						}
 						
 						echo '</ul></div>';
-						echo '<div class="col-md-8">';
+						echo '<div class="col-sm-8">';
 						if ($row['open_robotics_position']!="")
 							echo "<p>Position: ".$row['open_robotics_position']."</p>";
 						if ($row['education']!="")
@@ -50,7 +50,18 @@
 							echo '<p><a href="'.$row['personal_site'].'">Personal Site</a></p>';
 						if ($row['bio']!="")
 							echo '<p>'.$row['bio'].'</p>';	
-						echo '</div></div>';
+
+						echo '<h3>Badges:</h3>';
+						echo '<div class="row">';
+						$query = "SELECT `badge_id` FROM `user_badges` WHERE `user_id`='$id';";
+						if ($result2 = $db->query($query)) {
+							while ($row2 = $result2->fetch_assoc()) {
+								echo '<div class="col-sm-3"><a href="/badge?id='.$row2['badge_id'].'">
+								<img class="img-responsive" src="/upload_content/badge_images/small/'.$row2['badge_id'].'.png"></a></div>';
+							}
+						}
+						//echo '<div class="col-sm-3"></div><div class="col-sm-3"></div><div class="col-sm-3"></div>';
+						echo '</div></div></div>';
 					} else {
 						echo '<h2>Invalid User ID</h2>';
 					}

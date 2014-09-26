@@ -158,10 +158,35 @@ CREATE TABLE IF NOT EXISTS `training_completion` (
 	CONSTRAINT `training_completion.fk_user`
 		FOREIGN KEY (`user_id`)
 		REFERENCES `users`(`id`)
-		ON DELETE CASCADE
+		ON DELETE CASCADE,
 	CONSTRAINT `training_completion.fk_training_posts`
 		FOREIGN KEY (`training_id`)
 		REFERENCES `training_posts`(`id`)
+		ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS `badges` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`name` TEXT NOT NULL,
+	`description` TEXT NOT NULL,
+	`instructions` TEXT NOT NULL,
+	`difficulty` TEXT NOT NULL,
+	`is_disabled` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+	PRIMARY KEY (`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `user_badges` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`user_id` BIGINT(20) UNSIGNED NOT NULL,
+	`badge_id` BIGINT(20) UNSIGNED NOT NULL,
+	PRIMARY KEY(`id`),
+	CONSTRAINT `user_badges.fk_user_id`
+		FOREIGN KEY (`user_id`)
+		REFERENCES `users`(`id`)
+		ON DELETE CASCADE,
+	CONSTRAINT `user_badges.fk_badge_id`
+		FOREIGN KEY (`badge_id`)
+		REFERENCES `badges`(`id`)
 		ON DELETE CASCADE
 );
 

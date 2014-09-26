@@ -26,7 +26,7 @@
 						echo '		<h4>'.$row['sub_title'].'</h4>';
 						echo '		<h5>Published At '. $row['publish_time']. '</h5>';//, By <a href="/contact/user?id='.$row['created_by'].'">'.$name.'</a></h5>';
 						//echo '		>';
-						if (isLoggedIn()) { 
+						if (isLoggedIn() == true) { 
 							$query = "SELECT * FROM `training_completion` WHERE `user_id`='$user_id' AND `training_id`='$id';";
 							$result = $db->query($query);
 							if ($result->num_rows > 0) 
