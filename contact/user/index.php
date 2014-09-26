@@ -53,7 +53,7 @@
 
 						echo '<h3>Badges:</h3>';
 						echo '<div class="row">';
-						$query = "SELECT `badge_id` FROM `user_badges` WHERE `user_id`='$id';";
+						$query = "SELECT `badge_id` FROM `user_badges` WHERE `user_id`='$id' AND `badge_id` IN (SELECT `id` FROM `badges` WHERE `visible`='1');";
 						if ($result2 = $db->query($query)) {
 							while ($row2 = $result2->fetch_assoc()) {
 								echo '<div class="col-sm-3"><a href="/badge?id='.$row2['badge_id'].'">

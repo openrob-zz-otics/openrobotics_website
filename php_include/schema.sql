@@ -171,6 +171,7 @@ CREATE TABLE IF NOT EXISTS `badges` (
 	`description` TEXT NOT NULL,
 	`instructions` TEXT NOT NULL,
 	`difficulty` TEXT NOT NULL,
+	`visible` TINYINT(1) UNSIGNED NOT NULL,
 	`is_disabled` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 	PRIMARY KEY (`id`)
 );
