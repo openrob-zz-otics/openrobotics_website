@@ -96,6 +96,7 @@
 						<li><a class='heading-text' href="/calendar/">Calendar</a></li>
 						<li><a class='heading-text' href='http://forum.openrobotics.ca'>Forum</a></li>
 						<li><a class='heading-text' href="/training/">Training</a></li>
+						<li><a class='heading-text' href="/badge/list">Badges</a></li>
 					</ul>			
 				</li>
 				<li <?php if(PAGE_TITLE == "contact") echo CLASS_ACTIVE;?> class="dropdown">
