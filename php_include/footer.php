@@ -13,11 +13,11 @@
 			<script src="/assets/js/jquery.iframe-transport.js"></script>
 			<script src="/assets/js/jquery.fileupload.js"></script>';
 		}
-	?>
-	<!-- include unique page js -->
-	<script src="assets/js/<?php echo PAGE_TITLE;?>.js"></script>		
+	?>		
 	<!-- include general js -->
 	<script src="/assets/js/global.js"></script>
+	<!-- include unique page js -->
+	<script src="assets/js/<?php echo PAGE_TITLE;?>.js"></script>
 	<?php
 	if (!@seen_popup) {
 		echo '<script>$(function() {$("#nav_container").popover("show");});</script>';

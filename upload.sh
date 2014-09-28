@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # \
 # Automatically Upload Website to Testing/Remote Servers
 # Also compresses js/css/html files
@@ -21,7 +21,7 @@ test_password=
 
 remote_address=ubuntu@openrobotics.ca
 remote_path=/var/www/openrobotics
-remote_auth=pem #pem|password|none
+remote_auth=none #pem|password|none
 remote_pem=/c/creds/openrobotics/aws-or1.pem
 remote_password=
 
@@ -30,11 +30,12 @@ extra_commands="chmod 777 -R upload_content roster > /dev/null 2>&1"
 ################
 
 echo "Creating target directory"
-shopt -s extglob
+shopt -s extglob dotglob
 mkdir target
-cp -r !(resources|Templates|*.sh|*.jar|target|schema|npp_workspace*|npp|*.pem|*.sql) target/
+cp -r !(.|..|.git|resources|Templates|*.sh|*.jar|target|schema|npp_workspace*|npp|*.pem|*.sql) target/
 cp .htaccess target/
 cd target
+shopt -u extglob dotglob
 
 #compress for remote server
 if [ "$1" == "remote" ]; then

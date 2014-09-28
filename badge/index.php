@@ -11,18 +11,22 @@
 			<?php
 				$id = intval(@$_GET['id']);
 				if($id > 0 && $db = get_db()) {
-					$query = "SELECT * FROM `badges` WHERE `id`='$id' AND `is_disabled`='0';";
+					$query = "SELECT * FROM `badges` INNER JOIN `badge_categories` ON `badges`.`category`=`badge_categories`.`id` WHERE `badges`.`id`='$id' AND `badges`.`is_disabled`='0';";
 					if ($result = $db->query($query)) {
 						if ($row = $result->fetch_assoc()) {
+							//print_r($row);
 							echo "<h1>".ucwords(strtolower($row['name']))."</h1>";
+							echo "<h3>Category: ".ucwords(strtolower($row['category_name']))."</h3>";
 							echo "<h3>Difficulty: ".ucfirst(strtolower($row['difficulty']))."</h3>";
 							echo "<h3>Description</h3>";
 							echo "<p>".$row['description']."</p>";
 							echo "<h3>How to get it</h3>";
 							echo "<p>How to get".$row['instructions']."</p>";
 						}
+					} else {
+						echo "error: ".$dbs->error;
 					}
-				}
+				}  
 			?>
 		</div>
 		<div class="col-sm-4">

@@ -165,15 +165,26 @@ CREATE TABLE IF NOT EXISTS `training_completion` (
 		ON DELETE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS `badge_categories` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`category_name` TEXT NOT NULL,
+	PRIMARY KEY(`id`)
+);
+
 CREATE TABLE IF NOT EXISTS `badges` (
 	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`name` TEXT NOT NULL,
 	`description` TEXT NOT NULL,
 	`instructions` TEXT NOT NULL,
 	`difficulty` TEXT NOT NULL,
+	`category` BIGINT(20) UNSIGNED NOT NULL,
 	`visible` TINYINT(1) UNSIGNED NOT NULL,
 	`is_disabled` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
-	PRIMARY KEY (`id`)
+	PRIMARY KEY (`id`),
+	CONSTRAINT `badges.fk_category`
+		FOREIGN KEY (`category`)
+		REFERENCES `badge_categories`(`id`)
+		ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `user_badges` (
@@ -190,7 +201,7 @@ CREATE TABLE IF NOT EXISTS `user_badges` (
 		REFERENCES `badges`(`id`)
 		ON DELETE CASCADE
 );
-
+	
 INSERT INTO `users` VALUES ('1', 'intelligence@openrobotics.ca', '6c527bf7ce0349c332f828ec79fa1eac', '0', '0', '0');
 INSERT INTO `user_info` (`id`, `first_name`, `last_name`) VALUES ('1', 'Open', 'Robotics');
 INSERT INTO `user_permissions` VALUES ('1', '1', '1', '1', '1', '1', '1', '1');
