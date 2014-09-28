@@ -28,6 +28,9 @@ if (!canManageUsers()) {
 				while ($row = $result->fetch_assoc()) {
 					if ($i++ > 0)
 						echo '<hr>';
+					if ($row['name'] == "") {
+						$row['name'] = "[[No name]]";
+					}
 					echo '<div class="row"><div class="col-sm-10">';
 					echo '<a href="badge?id='.$row['id'].'"><h3>'.ucwords(strtolower($row['name'])).'</h3></a>';
 					echo '<p>Difficulty: '.ucfirst(strtolower($row['difficulty'])).'</p>';
