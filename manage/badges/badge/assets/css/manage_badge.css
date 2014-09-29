@@ -5,3 +5,7 @@ select {
 .progress-bar {
 	background-color: #CECECE;
 }
+
+.user_select {
+	cursor: pointer;
+}

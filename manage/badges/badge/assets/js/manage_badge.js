@@ -90,14 +90,94 @@ $(function() {
 	$("#icon_upload").fileupload({
 		dataType: "json",
 		formData: {id: getUrlParameter("id") },
-		done: function (e, data) {
+		success: function (e, data) {
 			$("#icon_upload_progress .progress-bar").css("background-color", "#5cb85c");
-			imageLoad();
+			$("#badge_image").attr("src", $("#badge_image").attr("src") + "?" + (new Date).getTime());
 		},
 		progressall: function (e, data) {
 			var progress = parseInt(data.loaded / data.total * 100, 10);
 			$("#icon_upload_progress .progress-bar").css("width", progress + "%");			
 		}		
+	});
+
+	$("#give_user_badge").keyup(function() {
+		if ($("#give_user_badge").val().length == 0) {
+			$("#search_user_list").empty();
+			return;
+		}
+		$.ajax({
+			type: "POST",
+			url: "/manage/badges/badge/assets/cgi/badges.php?task=3",
+			data: {
+				id: getUrlParameter("id"),
+				search: $("#give_user_badge").val()
+			}
+		}).done(function(data) {
+			$("#search_user_list").html(data);
+			$("li[class~='user_select']").click(function() {
+				var t =  $(this);
+				$.ajax({
+					type: "POST",
+					dataType: "json",
+					url: "/manage/badges/badge/assets/cgi/badges.php?task=4",
+					data: {
+						id: getUrlParameter("id"),
+						user_id: t.data("id")
+					}
+				}).done(function(data) {
+					console.log(data);
+					if (data.success) {
+						t.slideUp(function() {
+							reDrawUserList();
+						});
+					} else {
+						t.css("background-color","#f2dede");
+						t.html(t.html() + " - Error");
+					}
+				}).
+				fail(function() {
+					t.css("background-color","#f2dede");
+					t.html(t.html() + " - Error");
+				});
+			});
+		});
+	});
+
+	function reDrawUserList() {
+		$.ajax({
+			type: "POST",
+			url: "/manage/badges/badge/assets/cgi/badges.php?task=5",
+			data: {
+				badge_id: getUrlParameter("id"),
+			}
+		}).done(function(data) {
+			$("#user_list").html(data);
+			$("span[class~='delete_user']").click(function() {
+				clickDelete($(this).data('id'), $(this).parent());
+			});
+		});	
+	}
+
+ 	function clickDelete(user_id, p) {
+ 		p.slideUp(function() {
+			$.ajax({
+				type: "POST",
+				dataType: "json",
+				url: "/manage/badges/badge/assets/cgi/badges.php?task=6",
+				data: {
+					id: getUrlParameter("id"),
+					user_id: user_id
+				}
+			}).done(function(data) {
+				if (data.success) {
+					reDrawUserList();
+				}
+			});
+		});
+ 	}
+
+	$("span[class~='delete_user']").click(function() {
+		clickDelete($(this).data('id'), $(this).parent());
 	});
 
 });

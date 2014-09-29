@@ -99,7 +99,7 @@
 		<div class="col-sm-4">
 			<p><a href="/badge?id=<?php echo $badge_id;?>"><button class="btn btn-primary">View Badge Page</button></a></p>
 
-			<img class="img-responsive" src="/upload_content/badge_images/large/<?php echo $badge_id; ?>.png" />
+			<img id="badge_image" class="img-responsive" src="/upload_content/badge_images/large/<?php echo $badge_id; ?>.png" />
 
 
 			<p>Badge Icon (Upload a a high resolution square image (1000px*1000px). Thumbnails will be automatically created.<p>
@@ -115,7 +115,41 @@
 			</div>
 		</div>
 	</div>
+	<hr>
+	<div class="row">
+		<div class="col-sm-4">
+			<h3>List of users with this badge</h3>
+			<div id="user_list">
+				<?php
+				if ($db) {
+					$query = "SELECT * FROM `user_info` WHERE `id` IN (SELECT `user_id` FROM `user_badges` WHERE `badge_id`='$badge_id');";
+					if ($result = $db->query($query)) {
+						if ($result->num_rows) 
+							echo '<p>Click on the \'x\' beside a user\'s name to take this badge away from them.</p>';
+						echo '<ul class="list-group">';
+						while ($row = $result->fetch_assoc()) {
+							echo '<li class="list-group-item">';
+							echo "<span class='glyphicon glyphicon-remove delete_user' style='float:right;cursor:pointer;' data-id='".$row['id']."'></span>";
+							echo "<a href='/contact/user?id=".$row['id']."'>".$row['first_name'].' '.$row['last_name']."</a>";
+							echo '</li>';
+						}
+						echo '</ul>';
+					}
+					
+				}
+				?>
+			</div>
+		</div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-5">
+			<h3>Give this badge to a user</h3>
+			<p>Start by typing a user's name or email.</p>
+			<input type="text" class="form-control" id="give_user_badge" placeholder="First Name / Middle Name / Last Name / Email Address" />
+			<br />
+			<div id="search_user_list"></div>
 
+		</div>
+	</div>
 
 <?php
 $db->close();
