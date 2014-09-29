@@ -15,7 +15,7 @@
 	
 	<?php
 		if ($db = get_db()) {
-			$query = "SELECT * FROM `badges` WHERE `is_disabled`='0' AND `visible`='1';";
+			$query = "SELECT * FROM `badges` INNER JOIN `badge_categories` ON `badges`.`category`=`badge_categories`.`id` WHERE `badges`.`is_disabled`='0' AND `badges`.`visible`='1';";
 			if ($result = $db->query($query)) {
 				$i = 0;
 				while ($row = $result->fetch_assoc()) {
@@ -24,6 +24,7 @@
 					echo '<div class="row"><div class="col-sm-10">';
 					echo '<a href="..?id='.$row['id'].'"><h3>'.ucwords(strtolower($row['name'])).'</h3></a>';
 					echo '<p>Difficulty: '.ucfirst(strtolower($row['difficulty'])).'</p>';
+					echo '<p>Category: '.ucfirst(strtolower($row['category_name'])).'</p>';
 					echo '<p>'.$row['instructions'].'</p>';
 					echo '</div><div class="col-sm-2">';
 					echo '<a href="..?id='.$row['id'].'"><img class="img-responsive" src="/upload_content/badge_images/small/'.$row['id'].'.png" /></a>';

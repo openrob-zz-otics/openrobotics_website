@@ -44,7 +44,7 @@ if (!canManageUsers()) {
 
 
 
-	echo '</div>';
+	echo '</div></div>';
 
 }
 print_footnote();

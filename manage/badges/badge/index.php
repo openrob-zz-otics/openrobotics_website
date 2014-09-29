@@ -34,6 +34,7 @@
 			exit();
 		}
 		$badge_id = $db->insert_id;
+		echo '<script>location.replace("?id='.$badge_id.'");</script>';
 	}
 
 	$query = "SELECT * FROM `badges` WHERE `id`='$badge_id';";
@@ -101,7 +102,7 @@
 			<img class="img-responsive" src="/upload_content/badge_images/large/<?php echo $badge_id; ?>.png" />
 
 
-			<p>Badge Icon<p>
+			<p>Badge Icon (Upload a a high resolution square image (1000px*1000px). Thumbnails will be automatically created.<p>
 			<span class="btn btn-default fileinput-button">
 				<i class="glyphicon glyphicon-plus"></i>
 				<span>Upload...</span>
@@ -114,6 +115,7 @@
 			</div>
 		</div>
 	</div>
+
 
 <?php
 $db->close();
