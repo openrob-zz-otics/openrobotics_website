@@ -21,7 +21,7 @@
 							echo "<h3>Description</h3>";
 							echo "<p>".$row['description']."</p>";
 							echo "<h3>How to get it</h3>";
-							echo "<p>How to get".$row['instructions']."</p>";
+							echo "<p>".$row['instructions']."</p>";
 						}
 					} else {
 						echo "error: ".$dbs->error;

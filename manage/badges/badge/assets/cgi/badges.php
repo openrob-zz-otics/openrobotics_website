@@ -89,10 +89,11 @@
 			mkdir("../../../../../upload_content/badge_images/small");
 		}
 		$image = imagecreatefromstring(file_get_contents($_FILES["file"]["tmp_name"]));
-		//imagealphablending($badge_large, false);
 
 		$width = imagesx($image);
 		$height = imagesy($image);
+
+		echo $width.":".$height;
 
 		$badge_size_large = 1000;
 		$badge_size_small = 200;
@@ -115,15 +116,10 @@
 		   $image,
 		   0, 0, 0, 0,
 		   $badge_size_small, $badge_size_small,
-		   $width, $height);
-		
-		
+		   $width, $height);		
 
 		imagepng($badge_large, "../../../../../upload_content/badge_images/large/$id.png");
 		imagepng($badge_small, "../../../../../upload_content/badge_images/small/$id.png");
-
-		$return->success = true;
-		echo json_encode($return);
 	}
 
 	echo json_encode($return);
