@@ -19,4 +19,13 @@ $(function() {
 			$(this).height(newheight);
 		});
 	});
+
+	$("h4[class~='expand']").click(function() {
+		var id = "#"+$(this).data("id");
+		if ($(id).is(":visible")) {
+			$(id).slideUp();
+		} else {
+			$(id).slideDown();
+		}
+	});
 });

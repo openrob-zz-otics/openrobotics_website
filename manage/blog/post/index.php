@@ -26,7 +26,7 @@
 
 	if ($post_id == 0 && (canManageAllBlogPosts() || canAddBlogPost())) {
 		if ($db) {
-			$now = date("Y-m-d");
+			$now = date("Y-m-d H:i:s");
 			$query = "INSERT INTO `blog_posts` (`created_by`, `publish_time`) VALUES ('$user_id', '$now');";
 			if ($db->query($query)) {
 				$post_id = $db->insert_id;
