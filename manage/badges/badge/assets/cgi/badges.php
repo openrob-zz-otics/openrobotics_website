@@ -69,7 +69,7 @@
 	} else if ($task == 1) {
 		$id = @$_POST['id'];
 		if ($db = get_db()) {
-			$query = "UPDATE `badges` SET `is_disabled`='1';";
+			$query = "UPDATE `badges` SET `is_disabled`='1' WHERE `id`='$id';";
 			if (!$db->query($query)) {
 				$db->close();
 				fail();
