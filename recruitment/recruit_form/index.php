@@ -100,6 +100,7 @@
 						$phone_number = @$_POST["phone_number"];
 						$year = @$_POST['year'];
 						$major = @$_POST['major'];
+						$student_number = @$_POST['student_number'];
 						
 						$qualities_1 = @$_POST["qualities_1"];
 						$qualities_2 = @$_POST["qualities_2"];
@@ -143,10 +144,13 @@
 							$success = "Submission Successful! Will be processed within 24 hours.";
 
 								//Put into the db, :)
+							$query = "INSERT INTO `roster` (`name`, `email`, `phone`, `year`, `major`, `student_number`) VALUES ('$first_name $middle_name $last_name', '$email', '$phone_number', '$year', '$major', '$student_number');";
 							$db = get_db();
-							$query = "INSERT INTO `roster` (`name`, `email`, `phone`, `year`, `major`) VALUES ('$first_name $middle_name $last_name', '$email', '$phone_number', '$year', '$major');";
 							//echo $query;
-							$db->query($query);
+							if($db->query($query)) {
+							} else {
+								$error = "Uh oh, submission was unsuccessful. Please try again. If the problem persists, contact admin directly.";
+							}
 						} else {
 							$error = "Uh oh, submission was unsuccessful. Please try again. If the problem persists, contact admin directly.";
 						}
@@ -228,6 +232,11 @@
 					<input type="text" name="major" class="form-control" placeholer="Electrial Engineering" id="form_major" value="<?php echo @$major;?>">
 				</div>
 
+				<div class="form-group" id="control_student_number">
+					<label for="form_student_number">Student Number</label>
+					<input type="text" name="student_number" class="form-control" placeholder="" id="form_student_number" value="<?php echo @$student_number;?>">
+				</div>
+				
 
 				<br />
 				<p class="text-warning">Click on the headings below to reveal more parts of the form. Neglecting to complete these parts of the form will reflect poorly on your applications.</p>

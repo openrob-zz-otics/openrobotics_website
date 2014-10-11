@@ -147,6 +147,7 @@ CREATE TABLE IF NOT EXISTS `roster` (
 	`phone` TEXT NOT NULL,
 	`year` TINYINT(1) UNSIGNED NOT NULL,
 	`major` TEXT NOT NULL,
+	`student_number` TEXT NOT NULL,
 	PRIMARY KEY(`id`)
 );
 
