@@ -14,5 +14,10 @@
 			<img src="/assets/images/mail-icon.png" width="35">
 		</a>
 	</p>
-	<p style="padding-top:12px;">&copy; 2014 UBC Open Robotics <a href="/email/register_email">Subscribe To Mailing List</a></p>
+	<p style="padding-top:12px;">
+		&copy; 2014 UBC Open Robotics - 
+		<a href="/email/register_email"> Subscribe To Mailing List</a>
+		<!-- DONATE LINK -->		
+		- <a href="<?php echo $GLOBALS['donate_link'];?>"> Donate</a>
+	</p>
 </footer>

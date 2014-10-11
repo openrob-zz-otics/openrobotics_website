@@ -25,7 +25,29 @@
 							echo '"/assets/images/default_profile.png" width="150"';
 						}
 						echo ' alt="'.$row['first_name'].' '.$row['last_name'].'" class="img-responsive img-thumbnail"></a></center>
-						</div><div class="col-sm-8"><p><a href="/contact/user?id='.$row['id'].'" style="font-size:large;">'.$row['first_name'].' '.$row['last_name'].'</a><br />'.$row['open_robotics_position'].'<br />'.$row['education'].'</p><hr><p>'.$row['bio'].'</p></div></div>';
+						</div><div class="col-sm-8"><p><a href="/contact/user?id='.$row['id'].'" style="font-size:large;">'.$row['first_name'].' '.$row['last_name'].'</a><br />'.$row['open_robotics_position'].'<br />'.$row['education'].'</p><hr><p>'
+						. ((strlen($row['bio']) > 200) ? substr($row['bio'], 0, 200)."<a href='/contact/user?id=".$row['id']."'>... read more.</a>" : $row['bio']).'</p>';
+						$query = "SELECT `id`, `name` FROM `badges` WHERE `is_disabled`='0' AND `id` IN (SELECT `badge_id` FROM `user_badges` WHERE `user_id`='".$row['id']."');";
+						if ($result2 = $db->query($query)) {
+							$i = 0;
+							while ($row2 = $result2->fetch_assoc()) {
+								if ($i == 0) {
+									echo '<div class="row">';
+								}
+								echo '<div class="col-xs-1">';
+								echo '<a href="/badge?id='.$row2['id'].'"><img data-toggle="tooltip" data-placement="top" title="'.$row2['name'].'" class="img-responsive badge_image" style="max-width:50px;" src="/upload_content/badge_images/small/'.$row2['id'].'.png"></a>';
+								echo '</div>';
+								if ($i++ == 11) {
+									echo '</div>';
+									$i = 0;
+								}
+
+							}
+						}
+						if ($i > 0) {
+							echo '</div>';
+						}
+						echo '</div></div>';
 					}
 				}
 				$db->close();

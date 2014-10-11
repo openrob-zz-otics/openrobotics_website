@@ -65,7 +65,7 @@
 	
 	
 	<div class="row" id="form_control" <?php if(@$message_sent)echo'style="display:none;"';?>>
-		<div class="col-sm-3"></div>
+		<div class="col-sm-2"></div>
 		<div class="col-sm-6">
 			<h3>Contact Form</h3>
 			<?php
@@ -96,7 +96,17 @@
 				<button class="btn btn-default btn-disabled" name="submit" id="form_submit" disabled>Submit</button>
 			</form>
 		</div>		
-		<div class="col-sm-3"></div>
+		
+		<div class="col-sm-4" style="text-align:right;">
+			<h3></h3><!-- lazy padding -->
+			
+			<p style="font-size:19px;">
+				If you are interested in sponsorship or donating to UBC Open Robotics, you may contact us with this form.
+				To donate immediately, click the button below.
+			</p>
+			<a href="<?php echo $GLOBALS['donate_link']; ?>"><button class="btn btn-lg btn-or">Donate Now</button></a>
+			
+		</div>
 	</div>
 			
 <?php 

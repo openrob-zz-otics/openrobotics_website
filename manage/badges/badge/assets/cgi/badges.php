@@ -170,9 +170,9 @@
 			$query = "SELECT * FROM `user_info` WHERE `id` IN (SELECT `user_id` FROM `user_badges` WHERE `badge_id`='$badge_id');";
 			if ($result = $db->query($query)) {
 				echo '<ul class="list-group">';
+				if ($result->num_rows) 
+					echo '<p>Click on the \'x\' beside a user\'s name to take this badge away from them.</p>';
 				while ($row = $result->fetch_assoc()) {
-					if ($result->num_rows) 
-						echo '<p>Click on the \'x\' beside a user\'s name to take this badge away from them.</p>';
 					echo '<li class="list-group-item">';
 					echo "<span class='glyphicon glyphicon-remove delete_user' style='float:right;cursor:pointer;' data-id='".$row['id']."'></span>";
 					echo "<a href='/contact/user?id=".$row['id']."'>".$row['first_name'].' '.$row['last_name']."</a>";

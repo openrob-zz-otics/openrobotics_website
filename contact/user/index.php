@@ -53,10 +53,10 @@
 
 						echo '<h3>Badges:</h3>';
 						echo '<div class="row">';
-						$query = "SELECT `badge_id` FROM `user_badges` WHERE `user_id`='$id' AND `badge_id` IN (SELECT `id` FROM `badges` WHERE `visible`='1');";
+						$query = "SELECT `badge_id` FROM `user_badges` WHERE `user_id`='$id' AND `badge_id` IN (SELECT `id` FROM `badges` WHERE `visible`='1' AND `is_disabled`='0');";
 						if ($result2 = $db->query($query)) {
 							while ($row2 = $result2->fetch_assoc()) {
-								echo '<div class="col-sm-3"><a href="/badge?id='.$row2['badge_id'].'">
+								echo '<div class="col-sm-2"><a href="/badge?id='.$row2['badge_id'].'">
 								<img class="img-responsive" src="/upload_content/badge_images/small/'.$row2['badge_id'].'.png"></a></div>';
 							}
 						}

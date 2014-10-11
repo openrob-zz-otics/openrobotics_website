@@ -201,3 +201,13 @@ th {
 hr {
 	/*border-top-color: #BDBDBD;*/
 }
+
+.btn-or {
+	background-color: #bf1e2e;
+	border-color: #731e1e;
+	color: #fff;
+}
+
+.btn-or:hover {
+	color: #fff;
+}

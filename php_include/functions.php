@@ -21,6 +21,9 @@ class ValidateSessionResult {
 
 */
 
+/* -- Constants -- */
+$donate_link = "https://www.donate.startanevolution.ca/ea-action/action?ea.client.id=1730&ea.campaign.id=19413&Direct%20my%20Gift%20to%20Module=Open%20Robotics%20Student%20Team%20G1102";
+
 /* -- Globals -- */
 $user_email = "";
 $user_first_name = "";
@@ -150,6 +153,12 @@ function myMailFrom($to, $subject, $message, $from) {
 	$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 	
 	return mail($to, $subject, $message, $headers);
+}
+
+// from
+// http://stackoverflow.com/questions/5341168/best-way-to-make-links-clickable-in-block-of-text
+function make_links_clickable($text){
+    return preg_replace('!(((f|ht)tp(s)?://)[-a-zA-Zа-яА-Я()0-9@:%_+.~#?&;//=]+)!i', '<a href="$1">$1</a>', $text);
 }
 
 ?>
