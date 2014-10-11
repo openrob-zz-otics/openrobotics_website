@@ -59,7 +59,7 @@
 		</div>
 	</div>
 
-  <hr class="featurette-divider">
+  	<hr class="featurette-divider">
 
 	<div class="row featurette">
 		<div class="col-sm-5">
@@ -68,6 +68,21 @@
 		<div class="col-sm-7">
 			<h2 class="featurette-heading">Let your idea <span class="text-muted">come to life.</span></h2>
 			<p class="lead">Have an idea? We can help you find the resources and pair you with more people like yourself.</p>
+		</div>
+	</div>
+
+	<hr>
+	
+	
+	<div class="row">
+		<div class="col-sm-12" style="text-align:center;">
+			<p style="font-size:19px;">
+				UBC Open Robotics is a new team, and we're working on growing our team and expanding our reach. 
+				We would graciously accept donations to help us reach our goal of competing in RoboCup 2016. 
+				For more details on sponshorship, please use our <a href="contact">contact form.</a>
+				Thank you!
+			</p>
+			<a href="<?php echo $GLOBALS['donate_link']; ?>"><button class="btn btn-lg btn-or">Donate Now</button></a>
 		</div>
 	</div>
 

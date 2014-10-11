@@ -19,16 +19,28 @@
 		if ($result = $db->query($query)) {
 			$i = 0;
 			while ($row = $result->fetch_assoc()) {
-				if ($i++ > 0)
-					echo '<hr>';
-				echo '<div class="row"><div class="col-sm-10">';
-				echo '<a href="..?id='.$row['id'].'"><h3>'.ucwords(strtolower($row['name'])).'</h3></a>';
-				echo '<p>Difficulty: '.ucfirst(strtolower($row['difficulty'])).'</p>';
-				echo '<p>Category: '.ucfirst(strtolower($row['category_name'])).'</p>';
-				echo '<p>'.$row['instructions'].'</p>';
-				echo '</div><div class="col-sm-2">';
+				// if ($i++ > 0)
+				// 	echo '<hr>';
+				// echo '<div class="row"><div class="col-sm-10">';
+				// echo '<a href="..?id='.$row['id'].'"><h3>'.ucwords(strtolower($row['name'])).'</h3></a>';
+				// echo '<p>Difficulty: '.ucfirst(strtolower($row['difficulty'])).'</p>';
+				// echo '<p>Category: '.ucfirst(strtolower($row['category_name'])).'</p>';
+				// echo '<p>'.$row['instructions'].'</p>';
+				// echo '</div><div class="col-sm-2">';
+				// echo '<a href="..?id='.$row['id'].'"><img class="img-responsive" src="/upload_content/badge_images/small/'.$row['id'].'.png" /></a>';
+				// echo '</div></div>';
+				if ($i == 0) {
+					echo '<div class="row">';
+				}
+				echo "<div class='col-sm-2'>";
 				echo '<a href="..?id='.$row['id'].'"><img class="img-responsive" src="/upload_content/badge_images/small/'.$row['id'].'.png" /></a>';
-				echo '</div></div>';
+				echo "</div>";
+				if ($i == 5) {
+					echo '</div>';
+					$i = 0;
+				} else {
+					$i++;
+				}
 			}
 			if ($i == 0) {
 				echo '<div class="row"><div class="col-sm-12"><p>No Results Found</p></div></div>';

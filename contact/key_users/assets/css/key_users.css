@@ -1,3 +1,7 @@
 .img-thumbnail {
 	max-height: 300px;
 }
+
+.tooltip {
+    font-size: medium;
+}
