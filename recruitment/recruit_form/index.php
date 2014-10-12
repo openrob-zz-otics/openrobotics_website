@@ -122,7 +122,8 @@
 							"Applying for level: $level.\r\r\n".
 							"Name: ".$first_name." ".$middle_name." ".$last_name."\r\n".
 							"Email: ".$email."\r\n".
-							"Phone: ".$phone_number."\r\n\r\n".
+							"Phone: ".$phone_number."\r\n".
+							"Student Number: ".$student_number."\r\n\r\n".
 							"Qualities: \r\n".
 							$qualities_1_text."\r\n".$qualities_1."\r\n\r\n".
 							$qualities_2_text."\r\n".$qualities_2."\r\n\r\n".
