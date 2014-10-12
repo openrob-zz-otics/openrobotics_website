@@ -13,7 +13,7 @@
 	$excel = new PHPExcel();
 
 	$excel->getProperties()->setCreator("Jonathan Chapple");
-	$excel->getProperties()->setLastModifiedBy("Jonathan Chapple");
+	$excel->getProperties()->setLastModifiedBy("Ming Xu");
 	$excel->getProperties()->setTitle("Open Robotics Team Roster");
 	$excel->getProperties()->setSubject("Open Robotics Team Roster");
 	$excel->getProperties()->setDescription("Open Robotics Team Roster.");
@@ -25,6 +25,7 @@
 	$excel->getActiveSheet()->SetCellValue("C1", "Phone");
 	$excel->getActiveSheet()->SetCellValue("D1", "Year");
 	$excel->getActiveSheet()->SetCellValue("E1", "Major");
+	$excel->getActiveSheet()->SetCellValue("F1", "Student Number");
 
 	$db = get_db();
 
@@ -39,6 +40,7 @@
 		$excel->getActiveSheet()->SetCellValue("C".$i, $row['phone']);
 		$excel->getActiveSheet()->SetCellValue("D".$i, $row['year']);
 		$excel->getActiveSheet()->SetCellValue("E".$i, $row['major']);
+		$excel->getActiveSheet()->SetCellValue("F".$i, $row['student_number']);
 	}
 
 	$excel->getActiveSheet("Open Robotics Team Roster");
