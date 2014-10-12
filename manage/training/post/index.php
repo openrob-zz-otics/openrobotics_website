@@ -74,11 +74,11 @@
 			</div>
 			<div class="form-group">
 				<label for="form_title">Title</label>
-				<input type="text" class="form-control" placeholder="Title" id="form_title" value="<?php echo @$post_data['title'];?>">
+				<input type="text" class="form-control" placeholder="Title" id="form_title" value="<?php echo htmlspecialchars(@$post_data['title']);?>">
 			</div>
 			<div class="form-group">
 				<label for="form_subtitle">Subtitle</label>
-				<input type="text" class="form-control" placeholder="Subtitle" id="form_subtitle" value="<?php echo @$post_data['sub_title'];?>">
+				<input type="text" class="form-control" placeholder="Subtitle" id="form_subtitle" value="<?php echo htmlspecialchars (@$post_data['sub_title']);?>">
 			</div>
 			<div class="form-group">
 				<label for="form_content">Content (You can input html!)</label>
