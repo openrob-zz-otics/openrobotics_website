@@ -5,9 +5,9 @@
 
 <!-- Fixed navbar -->
 <div id="nav_container" class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="line hidden-xs" id="left_line" style="position: absolute; transform: rotate(0deg); width: 400px; top: 120px; left: 10px;"></div>
+	<div class="line hidden-xs" id="left_line" style="display:none;position: absolute; transform: rotate(0deg); width: 400px; top: 120px; left: 10px;"></div>
 	
-	<div class="line hidden-xs" id="right_line" style="position: absolute; transform: rotate(0deg); width: 400px; top: 120px; left: 550px;"></div>
+	<div class="line hidden-xs" id="right_line" style="display:none;position: absolute; transform: rotate(0deg); width: 400px; top: 120px; left: 550px;"></div>
 
 	<div class="container navbar-inner navbar-full" id="cred_navbar">
 		<?php

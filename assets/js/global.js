@@ -1,4 +1,6 @@
 $(function() {
+	$("#left_line").fadeIn('fast');
+	$("#right_line").fadeIn('fast');
 	$(window).resize(function() {
 		var width = $("#nav_container").width();
 		var dif = 0;
