@@ -21,6 +21,7 @@
 						$name = $asoc['first_name'].' '.$asoc['last_name'];
 					
 						echo '<div class="row">';
+						echo '  <div class="col-sm-2"></div>';
 						echo '	<div class="col-sm-8">';
 						echo '		<h3>'.$row['title'].'</h3>';
 						echo '		<h4>'.$row['sub_title'].'</h4>';
