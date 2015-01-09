@@ -68,13 +68,38 @@
 	<div class="container">
 	<br />
 	<h3>All Projects</h3>
-	
+	<div class="row">
+		<div class="col-sm-6">
+			<h4>Projects in Progress</h4>
 	<?php
 		if($db) {
 			$query = "SELECT * FROM `projects` WHERE `visible`='1' AND `is_disabled`='0';";
+
 			if ($result = $db->query($query)) {
 				echo "<ul>";
 				while ($row = $result->fetch_assoc()) {
+					if (isset($row['finish_time']))
+						continue;
+					echo '<li><a href="project?id='.$row['id'].'">';
+					echo $row['name'];
+					echo "</a></li>";
+				}
+				echo "</ul>";
+			}
+		}
+	?>
+		</div>
+		<div class="col-sm-6">
+			<h4>Finished Projects</h4>
+	<?php
+		if($db) {
+			$query = "SELECT * FROM `projects` WHERE `visible`='1' AND `is_disabled`='0';";
+
+			if ($result = $db->query($query)) {
+				echo "<ul>";
+				while ($row = $result->fetch_assoc()) {
+					if (!isset($row['finish_time']))
+						continue;
 					echo '<li><a href="project?id='.$row['id'].'">';
 					echo $row['name'];
 					echo "</a></li>";
@@ -84,6 +109,8 @@
 			$db->close();
 		}
 	?>
+		</div>
+	</div>
 	
 	<?php
 		print_footnote();
