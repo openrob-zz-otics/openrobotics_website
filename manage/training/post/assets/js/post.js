@@ -67,7 +67,7 @@ $(function() {
 			$.ajax({
 				type: "POST",
 				dataType: "json",
-				url: "/manage/blog/training/assets/cgi/post.php?task=3",
+				url: "/manage/training/post/assets/cgi/post.php?task=3",
 				data: {
 					id : getUrlParameter("id")
 				}
