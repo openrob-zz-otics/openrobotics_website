@@ -23,8 +23,8 @@
 						echo '<div class="row">';
 						echo '  <div class="col-sm-2"></div>';
 						echo '	<div class="col-sm-8">';
-						echo '		<h3>'.$row['title'].'</h3>';
-						echo '		<h4>'.$row['sub_title'].'</h4>';
+						echo '		<h3>'.htmlspecialchars($row['title']).'</h3>';
+						echo '		<h4>'.htmlspecialchars($row['sub_title']).'</h4>';
 						echo '		<h5>Published At '. $row['publish_time']. '</h5>';//, By <a href="/contact/user?id='.$row['created_by'].'">'.$name.'</a></h5>';
 						//echo '		>';
 						if (isLoggedIn() == true) { 

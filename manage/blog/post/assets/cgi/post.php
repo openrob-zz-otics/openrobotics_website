@@ -32,6 +32,7 @@
 		$id = intval(@$_POST['id']);
 		$title = @$_POST['title'];
 		$sub_title = @$_POST['subtitle'];
+		$short_desc = @$_POST['short_desc'];
 		$content = @$_POST['content'];
 		$visible = @$_POST['visible'] == 'true' ? '1' : '0';
 		$return->success = true;
@@ -43,9 +44,10 @@
 			} else {
 				$title = $db->real_escape_string($title);
 				$sub_title = $db->real_escape_string($sub_title);
+				$short_desc = $db->real_escape_string($short_desc);
 				$content = $db->real_escape_string($content);
 				
-				$query = "UPDATE `blog_posts` SET `title`='$title', `visible`='$visible', `sub_title`='$sub_title', `content`='$content' WHERE `id`='$id';";
+				$query = "UPDATE `blog_posts` SET `title`='$title', `visible`='$visible', `sub_title`='$sub_title', `short_desc`='$short_desc', `content`='$content' WHERE `id`='$id';";
 			
 				if (!$db->query($query)) {
 					$return->success = false;

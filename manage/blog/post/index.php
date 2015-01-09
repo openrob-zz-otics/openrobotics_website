@@ -77,8 +77,12 @@
 				<input type="text" class="form-control" placeholder="Title" id="form_title" value="<?php echo @$post_data['title'];?>">
 			</div>
 			<div class="form-group">
-				<label for="form_subtitle">Subtitle</label>
+				<label for="form_subtitle">Subtitle (optional)</label>
 				<input type="text" class="form-control" placeholder="Subtitle" id="form_subtitle" value="<?php echo @$post_data['sub_title'];?>">
+			</div>
+			<div class="form-group">
+				<label for="form_short_desc">Short Description</label>
+				<textarea class="form-control" placeholder="Write a short description that will show up on the list of blog posts" rows="3" id="form_short_desc"><?php echo @$post_data['short_desc'];?></textarea>
 			</div>
 			<div class="form-group">
 				<label for="form_content">Content (You can input html!)</label>

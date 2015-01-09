@@ -14,6 +14,7 @@ $(function() {
 	$("#form_submit").click(function() {
 		var title = $("#form_title").val();
 		var subtitle = $("#form_subtitle").val();
+		var short_desc = $("#form_short_desc").val();
 		var content = $("#form_content").val();
 		var ok = true;
 		
@@ -25,6 +26,10 @@ $(function() {
 			ok = false;
 		}
 		
+		if (typeof short_desc === 'undefined' || short_desc < 1) {
+			ok = false;
+		}
+
 		if (ok) {		
 			$.ajax({
 				type: "POST",
@@ -33,6 +38,7 @@ $(function() {
 				data: {
 					title: $("#form_title").val(),
 					subtitle: $("#form_subtitle").val(),
+					short_desc: $("#form_short_desc").val(),
 					content: $("#form_content").val(),
 					visible: $("#form_visible").prop("checked"),
 					id: getUrlParameter("id")
@@ -49,7 +55,7 @@ $(function() {
 				}
 			});		
 		} else {
-			$("#status_message").html("Please fill out both title and content.");
+			$("#status_message").html("Please fill out both title, short description, and content.");
 			$("#status_message").removeClass("bg-success");
 			$("#status_message").addClass("bg-danger");
 		}
