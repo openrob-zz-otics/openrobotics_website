@@ -1,14 +1,9 @@
 $(function() {
+	//make all images responsive
 	$("#disp-content img").addClass("img-responsive");
-	$("#disp-content iframe").each(function() {
-		var width = $(this).width();
-		var height = $(this).height();
-		$(this).css("max-width", width+"px");
-		$(this).css("max-height", height+"px");		
-	});
-	
+
+	//resize youtube videos to fit
 	$(window).resize(function() {
-		console.log("resize");
 		$("#disp-content iframe").each(function() {
 			var width = parseInt($(this).css("max-width"));
 			var height = parseInt($(this).css("max-height"));
@@ -18,7 +13,7 @@ $(function() {
 			$(this).width(newwidth);
 			$(this).height(newheight);
 		});
-	});
+	}).trigger("resize");
 
 	$("h4[class~='expand']").click(function() {
 		var id = "#"+$(this).data("id");

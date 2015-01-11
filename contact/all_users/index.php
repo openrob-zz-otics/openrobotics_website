@@ -14,6 +14,7 @@
 		<ul>
 		<?php
 			if ($db = get_db()) {
+				//list all users
 				$query = "SELECT `id`, `first_name`, `last_name` FROM `user_info` WHERE `id` IN (SELECT `id` FROM `users` WHERE `id`!='1' AND `is_disabled`='0')";
 				$query .= " ORDER BY `last_name`;";
 				//echo $query;

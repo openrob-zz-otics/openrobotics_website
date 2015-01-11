@@ -126,8 +126,8 @@
 				</span>
 			</label>
 			<select class="form-control" id="form_display_type">
-				<option value="0" <?php if ($display_type==0) echo "selected";?>>1. Images on right.</option>
-				<option value="1" <?php if ($display_type==1) echo "selected";?>>2. Images on grid below.</option>
+				<option value="1" <?php if ($display_type==1) echo "selected";?>>1. Images on right.</option>
+				<option value="2" <?php if ($display_type==2) echo "selected";?>>2. Images on grid below.</option>
 			</select><br />
 			<div class="form-group">
 				<label for="form_description">Description/Write Up</label>
