@@ -88,7 +88,7 @@
 
 			<div class="form-group" id="new_difficulty_group_2" <?php if ($num) echo 'style="display:none;"'; ?>>
 				<label for="form_new_difficulty_2">New Difficulty Description</label>
-				<input type="text" class="form-control" placeholder="I'm your favorite hello and your hardest goodbye." rows="5" id="form_new_difficulty_2"><?php echo @$post_data['new_difficulty_2'];?>
+				<input type="text" class="form-control" placeholder="One of a kind" rows="5" id="form_new_difficulty_2"><?php echo @$post_data['new_difficulty_2'];?>
 			</div>
 			
 			<label>Category</label>
@@ -118,7 +118,7 @@
 				<textarea class="form-control" placeholder="Instructions" rows="5" id="form_instructions"><?php echo @$post_data['instructions'];?></textarea>
 			</div>
 			<button class="btn btn-default" id="form_submit">Update</button><br /><br />
-
+cesse
 			<button class="btn btn-default" id="delete_popover">Delete Post</button><br /><br />
 		</div>
 		<div class="col-sm-4">
@@ -135,7 +135,7 @@
 			</span>
 			<br />
 			<br />
-			<div id="icon_upload_progress" class="progress">
+		cesse	<div id="icon_upload_progress" class="progress">
 				<div class="progress-bar progress-bar-striped active"></div>
 			</div>
 		</div>

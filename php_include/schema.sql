@@ -115,12 +115,17 @@ CREATE TABLE IF NOT EXISTS `training_posts` (
 	`publish_time` DATETIME NOT NULL,
 	`title` TEXT NOT NULL,
 	`sub_title` TEXT,
+	`category`TEXT NOT NULL,
 	`content` TEXT NOT NULL,	
 	`is_disabled` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 	PRIMARY KEY(`id`),
 	CONSTRAINT `training_posts.fk_user`
 		FOREIGN KEY (`created_by`)
 		REFERENCES `users`(`id`)
+		ON DELETE CASCADE
+	CONSTRAINT `training_posts.fk_training_category`
+		FOREIGN KEY (`category`)
+		REFERENCES `training_categories`(`training_category_id`)
 		ON DELETE CASCADE
 );
 
@@ -166,6 +171,13 @@ CREATE TABLE IF NOT EXISTS `training_completion` (
 		FOREIGN KEY (`training_id`)
 		REFERENCES `training_posts`(`id`)
 		ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS `training_categories` (
+	`training_category_id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`training_category_name` TEXT NOT NULL,
+	`training_category_description` TEXT NOT NULL,
+	PRIMARY KEY(`training_category_id`)
 );
 
 CREATE TABLE IF NOT EXISTS `badge_categories` (
