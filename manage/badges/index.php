@@ -22,7 +22,7 @@ if (!canManageUsers()) {
 		</div>
 		</div>';
 		if ($db = get_db()) {
-			$query = "SELECT * FROM `badges` INNER JOIN `badge_difficulties` ON `badges`.`difficulty`=`badge_difficulties`.`id` WHERE `is_disabled`='0';";
+			$query = "SELECT `badges`.`name`, `badge_difficulties`.`difficulty_name`, `badges`.`instructions`, `badges`.`id` FROM `badges` INNER JOIN `badge_difficulties` ON `badges`.`difficulty`=`badge_difficulties`.`id` WHERE `is_disabled`='0';";
 			if ($result = $db->query($query)) {
 				$i = 0;
 				while ($row = $result->fetch_assoc()) {
