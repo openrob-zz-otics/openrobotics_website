@@ -125,6 +125,7 @@ $(function() {
 		var finish_time = $("#form_finish_time").val();
 		var name = $("#form_name").val();
 		var description = $("#form_description").val();
+		var display_type = $("#form_display_type option:selected").val();
 		var selected_ids = [];
 		$("#select-right option").each(function() {
 			selected_ids.push($(this).val());
@@ -143,6 +144,7 @@ $(function() {
 				finish_time: finish_time,
 				name: name,
 				description: description,
+				display_type: display_type,
 				project_contributors: project_contributors
 			}
 		}).done(function(data) {
@@ -222,6 +224,11 @@ $(function() {
 			$("#form_finish_time").prop("disabled", true);
 			$("#form_finish_time").val("");
 		}
+	});
+
+
+	$("#display_what_is").popover({
+		html: true
 	});
 	
 });
