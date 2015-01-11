@@ -65,6 +65,7 @@
 		
 		$result = $db->query($query);
 		$project_data = $result->fetch_assoc();
+		$display_type = $project_data['display_type'];
 
 		if ($result->num_rows < 1) {
 			echo '<div class="row"><div class="col-md-12"><h3 class="text-danger">ID Invalid!</h3></div></div>';
@@ -77,15 +78,24 @@
 	<div class="row">
 		<div class="col-md-6">
 			<p id="error-message"></p>
-			<div class="checkbox">
-				<label>
-					<input type="checkbox" id="form_visible" <?php if($project_data['visible']=='1')echo "checked";?>> Make Project Visible
-				</label>
-			</div>
-			<div class="checkbox">
-				<label>
-					<input type="checkbox" id="form_featured" <?php if(!canManageAllProjects())echo "disabled";?> <?php if($project_data['is_featured']=='1')echo "checked";?>> Featured Project
-				</label>	
+						
+			<div class="row">
+				<div class="col-md-8">
+				
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" id="form_visible" <?php if($project_data['visible']=='1')echo "checked";?>> Make Project Visible
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" id="form_featured" <?php if(!canManageAllProjects())echo "disabled";?> <?php if($project_data['is_featured']=='1')echo "checked";?>> Featured Project
+						</label>	
+					</div>
+				</div>
+				<div class="col-md-4">
+					<a href="/projects/project?id=<?php echo $project_id;?>"><button class="btn btn-default">View Project</button></a>
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="form_start_time">Project Start Date</label>
@@ -104,6 +114,21 @@
 				<label for="form_name">Name</label>
 				<input type="text" class="form-control" id="form_name" placeholder="Name" value="<?php echo $project_data['name'];?>">
 			</div>
+			<label>Display Type
+				<span id="display_what_is" class="text-danger" data-togger="popover" 
+					data-content="There are multiple ways of displaying a project page. 
+					Select the one that best suits your content.<br /><br />
+					<ol>
+						<li>Display the description in a skinny column on the left while displaying uploaded images on the left, one on top of the other. Best for just one or a few images.</li><br />
+						<li>Display the entire description in full page width, with the images in a grid underneath. Best for lots of images</li>
+					</ol>">
+				<strong><em>What is this?</em></strong>
+				</span>
+			</label>
+			<select class="form-control" id="form_display_type">
+				<option value="0" <?php if ($display_type==0) echo "selected";?>>1. Images on right.</option>
+				<option value="1" <?php if ($display_type==1) echo "selected";?>>2. Images on grid below.</option>
+			</select><br />
 			<div class="form-group">
 				<label for="form_description">Description/Write Up</label>
 				<textarea rows="10" class="form-control" id="form_description" placeholder="Description"><?php echo $project_data['description'];?></textarea>
@@ -150,7 +175,9 @@
 				</div>
 			</div>
 			<br />
-			
+						
+			<br />
+
 			<p>Main Picture<p>
 			<span class="btn btn-default fileinput-button">
 				<i class="glyphicon glyphicon-plus"></i>

@@ -66,7 +66,8 @@ CREATE TABLE IF NOT EXISTS `projects` (
 	`start_time` DATE NOT NULL,
 	`finish_time` DATE,
 	`name` TEXT NOT NULL,
-	`description` TEXT NOT NULL,	
+	`description` TEXT NOT NULL,
+	`display_type` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 	`is_disabled` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 	PRIMARY KEY(`id`),
 	CONSTRAINT `projects.fk_user`
@@ -97,6 +98,7 @@ CREATE TABLE IF NOT EXISTS `blog_posts` (
 	`publish_time` DATETIME NOT NULL,
 	`title` TEXT NOT NULL,
 	`sub_title` TEXT,
+	`short_desc` TEXT NOT NULL,
 	`content` TEXT NOT NULL,	
 	`is_disabled` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 	PRIMARY KEY(`id`),

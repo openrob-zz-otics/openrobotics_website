@@ -64,6 +64,7 @@
 		}	
 		$name = @$_POST['name'];
 		$description = @$_POST['description'];
+		$display_type = intval(@$_POST['display_type']);
 		$project_contributors = explode(',',@$_POST['project_contributors']);
 		
 		if ($db = get_db()) {
@@ -88,7 +89,7 @@
 				$finish_time = $db->real_escape_string($finish_time);
 				$name = $db->real_escape_string($name);
 				$description = $db->real_escape_string($description);
-				$query = "UPDATE `projects` SET `visible`='$visible', `is_featured`='$is_featured', `start_time`='$start_time', `finish_time`=".($finish_time==null?"NULL":"'$finish_time'").", `name`='$name', `description`='$description' WHERE `id`='$id';";
+				$query = "UPDATE `projects` SET `visible`='$visible', `is_featured`='$is_featured', `start_time`='$start_time', `finish_time`=".($finish_time==null?"NULL":"'$finish_time'").", `name`='$name', `description`='$description', `display_type`='$display_type' WHERE `id`='$id';";
 				if (!$db->query($query)) {
 					$return->success = false;
 				} else {

@@ -33,7 +33,7 @@ if (!canAddBlogPost() && !canManageAllBlogPosts()) {
 					if ($result = $db->query($query)) {
 						while ($row = $result->fetch_assoc()) {
 							echo "<li><a href='/manage/training/post?id=".$row['id']."'>";
-							echo $row['title'].' - '.$row['publish_time'];
+							echo htmlspecialchars($row['title']).' - '.$row['publish_time'];
 							echo "</li>";
 						}
 					}
