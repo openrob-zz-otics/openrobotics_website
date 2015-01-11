@@ -22,7 +22,7 @@ if (!canManageUsers()) {
 		</div>
 		</div>';
 		if ($db = get_db()) {
-			$query = "SELECT * FROM `badges` WHERE `is_disabled`='0';";
+			$query = "SELECT * FROM `badges` INNER JOIN `badge_difficulties` ON `badges`.`difficulty`=`badge_difficulties`.`id` WHERE `is_disabled`='0';";
 			if ($result = $db->query($query)) {
 				$i = 0;
 				while ($row = $result->fetch_assoc()) {
@@ -33,7 +33,7 @@ if (!canManageUsers()) {
 					}
 					echo '<div class="row"><div class="col-sm-10">';
 					echo '<a href="badge?id='.$row['id'].'"><h3>'.ucwords(strtolower($row['name'])).'</h3></a>';
-					echo '<p>Difficulty: '.ucfirst(strtolower($row['difficulty'])).'</p>';
+					echo '<p>Difficulty: '.ucfirst(strtolower($row['difficulty_name'])).'</p>';
 					echo '<p>'.$row['instructions'].'</p>';
 					echo '</div><div class="col-sm-2">';
 					echo '<a href="badge?id='.$row['id'].'"><img class="img-responsive" src="/upload_content/badge_images/small/'.$row['id'].'.png" /></a>';

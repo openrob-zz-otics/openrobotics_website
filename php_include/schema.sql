@@ -174,12 +174,18 @@ CREATE TABLE IF NOT EXISTS `badge_categories` (
 	PRIMARY KEY(`id`)
 );
 
-CREATE TABLE IF NOT EXISTS `badge_difficulty` (
+CREATE TABLE IF NOT EXISTS `badge_difficulties` (
 	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`difficulty_name` TEXT NOT NULL,
 	`description` TEXT NOT NULL,
 	PRIMARY KEY(`id`)
 );
+################################
+#
+# FIX THE GODDAMN FK CONSTRAINTS
+#
+#################################
+
 
 CREATE TABLE IF NOT EXISTS `badges` (
 	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -197,7 +203,7 @@ CREATE TABLE IF NOT EXISTS `badges` (
 		ON DELETE CASCADE
 	CONSTRAINT `badges.fk_difficulty`
 		FOREIGN KEY (`difficulty`)
-		REFERENCES `badge_difficulty`(`id`)
+		REFERENCES `badge_difficulties`(`id`)
 		ON DELETE CASCADE
 );
 
