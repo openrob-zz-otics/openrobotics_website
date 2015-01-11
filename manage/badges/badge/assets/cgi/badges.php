@@ -31,6 +31,8 @@
 		$name = @$_POST['name'];
 		$difficulty = @$_POST['difficulty'];
 		$category = @$_POST['category'];
+		$new_difficulty = @$_POST['new_difficulty'];
+		$new_difficulty_description = @$_POST['new_difficulty_description'];
 		$new_category = @$_POST['new_category'];
 		$description = @$_POST['description'];
 		$instructions = @$_POST['instructions'];
@@ -41,6 +43,8 @@
 			$name = $db->real_escape_string($name);
 			$difficulty = $db->real_escape_string($difficulty);
 			$category = $db->real_escape_string($category);
+			$new_difficulty = $db->real_escape_string($new_difficulty);
+			$new_difficulty_description = $db->real_escape_string($new_difficulty_description);
 			$new_category = $db->real_escape_string($new_category);
 			$description = $db->real_escape_string($description);
 			$instructions = $db->real_escape_string($instructions);
@@ -54,6 +58,16 @@
 				}
 				$category = $db->insert_id;
 				$return->new_category_id = $category;
+			}
+
+			if ($difficulty == 0) {
+				$query = "INSERT INTO `badge_difficulties` (`difficulty_name`,`description`) VALUES ('$new_difficulty','$new_difficulty_description');";
+				if (!$db->query($query)) {
+					$db->close();
+					fail();
+				}
+				$difficulty = $db->insert_id;
+				$return->new_difficulty_id = $difficulty;
 			}
 
 			$query = "UPDATE `badges` SET `visible`='$visible', `name`='$name', `difficulty`='$difficulty', `category`='$category', `description`='$description', `instructions`='$instructions' WHERE `id`='$id';";

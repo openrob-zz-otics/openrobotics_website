@@ -53,20 +53,44 @@
 	<div class="row">
 		<div class="col-sm-8">
 			<p id="status_message"></p>
+			
 			<div class="checkbox">
 				<label>
 					<input type="checkbox" id="form_visible" <?php if (@$post_data['visible'])echo 'checked'?>>
 					Enable Badge
 				</label>
 			</div>
+			
 			<div class="form-group">
 				<label for="form_name">Name</label>
 				<input type="text" class="form-control" placeholder="Name" id="form_name" value="<?php echo @$post_data['name'];?>">
 			</div>
-			<div class="form-group">
-				<label for="form_difficulty">Difficulty</label>
-				<input type="text" class="form-control" placeholder="Difficulty" id="form_difficulty" value="<?php echo @$post_data['difficulty'];?>">
+
+
+			<!--Edited by MX-->
+			<label>Difficulty</label>
+			<select class="form-control" id="form_difficulty">
+				<?php
+					$query = "SELECT * FROM `badge_difficulties`;";
+					$resultX = $db->query($query);
+					$num = $resultX->num_rows;
+					while ($rowX = $resultX->fetch_assoc()) {
+						echo '<option data-toggle="tooltip" title="'.$rowX['description'].'" data-id="'.$rowX['id'].'" '.($post_data['difficulty']==$rowX['id']?'selected':'').'>'.ucwords(strtolower($rowX['difficulty_name'])).'</option>';
+					}
+				?>
+				<option data-id="0" <?php if(!$num) echo "selected";?>>New Difficulty</option>
+			</select><br />
+			
+			<div class="form-group" id="new_difficulty_group" <?php if ($num) echo 'style="display:none;"'; ?>>
+				<label for="form_new_difficulty">New Difficulty</label>
+				<input type="text" class="form-control" placeholder="Legendary" rows="5" id="form_new_difficulty"><?php echo @$post_data['new_difficulty'];?>
 			</div>
+
+			<div class="form-group" id="new_difficulty_group_2" <?php if ($num) echo 'style="display:none;"'; ?>>
+				<label for="form_new_difficulty_2">New Difficulty Description</label>
+				<input type="text" class="form-control" placeholder="I'm your favorite hello and your hardest goodbye." rows="5" id="form_new_difficulty_2"><?php echo @$post_data['new_difficulty_2'];?>
+			</div>
+			
 			<label>Category</label>
 			<select class="form-control" id="form_category">
 				<?php
@@ -79,6 +103,7 @@
 				?>
 				<option data-id="0" <?php if(!$num) echo "selected";?>>New Category</option>
 			</select><br />
+			
 			<div class="form-group" id="new_category_group" <?php if ($num) echo 'style="display:none;"'; ?>>
 				<label for="form_new_category">New Category</label>
 				<input type="text" class="form-control" placeholder="Mechanical" rows="5" id="form_new_category"><?php echo @$post_data['new_category'];?>

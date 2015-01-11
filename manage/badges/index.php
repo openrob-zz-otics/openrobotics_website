@@ -41,11 +41,7 @@ if (!canManageUsers()) {
 				}
 			}
 		}
-
-
-
 	echo '</div></div>';
-
 }
 print_footnote();
 ?>

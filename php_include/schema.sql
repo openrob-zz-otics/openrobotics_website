@@ -172,12 +172,19 @@ CREATE TABLE IF NOT EXISTS `badge_categories` (
 	PRIMARY KEY(`id`)
 );
 
+CREATE TABLE IF NOT EXISTS `badge_difficulty` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`difficulty_name` TEXT NOT NULL,
+	`description` TEXT NOT NULL,
+	PRIMARY KEY(`id`)
+);
+
 CREATE TABLE IF NOT EXISTS `badges` (
 	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`name` TEXT NOT NULL,
 	`description` TEXT NOT NULL,
 	`instructions` TEXT NOT NULL,
-	`difficulty` TEXT NOT NULL,
+	`difficulty` BIGINT(20) UNSIGNED NOT NULL,
 	`category` BIGINT(20) UNSIGNED NOT NULL,
 	`visible` TINYINT(1) UNSIGNED NOT NULL,
 	`is_disabled` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
@@ -185,6 +192,10 @@ CREATE TABLE IF NOT EXISTS `badges` (
 	CONSTRAINT `badges.fk_category`
 		FOREIGN KEY (`category`)
 		REFERENCES `badge_categories`(`id`)
+		ON DELETE CASCADE
+	CONSTRAINT `badges.fk_difficulty`
+		FOREIGN KEY (`difficulty`)
+		REFERENCES `badge_difficulty`(`id`)
 		ON DELETE CASCADE
 );
 

@@ -6,7 +6,7 @@ $(function() {
 			var sParameterName = sURLVariables[i].split('=');
 			if (sParameterName[0] == sParam) {
 				return sParameterName[1];
-			}
+				}
 		}
 	}
 	
@@ -19,8 +19,10 @@ $(function() {
 				id: getUrlParameter('id'),
 				visible: $("#form_visible").prop('checked'),
 				name: $("#form_name").val(),
+				new_difficulty: $("#form_new_difficulty").val(),
+				new_difficulty_description: $("#form_new_difficulty_2").val(),
 				new_category: $("#form_new_category").val(),
-				difficulty: $("#form_difficulty").val(),
+				difficulty: $("#form_difficulty option:selected").data("id"),
 				category: $("#form_category option:selected").data("id"),
 				description: $("#form_description").val(),
 				instructions: $("#form_instructions").val()
@@ -34,6 +36,13 @@ $(function() {
 					$("#form_category option:selected").prop('selected', false);
 					$("#form_category").append('<option data-id="'+ data.new_category_id+'" selected>'+$("#form_new_category").val()+'</option>');
 					$("#new_category_group").fadeOut(function(){$("#form_new_category").val('')});
+				}
+				if ($("#form_difficulty option:selected").data("id") == 0) {
+					$("#form_difficulty option:selected").prop('selected', false);
+					$("#form_difficulty").append('<option data-id="'+ data.new_difficulty_id+'" selected>'+$("#form_new_difficulty").val()+'</option>');
+					$("#new_difficulty_group").fadeOut(function(){$("#form_new_difficulty").val('')});
+					$("#new_difficulty_group_2").fadeOut(function(){$("#form_new_difficulty").val('')});
+
 				}
 
 			} else {
@@ -85,6 +94,19 @@ $(function() {
 			$("#new_category_group").fadeOut();
 		}
 	});
+
+	//new difficulty
+	$("#form_difficulty").change(function() {
+		if ($("#form_difficulty option:selected").data("id") == 0) {
+			$("#new_difficulty_group").fadeIn();
+			$("#new_difficulty_group_2").fadeIn();
+
+		} else {
+			$("#new_difficulty_group").fadeOut();
+			$("#new_difficulty_group_2").fadeOut();
+		}
+	});
+
 
 	//Update for uploading images
 	$("#icon_upload").fileupload({
