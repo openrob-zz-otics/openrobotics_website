@@ -7,114 +7,50 @@
 ?>
 <div class="container">
 		<?php
-			$project_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
-
-
-			
+			//get project id and check if it is valid.
+			$project_id = @intval($_GET['id']);
 			if (!$project_id) {
 				echo "<h2>Invalid Project ID</h2>";
 			} else if ($db = get_db()) {
+				//get the current project information from the database
 				$query = "SELECT * FROM `projects` WHERE `id`='$project_id' AND `is_disabled`='0';";
 				if ($result = $db->query($query)) {
-					if ($row = $result->fetch_assoc()) {
+					if ($project_data = $result->fetch_assoc()) {
 
-						$has_perms = ($user_id == $row['created_by']) || canManageAllProjects();
+						//check whether or not the current user has rights to manage the user
+						$has_perms = ($user_id == $project_data['created_by']) || canManageAllProjects();
 
-						$query = "SELECT `id` FROM `user_info` WHERE `id`='".$row['created_by']."' OR `id` IN (SELECT `user_id` FROM `project_contributors` WHERE `project_id`='$project_id');";
-						//echo $query;
+						//since we are iterating across all contributors now, copy the needed data 
+						//so we don't have to access db again
+						$contributor_ids = array();
+						$first_name_array = array();
+						$last_name_array = array();
+
+						//get the list of contributors (including who created project. grab the data and check if current user can manager the project)
+						$query = "SELECT `id`, `first_name`, `last_name` FROM `user_info` WHERE `id`='".$project_data['created_by']."' OR `id` IN (SELECT `user_id` FROM `project_contributors` WHERE `project_id`='$project_id');";
 						if ($result2 = $db->query($query)) {
-							while ($row2 = $result2->fetch_assoc()) {
-								if ($row2['id'] == $user_id && canManageProjects())
+							while ($contributor_data = $result2->fetch_assoc()) {
+								array_push($contributor_ids, $contributor_data['id']);
+								array_push($first_name_array, $contributor_data['first_name']);
+								array_push($last_name_array, $contributor_data['last_name']);
+								if ($contributor_data['id'] == $user_id && canAddProjects())
 									$has_perms = true;
 							}
 						}
 
-						if ($row['visible'] || $has_perms) {
-
-		?>
-		<div class="row">
-			<div class="col-md-12">
-				<h1>
-		<?php
-						echo $row['name'];
-		?>
-				</h1>
-			</div>
-		</div>
-		<div class="row">
-		<?php
-		$display_type = $row['display_type'];
-		
-		if ($display_type == 0)
-			echo '<div class="col-md-4">';
-		else if ($display_type == 2)
-			echo '<div class="col-md-12">';
-
-						$query = "SELECT `id`, `first_name`, `last_name` FROM `user_info` WHERE `id`='".$row['created_by']."' OR `id` IN (SELECT `user_id` FROM `project_contributors` WHERE `project_id`='$project_id');";
-						//echo $query;
-						if ($result2 = $db->query($query)) {
-							echo "<h4>Contributors:</h4><ul class='list'>";
-							while ($row2 = $result2->fetch_assoc()) {
-								echo "<li><a href='/contact/user?id=".$row2['id']."' >";
-								echo $row2['first_name'].' '.$row2['last_name']."</a></li>";
-							}
-							echo "</ul>";
-						}
-						
-
-						echo "<p>Started: ".$row['start_time']."<br />";
-						if (isset($row['finish_time'])) {
-							echo "Finished: ".$row['finish_time']."</p>";
+						//if the user has permissions they can see even if it is invisible (eg. while writing)
+						if ($project_data['visible'] || $has_perms) {
+							//include the relevant style page to draw the project
+							include("assets/styles/".$project_data['display_type'].".php");
 						} else {
-							echo "Ongoing project</p><hr>";
+							//pretend it is invalid project 
+							echo "<h2 class='text-danger'>Invalid Project ID</h2>";
 						}
-						
-
-						echo "<span class='disp-content'>".$row['description']."</span>";
-
-						echo "</div>";
-						if ($display_type == 0)
-							echo '<div class="col-md-8">';
-						else if ($display_type == 1)
-							echo '<div class="row">';
-	
-						$counter = 0;
-
-						if (file_exists("../../upload_content/project_images/".$project_id."/")) {
-							$array = scandir("../../upload_content/project_images/".$project_id."/");
-							foreach ($array as $val) {
-								$ext = strtolower(array_pop(explode('.', $val)));
-								if ($ext == "png" || $ext == "jpg") {
-
-									if ($display_type == 1) 
-										echo '<div class="col-md-3">';
-									
-									echo "<img class='img-responsive img-thumbnail' src='/upload_content/project_images/".$project_id."/$val'>";
-
-									if ($display_type == 1) {
-										echo '</div>';
-										if ($counter++ == 3) {
-											//echo '</div><div class="row">';
-											$counter=0;
-										}
-									}
-								}
-							}
-						}
-						echo "</div>";
-						if ($display_type == 0)
-							echo "</div>";
-					
-					} else {
-						echo "<h2 class='text-danger'>Invalid Project ID</h2>";
-					}
 				}
 				$db->close();
 			}
 		}
 		
-		?>
-	<?php
 		print_footnote();
 	?>
 

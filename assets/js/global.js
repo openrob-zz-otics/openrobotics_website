@@ -1,4 +1,9 @@
 $(function() {
+	
+	//This code controlls the horizontal line that in the main open robotics banner
+	//It needs to be resized with the window and removed on mobile.
+	//the fixed values will need to be changed if the mobile transition width is ever 
+	//changed. 
 	$("#left_line").fadeIn('fast');
 	$("#right_line").fadeIn('fast');
 	$(window).resize(function() {
@@ -12,10 +17,9 @@ $(function() {
 		$("#right_line").width( width / 2 - 95);
 		$("#left_line").css("left", 10 + dif / 2);
 		$("#right_line").css("left", (dif + width) / 2 + 85);
-	});
+	}).trigger("resize");
 	
-	$(window).trigger("resize");
-	
+	//poppup on main page for new (non-cookied) viewers
 	$("#nav_container").popover({
 		trigger: 'manual',
 		html: 'true',

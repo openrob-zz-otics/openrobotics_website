@@ -1,3 +1,4 @@
+//resize the embedded document to fit width
 $(function() {
 	$(window).resize(function() {
 		var width = $("#div_container").width();

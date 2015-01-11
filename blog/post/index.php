@@ -10,11 +10,14 @@
 	<?php
 		$id = intval(@$_GET['id']);
 		if ($db = get_db()) {
+			//get data about current blod post
 			$query = "SELECT * FROM `blog_posts` WHERE `visible`='1' AND `is_disabled`='0' AND `id`='$id';";
 			if ($result = $db->query($query)) {
+				//check that we got data
 				if ($result->num_rows < 1) {
 					echo '<div class="row"><div class="col-sm-12"><h3 class="text-danger">Invalid ID!</h3></div></div>';
 				} else {
+					//print the blog post
 					if ($row = $result->fetch_assoc()) {
 						$query = "SELECT `first_name`, `last_name` FROM `user_info` WHERE `id`='".$row['created_by']."';";
 						$asoc = $db->query($query)->fetch_assoc();
