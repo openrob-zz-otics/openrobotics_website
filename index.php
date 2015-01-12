@@ -27,8 +27,15 @@
 	<div class="row">
 		<div class="col-sm-4">
 			<center><img class="img-circle" src="/assets/images/icon1.png" style="width: 140px; height: 140px;"></center>
+			<!--
 			<h2>@home</h2>
 			<p>We aim to complete our electromechanical platform by summer 2015, and compete at RoboCup<a href="http://www.robocupathome.org/">@home</a> 2016 in Germany.</p>
+			-->	
+			<h2>Training</h2>
+			<p>
+				Open Robotics offers training for different disciplines involved in robotics. The training is freely available on this website.
+			</p>
+			<p><a class="btn btn-default" href="/training/" role="buttons">View &raquo;</a></p>
 			<!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
 		</div><!-- /.col-lg-4 -->
 		<div class="col-sm-4">

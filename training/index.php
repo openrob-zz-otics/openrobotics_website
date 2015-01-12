@@ -66,7 +66,7 @@
 
 	<div class="col-lg-4">
 		<br/>
-		<h3 class="text-center">Tutorial Categories</h3><br/>
+		<h3 class="text-center">Training Categories</h3><br/>
 		<?php 
 			if ($db = get_db()) {
 				$query = "SELECT * FROM `training_categories`";
