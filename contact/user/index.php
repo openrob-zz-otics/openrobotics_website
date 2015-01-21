@@ -25,7 +25,7 @@
 							echo '"/assets/images/default_profile.png" width="150"';
 						}
 						echo ' alt="'.$row['first_name'].' '.$row['last_name'].'" class="img-responsive img-thumbnail">';
-						$query = "SELECT `id`, `name` FROM `projects` WHERE `visible`='1' AND `is_diabled`='0' AND (`created_by`='".$row['id']."' OR `id` IN (SELECT `project_id` FROM `project_contributors` WHERE `user_id`='".$row['id']."'));";
+						$query = "SELECT `id`, `name` FROM `projects` WHERE `visible`='1' AND `is_disabled`='0' AND (`created_by`='".$row['id']."' OR `id` IN (SELECT `project_id` FROM `project_contributors` WHERE `user_id`='".$row['id']."'));";
 						echo '<br /><br /><p>Involved with the following projects:</p><ul>';
 						if ($result2 = $db->query($query)) {
 							while ($row2 = $result2->fetch_assoc()) {
