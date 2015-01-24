@@ -5,18 +5,22 @@
 	print_header($page_name, false);
 	print_navbar();
 ?>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12" style="margin-top:25px;margin-bottom:25px;text-align:center;">
+				<div class="btn-group" role="group" aria-label="...">
+					<a href="?upcoming=0"><button type="button" class="btn btn-default btn-lg">Current and Complete Projects</button></a>
+					<a href="?upcoming=1"><button type="button" class="btn btn-default btn-lg">Upcoming Projects</button></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<?php
+		$p = intval(@$_GET['upcoming']);
 		if($db = get_db()) {
-			$query = "SELECT * FROM `projects` WHERE `is_featured`='1' AND `visible`='1' AND `is_disabled`='0';";
-			if ($result = $db->query($query)) {
-				/*echo "<ul>";
-				while ($row = $result->fetch_assoc()) {
-					echo '<li><a href="project?id='.$row['id'].'">';
-					echo $row['name'];
-					echo "</a></li>";
-				}
-				echo "</ul>";*/
-			
+			$query = "SELECT * FROM `projects` WHERE `is_upcoming_project`='$p' AND `is_featured`='1' AND `visible`='1' AND `is_disabled`='0';";
+			if ($result = $db->query($query)) {			
 		
 	?>
 	<div id="myCarousel" class="carousel slide carousel_resize" data-ride="carousel">
@@ -30,21 +34,11 @@
 		</ol>
 		
 		<div id="carousel-overlay">
-			<p style="font-family:'klinic-slab-book';">Featured Project</p>
+			<p style="font-family:'klinic-slab-book';"><?php if($p) echo 'Featured Upcoming Projects'; else echo 'Featured Projects';?></p>
 		</div>
 		
 		<div class="carousel-inner">
-			<!--<div class="item carousel_resize active">
-				<img src="/assets/images/carousel/0.jpg" class="carousel_resize">
-				<div class="container">
-					<div class="carousel-caption">
-						<button type="button" class="btn btn-default btn-lg transparent-button">
-							<a href="/projects/">View Projects</a>
-						</button>	
-					</div>
-				</div>
-			</div>-->
-			
+				
 			<?php
 			$i = 0;
 			while ($row = $result->fetch_assoc()) {
@@ -67,13 +61,16 @@
 	</div>
 	<div class="container">
 	<br />
-	<h3>All Projects</h3>
+	<h3><?php if($p) echo 'All Upcoming Projects'; else echo 'All Projects';?></h3>
 	<div class="row">
 		<div class="col-sm-6">
-			<h4>Projects in Progress</h4>
+			<?php 
+				if (!$p)
+					echo "<h4>Projects in Progress</h4>";
+			?>
 	<?php
 		if($db) {
-			$query = "SELECT * FROM `projects` WHERE `visible`='1' AND `is_disabled`='0';";
+			$query = "SELECT * FROM `projects` WHERE `is_upcoming_project`='$p' AND `visible`='1' AND `is_disabled`='0';";
 
 			if ($result = $db->query($query)) {
 				echo "<ul>";
@@ -89,10 +86,11 @@
 		}
 	?>
 		</div>
-		<div class="col-sm-6">
-			<h4>Finished Projects</h4>
-	<?php
-		if($db) {
+		<?php 
+			if (!$p)
+			echo '<div class="col-sm-6"><h4>Finished Projects</h4>';
+	
+		if($db && !$p) {
 			$query = "SELECT * FROM `projects` WHERE `visible`='1' AND `is_disabled`='0';";
 
 			if ($result = $db->query($query)) {
