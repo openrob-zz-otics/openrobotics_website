@@ -92,6 +92,11 @@
 							<input type="checkbox" id="form_featured" <?php if(!canManageAllProjects())echo "disabled";?> <?php if($project_data['is_featured']=='1')echo "checked";?>> Featured Project
 						</label>	
 					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" id="form_is_upcoming_project" <?php if($project_data['is_upcoming_project']) echo "checked";?>> Upcoming Project
+						</label>
+					</div>
 				</div>
 				<div class="col-md-4">
 					<a href="/projects/project?id=<?php echo $project_id;?>"><button class="btn btn-default">View Project</button></a>
@@ -174,10 +179,13 @@
 					</select>
 				</div>
 			</div>
+			<br />						
 			<br />
-						
-			<br />
-
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" id="form_hide_main_picture" <?php if($project_data['hide_main_picture'])echo "checked";?>> Hide main project photo from project page <br />(only show it on featured projects slideshow)
+				</label>
+			</div>
 			<p>Main Picture<p>
 			<span class="btn btn-default fileinput-button">
 				<i class="glyphicon glyphicon-plus"></i>

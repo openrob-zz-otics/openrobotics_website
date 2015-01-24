@@ -67,6 +67,8 @@ CREATE TABLE IF NOT EXISTS `projects` (
 	`finish_time` DATE,
 	`name` TEXT NOT NULL,
 	`description` TEXT NOT NULL,
+	`hide_main_picture` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+	`is_upcoming_project` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 	`display_type` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 	`is_disabled` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 	PRIMARY KEY(`id`),

@@ -125,6 +125,8 @@ $(function() {
 		var finish_time = $("#form_finish_time").val();
 		var name = $("#form_name").val();
 		var description = $("#form_description").val();
+		var hide_main_picture = $("#form_hide_main_picture").prop("checked");
+		var is_upcoming_project = $("#form_is_upcoming_project").prop("checked");
 		var display_type = $("#form_display_type option:selected").val();
 		var selected_ids = [];
 		$("#select-right option").each(function() {
@@ -144,6 +146,8 @@ $(function() {
 				finish_time: finish_time,
 				name: name,
 				description: description,
+				hide_main_picture: hide_main_picture,
+				is_upcoming_project: is_upcoming_project,
 				display_type: display_type,
 				project_contributors: project_contributors
 			}

@@ -47,6 +47,9 @@
 		if (file_exists("../../upload_content/project_images/".$project_id."/")) {
 			$array = scandir("../../upload_content/project_images/".$project_id."/");
 			foreach ($array as $val) {
+				//don't display main picture if set so				
+				if ($val[0] == '0' && $project_data['hide_main_picture'])
+					continue;
 				$ext = strtolower(array_pop(explode('.', $val)));
 				if ($ext == "png" || $ext == "jpg") {
 		

@@ -64,6 +64,8 @@
 		}	
 		$name = @$_POST['name'];
 		$description = @$_POST['description'];
+		$hide_main_picture = @$_POST['hide_main_picture'] == 'true' ? '1' : '0';
+		$is_upcoming_project = @$_POST['is_upcoming_project'] == 'true' ? '1' : '0';
 		$display_type = intval(@$_POST['display_type']);
 		$project_contributors = explode(',',@$_POST['project_contributors']);
 		
@@ -89,7 +91,7 @@
 				$finish_time = $db->real_escape_string($finish_time);
 				$name = $db->real_escape_string($name);
 				$description = $db->real_escape_string($description);
-				$query = "UPDATE `projects` SET `visible`='$visible', `is_featured`='$is_featured', `start_time`='$start_time', `finish_time`=".($finish_time==null?"NULL":"'$finish_time'").", `name`='$name', `description`='$description', `display_type`='$display_type' WHERE `id`='$id';";
+				$query = "UPDATE `projects` SET `visible`='$visible', `is_featured`='$is_featured', `start_time`='$start_time', `finish_time`=".($finish_time==null?"NULL":"'$finish_time'").", `name`='$name', `description`='$description', `hide_main_picture`='$hide_main_picture', `is_upcoming_project`='$is_upcoming_project', `display_type`='$display_type' WHERE `id`='$id';";
 				if (!$db->query($query)) {
 					$return->success = false;
 				} else {
