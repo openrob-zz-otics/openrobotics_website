@@ -180,5 +180,17 @@
 				}
 			}
 		}
+	} else if ($task == 6) {
+		$id = intval(@$_POST['id']);
+		$user_id = intval(@$_POST['user_id']);
+		if ($db = get_db()) {
+			$query = "UPDATE `projects` SET `created_by`='$user_id' WHERE `id`='$id';";
+			if (!($db->query($query))) {
+				$return->success = false;
+			} else {
+				$return->success = true;
+			}
+		}
+		echo json_encode($return);
 	}
 ?>

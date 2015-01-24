@@ -234,5 +234,20 @@ $(function() {
 	$("#display_what_is").popover({
 		html: true
 	});
+
+	$("#btn_hand_over").click(function() {
+		var user_id = $("#hand_over option:selected").val();
+		var name = $("#hand_over option:selected").html();
+		$.ajax({
+			type: "POST",
+			url: "/manage/projects/project/assets/cgi/project.php?task=6",
+			data: {
+				id: getUrlParameter("id"),
+				user_id: user_id
+			}
+		}).done(function() {
+			$("#created_by").html(name);
+		});		
+	});
 	
 });

@@ -142,6 +142,44 @@
 			<button class="btn btn-default" data-container="body" id="delete-popover">Delete</button><br /><br />
 		</div>		
 		<div class="col-md-6">
+			<p>
+				Project Founded By:
+				<span id="created_by" style="font-weight:bold">
+				<?php
+					if ($db) {
+						$query = "SELECT `first_name`, `last_name` FROM `user_info` WHERE `id` IN (SELECT `created_by` FROM `projects` WHERE `id`='$project_id');";
+						if ($result = $db->query($query)) {
+							if ($row = $result->fetch_assoc()) {
+								echo $row['first_name'].' '.$row['last_name'];
+							}
+						}					
+					}
+				?>
+				</span>
+			</p>
+			<label>
+				Hand Over Project
+			</label>
+			<div class="row">
+				<div class="col-md-8">
+					<select class="form-control" id="hand_over">
+						<?php
+							if ($db) {
+								$query = "SELECT `id`, `first_name`, `last_name` FROM `user_info` WHERE `id`!='1' AND `id` NOT IN (SELECT `created_by` FROM `projects` WHERE `id`='$project_id');";
+								if ($result = $db->query($query)) {
+									while ($row = $result->fetch_assoc()) {
+										echo '<option value="'.$row['id'].'">'.$row['first_name'].' '.$row['last_name'].'</option>';
+									}
+								}
+							}
+						?>
+					</select>
+				</div>
+				<div class="col-md-4">
+					<button class="btn btn-default" id="btn_hand_over">Hand Over</button><br />
+				</div>
+			</div>
+			<br />
 			<p class="visible-lg visible-md">Contributors<br />All Users are listed on the left. Add those who are involved in this project to the right.</p>
 			<p class="hidden-lg hidden-md">Contributors<br />All Users are listed on the top. Add those who are involved in this project to the bottom. (On mobiles, tap to bring up selection), then press the arrows.</p>
 			<div class="row">
