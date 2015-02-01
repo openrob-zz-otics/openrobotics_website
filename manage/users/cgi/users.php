@@ -11,7 +11,7 @@
 	
 	if (!(isLoggedIn() && canManageUsers())) {
 		$return->update_success = false;
-		echo json_enocde($return);
+		echo json_encode($return);
 		exit();
 	}
 

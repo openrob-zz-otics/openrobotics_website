@@ -28,10 +28,19 @@
 					</a>					
 					</li>';
 			if (canManageUsers())
-				echo '<li><a href="/manage/users">Manage Users</a></li>';
+				echo '<li>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Tools<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/manage/users">Manage Users</a></li>
+						<li><a href="/manage/display">Manage Content</a></li>
+					</ul>
+					</a>					
+					</li>';
 			if (canSendEmail())
 				echo '<li><a href="/email/send_email">Email</a></li>';	
 		
+
+
 		
 			echo '</ul>'
 				.'</div>'

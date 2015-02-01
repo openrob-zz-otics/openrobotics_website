@@ -235,7 +235,42 @@ CREATE TABLE IF NOT EXISTS `user_badges` (
 		REFERENCES `badges`(`id`)
 		ON DELETE CASCADE
 );
-	
+
+CREATE TABLE IF NOT EXISTS `text_locations` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`location_name` TEXT NOT NULL,
+	`location_display_name` TEXT NOT NULL,
+	PRIMARY KEY(`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `display_text` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`text_location` BIGINT UNSIGNED NOT NULL,
+	`text_name` TEXT NOT NULL,
+	`text_display_name` TEXT NOT NULL,
+	`text_content` TEXT,
+	PRIMARY KEY(`id`)
+);
+
+#default text to display
+INSERT INTO `text_locations` VALUES('1', 'global', 'Global');
+INSERT INTO `text_locations` VALUES('2', 'home', 'Home Page');
+INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('1', 'donate_text', 'Donate Text', 'UBC Open Robotics is a new team, and we\'re working on growing our team and expanding our reach. We would graciously accept donations to help us reach our goal of competing in RoboCup 2016. For more details on sponshorship, please use our contact form. Thank you!');
+INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'l_heading', 'Left Heading', 'Training');
+INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'm_heading', 'Middle Heading', 'Future Projects');
+INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'r_heading', 'Right Heading', 'Get Involved');
+INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'l_par', 'Left Paragraph', 'Open Robotics offers training for different disciplines involved in robotics. The training is freely available on this website.');
+INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'm_par', 'Middle Paragraph', 'Our members have already worked on various projects. All of the projects are documented here on the website.');
+INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'r_par', 'Right Paragraph', 'All UBC students are welcome to check us out and work on projects.');
+INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'l_button', 'Left Button', 'View');
+INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'm_button', 'Middle Button', 'View Projects');
+INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'r_button', 'Right Button', 'View Details');
+INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'first_heading', 'First Heading', 'Work on <span class="text-muted">unique and interesting projects.</span>');
+INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'first_par', 'First Paragraph', 'Provide your skills to a current team. Aid in CAD, manufacturing, electrical design and programming.');
+INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'second_heading', 'Second Heading', 'Let your idea <span class="text-muted">come to life.</span>');
+INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'second_par', 'Second Paragraph', 'Have an idea? We can help you find the resources and pair you with more people like yourself.');
+
+#Add a default user
 INSERT INTO `users` VALUES ('1', 'intelligence@openrobotics.ca', '6c527bf7ce0349c332f828ec79fa1eac', '0', '0', '0');
 INSERT INTO `user_info` (`id`, `first_name`, `last_name`) VALUES ('1', 'Open', 'Robotics');
 INSERT INTO `user_permissions` VALUES ('1', '1', '1', '1', '1', '1', '1', '1');

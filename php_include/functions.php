@@ -161,4 +161,31 @@ function make_links_clickable($text){
     return preg_replace('!(((f|ht)tp(s)?://)[-a-zA-Zа-яА-Я()0-9@:%_+.~#?&;//=]+)!i', '<a href="$1">$1</a>', $text);
 }
 
+$acceptable_image_extensions = array("png", "jpg", "jpen", "gif");
+
+function start_PageDisplayText($page_name) {
+	$r_data = array();
+	if ($db = get_db()) {
+		$query = "SELECT * FROM `display_text` WHERE `text_location` IN (SELECT `id` FROM `text_locations` WHERE `location_name`='$page_name' OR `location_name`='global');";
+		if ($result = $db->query($query)) {
+			while ($row = $result->fetch_assoc()) {
+				array_push($r_data, $row);
+			}
+		}
+		$db->close();
+		return $r_data;
+	}
+	return NULL;	
+}
+function get_PageDisplayText($r_data, $name) {
+	if (!is_null($r_data)) {
+		foreach ($r_data as $data) {
+			if ($data['text_name'] == $name) {
+				return $data['text_content'];
+			}
+		}
+	}
+	return "Error Connecting to the database.";
+}
+
 ?>

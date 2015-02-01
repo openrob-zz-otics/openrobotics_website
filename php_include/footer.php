@@ -12,6 +12,11 @@
 			<script src="/assets/js/jquery.ui.widget.js"></script>
 			<script src="/assets/js/jquery.iframe-transport.js"></script>
 			<script src="/assets/js/jquery.fileupload.js"></script>';
+		} else if (PAGE_TITLE == "display") {
+			echo '<link rel="stylesheet" href="/assets/css/jquery.fileupload.css">
+			<script src="/assets/js/jquery.ui.widget.js"></script>
+			<script src="/assets/js/jquery.iframe-transport.js"></script>
+			<script src="/assets/js/jquery.fileupload.js"></script>';
 		} else if (PAGE_TITLE == "manage_badge") {
 			echo '<link rel="stylesheet" href="/assets/css/jquery.fileupload.css">
 			<script src="/assets/js/jquery.ui.widget.js"></script>

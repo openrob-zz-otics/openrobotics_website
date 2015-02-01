@@ -49,7 +49,7 @@
 				if ($val[0] == '0' && $project_data['hide_main_picture'])
 					continue;
 				$ext = strtolower(array_pop(explode('.', $val)));
-				if ($ext == "png" || $ext == "jpg") {
+				if (in_array($ext, $acceptable_image_extensions)) {
 					//put inside own column (don't need to make new rows)
 					echo '<div class="col-md-3">';
 					echo "<img class='img-responsive img-thumbnail' src='/upload_content/project_images/".$project_id."/$val'>";
