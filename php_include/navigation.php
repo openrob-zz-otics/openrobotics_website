@@ -37,11 +37,7 @@
 					</a>					
 					</li>';
 			if (canSendEmail())
-				echo '<li><a href="/email/send_email">Email</a></li>';	
-		
-
-
-		
+				echo '<li><a href="/email/send_email">Email</a></li>';			
 			echo '</ul>'
 				.'</div>'
 				.'<div class="visible-sm visible-xs">'
@@ -103,38 +99,21 @@
 				<li>
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a class='heading-text' href="//wiki.<?php echo $_SERVER['SERVER_NAME'].($_SERVER['SERVER_PORT']=='80' ? '' : ':'.$_SERVER['SERVER_PORT']); ?>">Wiki</a></li>
 						<li><a class='heading-text' href="/calendar/">Calendar</a></li>
 						<li><a class='heading-text' href='http://forum.openrobotics.ca'>Forum</a></li>
 						<li><a class='heading-text' href="/training/">Training</a></li>
 						<li><a class='heading-text' href="/badge/list">Badges</a></li>
 					</ul>			
 				</li>
-				<li <?php if(PAGE_TITLE == "contact") echo CLASS_ACTIVE;?> class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact <span class="caret"></span></a>
+				<li <?php if(PAGE_TITLE == "key_users") echo CLASS_ACTIVE;?>><a href="/contact/key_users">Members</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">About<span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
+						<li><a class='heading-text' href="/about/">About Us</a></li>
 						<li><a class='heading-text' href="/contact/">Contact Form</a></li>
-						<li><a class='heading-text' href="/contact/key_users">Key People</a></li>
 						<li><a class='heading-text' href="/contact/all_users">User Index</a></li>
-						<!--<li class="divider"></li>-->
-						<!--<li class="dropdown-header" class='heading-text'>Member Pages</li>-->
-						<?php
-							/*
-							if ($db = get_db()) {
-								$query = "SELECT * FROM `user_info` WHERE `id` in (SELECT `id` FROM `user_permissions` WHERE `in_contact_list`='1');";
-								if ($result = $db->query($query)) {
-									while ($row = $result->fetch_assoc()) {
-										echo "<li><a class='heading-text' href='/contact/user?id=".$row['id']."'>";
-										echo $row['first_name']." ".$row['last_name'];
-										echo "</a></li>";
-									}
-								}	
-								$db->close();
-							}*/
-						?>
 					</ul>
-				
-				<li <?php if(PAGE_TITLE == "about") echo CLASS_ACTIVE;?>><a href="/about/">About</a></li>
+				</li>
 		  </ul>
 		</div><!--/.nav-collapse -->
 	</div>
