@@ -93,7 +93,19 @@
 		</div>
 	</div>
 
+	<hr>
+
+	<div class="row">
+		<div class="col-sm-12">
+			<p style="font-size:17px;text-align:center">
+				UBC Open Robotics is currently seeking someone to administrate and further develop this site. Click <a href="/webdev">here</a> for more information.
+			</p>
+		</div>
+	</div>
+
+
 	<!-- /END THE FEATURETTES -->
+
 
 
 	<?php
