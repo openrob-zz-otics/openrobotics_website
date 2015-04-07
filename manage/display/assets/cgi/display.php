@@ -89,29 +89,36 @@
 		$width = imagesx($image);
 		$height = imagesy($image);
 
+		//echo "width: " . $width . "   height:   " . $height . "<br />";
+
 		$original_aspect = $width / $height;
 		$thumb_aspect = $thumb_width / $thumb_height;
 
 		if ( $original_aspect >= $thumb_aspect )
 		{
 		   // If image is wider than thumbnail (in aspect ratio sense)
-		   $new_height = $thumb_height;
-		   $new_width = $width / ($height / $thumb_height);
+		   $new_width = $thumb_width;
+		   $new_height = $height / ($width / $thumb_width);
 		}
 		else
 		{
 		   // If the thumbnail is wider than the image
-		   $new_width = $thumb_width;
-		   $new_height = $height / ($width / $thumb_width);
+		   $new_height = $thumb_height;
+		   $new_width = $width / ($height / $thumb_height);
 		}
 
-		$new_image = imagecreatetruecolor($new_width, $new_height);
+		$new_image = imagecreatetruecolor($thumb_width, $thumb_height);
+		imagesavealpha($new_image, true);
+
+		//set the background transparent
+		$trans_colour = imagecolorallocatealpha($new_image, 0, 0, 0, 127);
+    	imagefill($new_image, 0, 0, $trans_colour);
 
 		// Resize and crop
 		imagecopyresampled($new_image,
 						   $image,
-						   0,// - ($new_width - $thumb_width) / 2, // Center the image horizontally
-						   0,// - ($new_height - $thumb_height) / 2, // Center the image vertically
+						   0 - ($new_width - $thumb_width) / 2, // Center the image horizontally
+						   0 - ($new_height - $thumb_height) / 2, // Center the image vertically
 						   0, 0,
 						   $new_width, $new_height,
 						   $width, $height);
