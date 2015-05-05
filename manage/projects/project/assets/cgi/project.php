@@ -188,7 +188,13 @@
 			if (!($db->query($query))) {
 				$return->success = false;
 			} else {
-				$return->success = true;
+				$query = "DELETE FROM `project_contributors` WHERE `project_id`='$id' AND `user_id`='$user_id';";
+				if (!($db->query($query))) {
+					$return->success = false;
+				} else {
+					$return->success = true;
+				}
+
 			}
 		}
 		echo json_encode($return);

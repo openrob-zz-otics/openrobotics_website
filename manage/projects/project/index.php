@@ -187,7 +187,7 @@
 					<select multiple class="form-control" id="select-left">
 					<?php
 						if ($db) {
-							$query = "SELECT `id`, `first_name`, `last_name` FROM `user_info` WHERE `id`!='1' AND `id`!='$user_id' AND `id` NOT IN (SELECT `user_id` FROM `project_contributors` WHERE `project_id`='$project_id');";
+							$query = "SELECT `id`, `first_name`, `last_name` FROM `user_info` WHERE `id`!='1' AND `id` NOT IN (SELECT `user_id` FROM `project_contributors` WHERE `project_id`='$project_id');";
 							if ($result = $db->query($query)) {
 								while ($row = $result->fetch_assoc()) {
 									echo "<option value='".$row['id']."'>".$row['first_name'].' '.$row['last_name']."</option>";
