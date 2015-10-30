@@ -15,9 +15,7 @@
 			if ($db = get_db()) {
 				$query = "SELECT * FROM `users` JOIN `user_info` ON `users`.`id`=`user_info`.`id` WHERE `users`.`is_disabled`='0' AND `users`.`id` IN (SELECT `id` FROM `user_permissions` WHERE `in_contact_list`='1')";
 		
-				//Use this line to override the order in key_users page (sorry...)
-				//Eventually: make a way to set the order in a admin menu
-				$query .= "ORDER BY CASE `users`.`id` WHEN '2' THEN 0 WHEN '7' THEN 1 WHEN '3' THEN 2 WHEN '8' THEN 3 WHEN '11' THEN 4 WHEN '4' THEN 5 WHEN '6' THEN 6 ELSE 7 END ASC;";
+				$query .= " ORDER BY (SELECT COUNT(`id`) FROM `user_badges` WHERE `user_badges`.`user_id`=`users`.`id`) DESC;";
 				if ($result = $db->query($query)) {
 					while ($row = $result->fetch_assoc()) {
 						echo '<hr><div class="row"><div class="col-sm-4" ><center><a href="/contact/user?id='.$row['id'].'"><img src=';
