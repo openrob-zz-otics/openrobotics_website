@@ -7,7 +7,8 @@
 			$array = scandir("assets/images/carousel/");
 			$i=0;
 			foreach ($array as $val) {
-				$ext = strtolower(array_pop(explode('.', $val)));
+				$var = explode('.', $val);
+				$ext = strtolower(array_pop($var));
 				if (in_array($ext, $acceptable_image_extensions)) {		
 					echo '<li data-target="#myCarousel" data-slide-to="0" class="'.(!$i++?'active':'').'"></li>';
 				}
@@ -28,7 +29,8 @@
 			$array = scandir("assets/images/carousel/");
 			$i=0;
 			foreach ($array as $val) {
-				$ext = strtolower(array_pop(explode('.', $val)));
+				$var = explode('.', $val);
+				$ext = strtolower(array_pop($var));
 				if (in_array($ext, $acceptable_image_extensions)) {		
 					echo 
 					'<div class="item carousel_resize '.(!$i++?'active':'').'">
