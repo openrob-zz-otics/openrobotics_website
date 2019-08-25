@@ -45,12 +45,12 @@ CREATE TABLE IF NOT EXISTS `user_info` (
 	`last_name` TEXT NOT NULL,
 	`ubc_student_number` INT(10) UNSIGNED NOT NULL,
 	`contact_email` TEXT NOT NULL,
-	`linkedin` TEXT NOT NULL,
-	`personal_site` TEXT NOT NULL,
+	`linkedin` TEXT NULL,
+	`personal_site` TEXT NULL,
 	`open_robotics_position` TEXT NOT NULL,
-	`education` TEXT NOT NULL,
-	`employment` TEXT NOT NULL,
-	`bio` TEXT NOT NULL,
+	`education` TEXT NULL,
+	`employment` TEXT NULL,
+	`bio` TEXT NULL,
 	PRIMARY KEY(`id`),	
 	CONSTRAINT `user_info.fk_user`
 		FOREIGN KEY (`id`)
@@ -110,6 +110,13 @@ CREATE TABLE IF NOT EXISTS `blog_posts` (
 		ON DELETE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS `training_categories` (
+	`training_category_id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`training_category_name` TEXT NOT NULL,
+	`training_category_description` TEXT NOT NULL,
+	PRIMARY KEY(`training_category_id`)
+);
+
 CREATE TABLE IF NOT EXISTS `training_posts` (
 	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`visible` TINYINT(1) UNSIGNED NOT NULL,
@@ -117,14 +124,14 @@ CREATE TABLE IF NOT EXISTS `training_posts` (
 	`publish_time` DATETIME NOT NULL,
 	`title` TEXT NOT NULL,
 	`sub_title` TEXT,
-	`category`TEXT NOT NULL,
+	`category`BIGINT(20) UNSIGNED NOT NULL,
 	`content` TEXT NOT NULL,	
 	`is_disabled` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
 	PRIMARY KEY(`id`),
 	CONSTRAINT `training_posts.fk_user`
 		FOREIGN KEY (`created_by`)
 		REFERENCES `users`(`id`)
-		ON DELETE CASCADE
+		ON DELETE CASCADE,
 	CONSTRAINT `training_posts.fk_training_category`
 		FOREIGN KEY (`category`)
 		REFERENCES `training_categories`(`training_category_id`)
@@ -175,13 +182,6 @@ CREATE TABLE IF NOT EXISTS `training_completion` (
 		ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS `training_categories` (
-	`training_category_id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-	`training_category_name` TEXT NOT NULL,
-	`training_category_description` TEXT NOT NULL,
-	PRIMARY KEY(`training_category_id`)
-);
-
 CREATE TABLE IF NOT EXISTS `badge_categories` (
 	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`category_name` TEXT NOT NULL,
@@ -214,7 +214,7 @@ CREATE TABLE IF NOT EXISTS `badges` (
 	CONSTRAINT `badges.fk_category`
 		FOREIGN KEY (`category`)
 		REFERENCES `badge_categories`(`id`)
-		ON DELETE CASCADE
+		ON DELETE CASCADE,
 	CONSTRAINT `badges.fk_difficulty`
 		FOREIGN KEY (`difficulty`)
 		REFERENCES `badge_difficulties`(`id`)
@@ -271,6 +271,6 @@ INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `
 INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'second_par', 'Second Paragraph', 'Have an idea? We can help you find the resources and pair you with more people like yourself.');
 
 #Add a default user
-INSERT INTO `users` VALUES ('1', 'intelligence@openrobotics.ca', '6c527bf7ce0349c332f828ec79fa1eac', '0', '0', '0');
-INSERT INTO `user_info` (`id`, `first_name`, `last_name`) VALUES ('1', 'Open', 'Robotics');
+INSERT INTO `users` VALUES ('1', 'intelligence@openrobotics.ca', '6c527bf7ce0349c332f828ec79fa1eac', '3000-01-01 00:00:00', '0', '0');
+INSERT INTO `user_info` (`id`, `first_name`, `middle_name`, `last_name`, `ubc_student_number`, `contact_email`, `open_robotics_position`) VALUES ('1', 'Open', "", 'Robotics', 12345678, 'intelligence@openrobotics.ca', "admin");
 INSERT INTO `user_permissions` VALUES ('1', '1', '1', '1', '1', '1', '1', '1');
