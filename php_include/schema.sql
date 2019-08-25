@@ -110,6 +110,13 @@ CREATE TABLE IF NOT EXISTS `blog_posts` (
 		ON DELETE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS `training_categories` (
+	`training_category_id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`training_category_name` TEXT NOT NULL,
+	`training_category_description` TEXT NOT NULL,
+	PRIMARY KEY(`training_category_id`)
+);
+
 CREATE TABLE IF NOT EXISTS `training_posts` (
 	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`visible` TINYINT(1) UNSIGNED NOT NULL,
@@ -173,13 +180,6 @@ CREATE TABLE IF NOT EXISTS `training_completion` (
 		FOREIGN KEY (`training_id`)
 		REFERENCES `training_posts`(`id`)
 		ON DELETE CASCADE
-);
-
-CREATE TABLE IF NOT EXISTS `training_categories` (
-	`training_category_id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-	`training_category_name` TEXT NOT NULL,
-	`training_category_description` TEXT NOT NULL,
-	PRIMARY KEY(`training_category_id`)
 );
 
 CREATE TABLE IF NOT EXISTS `badge_categories` (
