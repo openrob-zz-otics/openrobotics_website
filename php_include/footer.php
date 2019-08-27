@@ -1,9 +1,9 @@
     </div><!-- main_container -->
 	
 	<!-- include jQuery -->
-	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<!-- include bootstrap js -->
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<?php 
 		if (PAGE_TITLE == "manage_project") {
 			echo '<link rel="stylesheet" href="assets/css/datepicker3.css">

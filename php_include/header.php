@@ -23,7 +23,7 @@
 		-->
 		
 		<!-- Bootstrap core CSS -->
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		
 		<!-- include global css -->
 		<link rel="stylesheet" href="/assets/css/styles.css">
