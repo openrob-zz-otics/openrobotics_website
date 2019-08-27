@@ -333,7 +333,7 @@
 				
 				<?php 
 					if ($recaptcha_enabled) {
-						echo recaptcha_get_html($public_key);
+						echo recaptcha_get_html($public_key, NULL, true);
 					}
 				?><br />
 				
