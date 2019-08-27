@@ -91,29 +91,21 @@
 		
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li <?php if(PAGE_TITLE == "recruitment") echo CLASS_ACTIVE;?>><a href="/recruitment/">Recruitment</a></li>
 				<li <?php if(PAGE_TITLE == "projects") echo CLASS_ACTIVE;?>><a href="/projects/">Projects</a></li>
-				<li <?php if(PAGE_TITLE == "blog") echo CLASS_ACTIVE;?>><a href="/blog/">Blog</a></li>
+				<li <?php if(PAGE_TITLE == "key_users") echo CLASS_ACTIVE;?>><a href="/contact/key_users">Meet the Team</a></li>				
+				<li <?php if(PAGE_TITLE == "recruitment") echo CLASS_ACTIVE;?>><a href="/recruitment/">Recruitment</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li>
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a class='heading-text' href="/calendar/">Calendar</a></li>
-						<li><a class='heading-text' href='http://forum.openrobotics.ca'>Forum</a></li>
+						<li><a class='heading-text' href="/blog/">Blog</a></li>
 						<li><a class='heading-text' href="/training/">Training</a></li>
-						<li><a class='heading-text' href="/badge/list">Badges</a></li>
+						<li><a class='heading-text' href="/calendar/">Calendar</a></li>
 					</ul>			
 				</li>
-				<li <?php if(PAGE_TITLE == "key_users") echo CLASS_ACTIVE;?>><a href="/contact/key_users">Members</a></li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">About<span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a class='heading-text' href="/about/">About Us</a></li>
-						<li><a class='heading-text' href="/contact/">Contact Form</a></li>
-						<li><a class='heading-text' href="/contact/all_users">User Index</a></li>
-					</ul>
-				</li>
+				<li <?php if(PAGE_TITLE == "contactus") echo CLASS_ACTIVE;?>><a href="/contact/">Contact Us</a></li>
+				<li <?php if(PAGE_TITLE == "donate") echo CLASS_ACTIVE;?> style="padding-top: 12px;"><a href="<?php echo $GLOBALS['donate_link'];?>"><button class="btn btn-lg btn-or">Donate</button></a></li>
 		  </ul>
 		</div><!--/.nav-collapse -->
 	</div>
