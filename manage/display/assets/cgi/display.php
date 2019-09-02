@@ -55,7 +55,8 @@
 			if (file_exists("../../../../assets/images/carousel/")) {
 				$array = scandir("../../../../assets/images/carousel/");
 				foreach ($array as $val) {
-					$ext = strtolower(array_pop(explode('.', $val)));
+					$var = explode('.', $val);
+					$ext = strtolower(array_pop($var));
 					if (in_array($ext, $acceptable_image_extensions)) {		
 						$return->append_data .= "<div id='img_$val' class='row'><div class='col-sm-8'><img class='img-responsive' src='../../../../assets/images/carousel/$val' /></div><div class='col=sm-4'><button class='btn btn-danger delete_image' data-val='$val'>Delete Image</button></div></div><br /><hr>";
 					}

@@ -261,7 +261,8 @@
 	if (file_exists("../../../upload_content/project_images/$project_id/")) {
 		$array = scandir("../../../upload_content/project_images/".$project_id."/");
 		foreach ($array as $val) {
-			$ext = strtolower(array_pop(explode('.', $val)));
+			$var = explode('.', $val);
+			$ext = strtolower(array_pop($var));
 			if ($ext == "png" || $ext == "jpg") {
 				echo "<div class='row'><div class='col-md-6'><img class='img-responsive img-thumbnail' src='/upload_content/project_images/$project_id/$val'></div>
 				<div class='col-md-6'><button class='btn btn-danger image_delete' data-file='$val'>Delete</button></div></div><br /><br />";

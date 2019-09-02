@@ -47,7 +47,8 @@
 		if (file_exists("../../upload_content/project_images/".$project_id."/")) {
 			$array = scandir("../../upload_content/project_images/".$project_id."/");
 			foreach ($array as $val) {
-				$ext = strtolower(array_pop(explode('.', $val)));
+				$var = explode('.', $val);
+				$ext = strtolower(array_pop($var));
 				if ($ext == "png" || $ext == "jpg") {
 		
 					echo "<img class='img-responsive img-thumbnail' src='/upload_content/project_images/".$project_id."/$val'>";
