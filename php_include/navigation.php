@@ -86,9 +86,9 @@
 		</div>
 		
 		<div class="nav-center hidden-xs">
-				<a href="/" title="Home">
-					<img src="/assets/images/logo.gif" class="img" id="logo" width="100" text="home">
-				</a>
+			<a href="/" title="Home">
+				<img src="/assets/images/logo.gif" class="img" id="logo" width="100" text="home">
+			</a>
 		</div>
 		
 		<div class="navbar-collapse collapse">
