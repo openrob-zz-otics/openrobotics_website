@@ -207,3 +207,10 @@ th {
 .btn-or:hover {
 	color: #fff;
 }
+
+#logo{
+    transition: transform .2s;
+}
+#logo:hover{
+    transform: scale(1.5);
+}
