@@ -88,8 +88,7 @@ if ($logged_in) {
 		$temp = explode(".", $_FILES["file"]["name"]);
 		$extension = end($temp);
 		imagepng(imagecreatefromstring(file_get_contents($_FILES["file"]["tmp_name"])), "../../../../upload_content/user_images/" . $user_id . ".png");
-        header("Location: /manage/profile");
-        echo("<meta http-equiv='refresh' content='1'>"); //Refresh by HTTP 'meta'
+		header("Location: /manage/profile");
 	} else if ($task == 3) {
 		$old_password = @$_POST['old_password'];
 		$password = @$_POST['password'];
