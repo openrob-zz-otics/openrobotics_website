@@ -89,9 +89,9 @@ if ($logged_in) {
 		$extension = end($temp);
 		imagepng(imagecreatefromstring(file_get_contents($_FILES["file"]["tmp_name"])), "../../../../upload_content/user_images/" . $user_id . ".png");
         header("Location: /manage/profile");
-        $page = $_SERVER['PHP_SELF'];
-        $sec = "10";
-        header("Refresh: $sec; url=$page");
+        // $page = $_SERVER['PHP_SELF'];
+        // $sec = "10";
+        // header("Refresh: $sec; url=$page");
 	} else if ($task == 3) {
 		$old_password = @$_POST['old_password'];
 		$password = @$_POST['password'];
