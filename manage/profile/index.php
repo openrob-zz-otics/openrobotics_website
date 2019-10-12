@@ -32,11 +32,6 @@
 					<input type="text" class="form-control" placeholder="John" id="form_first_name">
 				</div>		
 				
-				<div class="form-group" id="control_middle_name">
-					<label for="form_middle_name">Middle Name</label>
-					<input type="text" class="form-control" placeholder="Paul" id="form_middle_name">
-				</div>
-				
 				<div class="form-group" id="control_last_name">
 					<label for="form_last_name">Last Name</label>
 					<input type="text" class="form-control" placeholder="Smith" id="form_last_name">
