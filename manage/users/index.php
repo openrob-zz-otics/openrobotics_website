@@ -56,11 +56,6 @@
 									<input type="text" class="form-control" placeholder="John" id="'.$id.'_form_first_name" value="'.$info['first_name'].'">
 								</div>		
 								
-								<div class="form-group" id="control_middle_name">
-									<label for="form_middle_name">Middle Name</label>
-									<input type="text" class="form-control" placeholder="Paul" id="'.$id.'_form_middle_name" value="'.$info['middle_name'].'">
-								</div>
-								
 								<div class="form-group" id="control_last_name">
 									<label for="form_last_name">Last Name</label>
 									<input type="text" class="form-control" placeholder="Smith" id="'.$id.'_form_last_name" value="'.$info['last_name'].'">

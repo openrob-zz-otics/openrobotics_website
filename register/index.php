@@ -119,12 +119,7 @@
 					<label for="form_first_name" class="control-label">First Name</label>
 					<input type="text" name="first_name" class="form-control" placeholder="John" id="form_first_name" value="<?php echo @$first_name;?>">
 					<span class="help-block with-errors"></span>
-				</div>		
-				
-				<div class="form-group" id="control_middle_name">
-					<label for="form_middle_name">(Optional) Middle Name</label>
-					<input type="text" name="middle_name" class="form-control" placeholder="Paul" id="form_middle_name" value="<?php echo @$middle_name;?>">
-				</div>	
+				</div>
 				
 				<div class="form-group" id="control_last_name">
 					<label for="form_last_name">Last Name</label>
