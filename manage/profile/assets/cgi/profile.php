@@ -88,7 +88,7 @@ if ($logged_in) {
 		$temp = explode(".", $_FILES["file"]["name"]);
 		$extension = end($temp);
         $image = imagecreatefromstring(file_get_contents($_FILES["file"]["tmp_name"]));
-        imagepng($image, "../../../../upload_content/user_images/" . $user_id . ".png", 80);
+        imagepng($image, "../../../../upload_content/user_images/" . $user_id . ".png");
         header("Location: /manage/profile");
 	} else if ($task == 3) {
 		$old_password = @$_POST['old_password'];
