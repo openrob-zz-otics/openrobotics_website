@@ -7,3 +7,4 @@ ehthumbs.db
 Thumbs.db
 *npp*
 *.pem
+/upload_content
