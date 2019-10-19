@@ -89,7 +89,7 @@ if ($logged_in) {
 		$extension = end($temp);
         $image = imagecreatefromstring(file_get_contents($_FILES["file"]["tmp_name"]));
         $thumb_width = 200;
-        $thumb_height = 150;
+        $thumb_height = 200;
         $width = imagesx($image);
         $height = imagesy($image);
         $original_aspect = $width / $height;
