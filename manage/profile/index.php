@@ -14,7 +14,7 @@
 			
 			<form action="/manage/profile/assets/cgi/profile.php?task=2" method="POST" enctype="multipart/form-data">
 				<label for="file">Profile Picture:</label>
-				<?php echo '<img src="/upload_content/user_images/'.$user_id.'.png?'.time().' style="max-height:250px" class="img-responsive img-thumbnail"/>'; ?>
+				<?php echo '<img style="max-height:250px" class="img-responsive img-thumbnail" src="/upload_content/user_images/'.$user_id.'.png?'.time().'"/>'; ?>
 				<input type="file" name="file" id="file" class="btn btn-default"><br>
 				<input type="submit" name="submit" value="Upload" class="btn btn-default">
 			</form>
