@@ -88,7 +88,31 @@ if ($logged_in) {
 		$temp = explode(".", $_FILES["file"]["name"]);
 		$extension = end($temp);
         $image = imagecreatefromstring(file_get_contents($_FILES["file"]["tmp_name"]));
-        imagepng($image, "../../../../upload_content/user_images/" . $user_id . ".png");
+        $thumb_width = 200;
+        $thumb_height = 200;
+        $width = imagesx($image);
+        $height = imagesy($image);
+        $original_aspect = $width / $height;
+        $thumb_aspect = $thumb_width / $thumb_height;
+        if ( $original_aspect >= $thumb_aspect )
+        {
+           $new_height = $thumb_height;
+           $new_width = $width / ($height / $thumb_height);
+        }
+        else
+        {
+           $new_width = $thumb_width;
+           $new_height = $height / ($width / $thumb_width);
+        }
+        $thumb = imagecreatetruecolor( $thumb_width, $thumb_height );
+        imagecopyresampled($thumb,
+                           $image,
+                           0 - ($new_width - $thumb_width) / 2, 
+                           0 - ($new_height - $thumb_height) / 2,
+                           0, 0,
+                           $new_width, $new_height,
+                           $width, $height);
+        imagepng($thumb, "../../../../upload_content/user_images/" . $user_id . ".png");
         header("Location: /manage/profile");
 	} else if ($task == 3) {
 		$old_password = @$_POST['old_password'];
