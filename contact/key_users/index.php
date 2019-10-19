@@ -24,7 +24,7 @@
 						} else {
 							echo '"/assets/images/default_profile.png?'.time().'" width="150"';
 						}
-						echo ' alt="'.$row['first_name'].' '.$row['last_name'].'" class="img-responsive img-thumbnail"></a></center>
+						echo ' alt="'.$row['first_name'].' '.$row['last_name'].'" class="img-responsive img-thumbnail" style="border-radius:50%; height:200px;"></a></center>
 						</div><div class="col-sm-8"><p><a href="/contact/user?id='.$row['id'].'" style="font-size:large;">'.$row['first_name'].' '.$row['last_name'].'</a><br />'.$row['open_robotics_position'].'<br />'.$row['education'].'</p><hr><p>'
 						. ((strlen($row['bio']) > 200) ? substr($row['bio'], 0, 200)."<a href='/contact/user?id=".$row['id']."'>... read more.</a>" : $row['bio']).'</p>';
 						$query = "SELECT `id`, `name` FROM `badges` WHERE `is_disabled`='0' AND `id` IN (SELECT `badge_id` FROM `user_badges` WHERE `user_id`='".$row['id']."');";
