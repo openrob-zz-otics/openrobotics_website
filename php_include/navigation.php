@@ -82,12 +82,12 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand hidden-lg hidden-md hidden-sm" href="/"><img src="/assets/images/logo.gif" class="img" id="logo_small">Open Robotics</a>
+			<a class="navbar-brand hidden-lg hidden-md hidden-sm" href="/"><img src="/assets/images/logo.png" class="img" id="logo_small">Open Robotics</a>
 		</div>
 		
 		<div class="nav-center hidden-xs">
 			<a href="/" title="Home">
-				<img src="/assets/images/logo.gif" class="img" id="logo" width="100" text="home">
+				<img src="/assets/images/logo.png" class="img" id="logo" width="100" text="home">
 			</a>
 		</div>
 		

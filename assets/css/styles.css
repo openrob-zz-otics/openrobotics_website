@@ -212,5 +212,5 @@ th {
     transition: transform .2s;
 }
 #logo:hover{
-    transform: scale(1.5);
+    transform: scale(1.25);
 }
