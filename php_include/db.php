@@ -4,7 +4,7 @@
  */
  
 //Fill these with correct values
-define("MYSQL_SERVER", "localhost:3307");
+define("MYSQL_SERVER", "localhost");
 define("MYSQL_USER", "openrobotics");
 define("MYSQL_PASSWORD", "Password1");
 define("MYSQL_DATABASE", "openrobotics");
