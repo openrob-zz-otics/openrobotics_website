@@ -9,7 +9,7 @@
 		<meta name="author" content="UBC Open Robotics">
 		
 		<!-- set favicon -->
-		<link rel="icon" href="/assets/images/favicon.png">
+		<?php echo '<link rel="icon" href="/assets/images/favicon.png?'.time().'"/>'; ?>
 
 		<!-- set the page title -->
 		<title>
