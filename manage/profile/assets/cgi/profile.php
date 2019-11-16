@@ -89,18 +89,18 @@ if ($logged_in) {
 		$extension = end($temp);
         $image = imagecreatefromstring(file_get_contents($_FILES["file"]["tmp_name"]));
 
-        # Rotate the image if needed
+        # Rotate the image if it is needed
         $exif = exif_read_data($_FILES['file']['tmp_name']);
         if (!empty($exif['Orientation'])) {
             switch ($exif['Orientation']) {
                 case 3:
-                    $image = imagerotate($image, -180, 0);
+                    $image = imagerotate($image, 180, 0);
                     break;
                 case 6:
-                    $image = imagerotate($image, 90, 0);
+                    $image = imagerotate($image, -90, 0);
                     break;
                 case 8:
-                    $image = imagerotate($image, -90, 0);
+                    $image = imagerotate($image, 90, 0);
                     break;
             } 
         }
