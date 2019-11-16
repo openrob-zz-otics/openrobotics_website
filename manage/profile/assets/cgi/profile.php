@@ -88,6 +88,23 @@ if ($logged_in) {
 		$temp = explode(".", $_FILES["file"]["name"]);
 		$extension = end($temp);
         $image = imagecreatefromstring(file_get_contents($_FILES["file"]["tmp_name"]));
+
+        # Rotate the image if needed
+        $exif = exif_read_data($_FILES['file']['tmp_name']);
+        if (!empty($exif['Orientation'])) {
+            switch ($exif['Orientation']) {
+                case 3:
+                    $image = imagerotate($image, -180, 0);
+                    break;
+                case 6:
+                    $image = imagerotate($image, 90, 0);
+                    break;
+                case 8:
+                    $image = imagerotate($image, -90, 0);
+                    break;
+            } 
+        }
+
         $thumb_width = 200;
         $thumb_height = 200;
         $width = imagesx($image);
