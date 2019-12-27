@@ -1,216 +1,341 @@
 /*
  * Global Style Sheet
  */
- 
+
 /* Customize the Nav-Bar */
 @media (min-width: 768px) {
-	.navbar {
-		height: 155px;
-	}
+  .navbar {
+    height: 155px;
+  }
 
-	.navbar-nav>li {
-		padding-top: 25px;
-	}
+  .navbar-nav > li {
+    padding-top: 25px;
+  }
 
-	.navbar-nav>li>a {
-		color: #000 !important;
-		font-size: large;
-		/*font-weight: bold;
+  .navbar-nav > li > a {
+    color: #000 !important;
+    font-size: large;
+    /*font-weight: bold;
 		text-shadow: 1px 1px #ddd;*/
-	}
-	
-	#main_container  {
-		margin-top: 155px;
-	}
+  }
+
+  #main_container {
+    margin-top: 155px;
+  }
 }
 @media (max-width: 767px) {
-	.navbar-brand {
-		padding-top: 5px;
-	}
-	
-	#main_container {
-		margin-top: 85px;
-	}
+  .navbar-brand {
+    padding-top: 5px;
+  }
+
+  #main_container {
+    margin-top: 85px;
+  }
 }
 
-.navbar-nav>li>a {
-	font-family: "klinic-slab-book";
+.navbar-nav > li > a {
+  font-family: "klinic-slab-book";
 }
 
 .navbar-brand {
-	font-family: "klinic-slab-book";
+  font-family: "klinic-slab-book";
 }
 
 .nav-center {
-    margin:0;
-    float:none;
-	padding-top: 10px;
-	margin-right: 50px;
+  margin: 0;
+  float: none;
+  padding-top: 10px;
+  margin-right: 50px;
 }
 
 .navbar-inner {
-    text-align:center;
+  text-align: center;
 }
 
 #logo {
-	position: absolute;
+  position: absolute;
 }
 
 #logo_small {
-	width: 55px;
-	padding-right: 15px;
+  width: 55px;
+  padding-right: 15px;
 }
 
 #cred_navbar {
-	height:35px;
-	background-color: #3d3d3d;
+  height: 35px;
+  background-color: #3d3d3d;
 }
 
-#cred_navbar>ul>li {
-	height: 35px;
-	padding-top:7px;
-	padding-right:15px;
-	color: #fff!important;
-	font-size: initial!important;
+#cred_navbar > ul > li {
+  height: 35px;
+  padding-top: 7px;
+  padding-right: 15px;
+  color: #fff !important;
+  font-size: initial !important;
 }
 
-#cred_navbar>ul>li>a {
-	padding-top: 0px;
-	color: #fff!important;
-	font-size: initial!important;
+#cred_navbar > ul > li > a {
+  padding-top: 0px;
+  color: #fff !important;
+  font-size: initial !important;
 }
 
 .right-override {
-	float:right!important;
-	margin-top:0px;
+  float: right !important;
+  margin-top: 0px;
 }
 
-@media(max-width: 767px) {
-	.right-override {
-		padding-top: 7px;
-	}
+@media (max-width: 767px) {
+  .right-override {
+    padding-top: 7px;
+  }
 }
 
 .text-error {
-	color:#b94a48;
+  color: #b94a48;
 }
 
 .nav_float_fix {
-	display:inline!important;
+  display: inline !important;
 }
 
 .navbar-full {
-	width: auto;
-	max-width: 1170px;
+  width: auto;
+  max-width: 1170px;
 }
 
 .bg-danger {
-	padding: 1em 1em 1em 1em;
+  padding: 1em 1em 1em 1em;
 }
 
 .bg-success {
-	padding: 1em 1em 1em 1em;
+  padding: 1em 1em 1em 1em;
 }
 
 #right_nav {
-	position:absolute;
+  position: absolute;
 }
 
-#right_nav>ul>li {
-	padding-top: 7px;
-	padding-right: 15px; 
-	color: #fff!important;
+#right_nav > ul > li {
+  padding-top: 7px;
+  padding-right: 15px;
+  color: #fff !important;
 }
 
-#right_nav>ul>li>a{
-	padding-top: 0px;
-	padding-right: 15px; 
-	padding-left:0px;
-	font-size: initial;
-	color: #fff!important;
+#right_nav > ul > li > a {
+  padding-top: 0px;
+  padding-right: 15px;
+  padding-left: 0px;
+  font-size: initial;
+  color: #fff !important;
 }
 
 #manage_dropdown_control {
-	padding-top:7px;
-	float:left;
-	color:#fff;
-	font-size: 16px;
+  padding-top: 7px;
+  float: left;
+  color: #fff;
+  font-size: 16px;
 }
 
 #manage_dropdown_menu {
-	position:absolute;
-	top:35px;
+  position: absolute;
+  top: 35px;
 }
 
-#manage_dropdown_menu>li {
-	padding-left:10px;
+#manage_dropdown_menu > li {
+  padding-left: 10px;
 }
 
 .navbar-toggle {
-	position:absolute;
-	right: 0;
+  position: absolute;
+  right: 0;
 }
 
-div.line{
-	transform-origin: 0 100%;
-	height: 2px; 
-	background: #000;
-	z-index: 200;
-}
-
-@font-face {
-	font-family: "klinic-slab-book";
-	src: url("/assets/fonts/KlinicSlabBook.svg") format("svg"), 
-		 url("/assets/fonts/KlinicSlabBook.otf") format("opentype");
-	font-weight: normal;
-	font-style: normal;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: "klinic-slab-book";
+div.line {
+  transform-origin: 0 100%;
+  height: 2px;
+  background: #000;
+  z-index: 200;
 }
 
 @font-face {
-	font-family: "proxima-nova";
-	src: url("/assets/fonts/ProximaNovaRegular.svg") format("svg"),
-		 url("/assets/fonts/ProximaNovaRegular.otf") format("opentype");
-	font-weight: normal;
-	font-style: normal;
+  font-family: "klinic-slab-book";
+  src: url("/assets/fonts/KlinicSlabBook.svg") format("svg"),
+    url("/assets/fonts/KlinicSlabBook.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "klinic-slab-book";
 }
 
 @font-face {
-	font-family: "proxima-nova";
-	src: url("/assets/fonts/ProximaNovaRegularItalic.svg") format("svg"),
-		 url("/assets/fonts/ProximaNovaRegularItalic.otf") format("opentype");
-	font-weight: normal;
-	font-style: italic;
+  font-family: "proxima-nova";
+  src: url("/assets/fonts/ProximaNovaRegular.svg") format("svg"),
+    url("/assets/fonts/ProximaNovaRegular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "proxima-nova";
+  src: url("/assets/fonts/ProximaNovaRegularItalic.svg") format("svg"),
+    url("/assets/fonts/ProximaNovaRegularItalic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
 }
 
 body {
-	font-family: "proxima-nova";
+  font-family: "proxima-nova";
 }
 
 .heading-text {
-	font-family: "klinic-slab-book";
+  font-family: "klinic-slab-book";
 }
 
 th {
-	font-family: "klinic-slab-book";
+  font-family: "klinic-slab-book";
 }
 
 .btn-or {
-	background-color: #bf1e2e;
-	border-color: #731e1e;
-	color: #fff;
+  background-color: #bf1e2e;
+  border-color: #731e1e;
+  color: #fff;
 }
 
 .btn-or:hover {
-	color: #fff;
+  color: #fff;
 }
 
-#logo{
-    transition: transform .2s;
+.section {
+  padding-bottom: 50px;
 }
-#logo:hover{
-    transform: scale(1.25);
+
+.section .title {
+  text-align: left;
+  padding: 10px;
+}
+
+.section .title h1 {
+  font-weight: normal;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.section .title h2 {
+  text-align: center;
+  font-family: "Monospace", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+  margin-top: 30px;
+}
+
+.section .title > p {
+  font-size: 18px;
+  color: #fff;
+  font-weight: lighter;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.section .container .title {
+  padding-top: 30px;
+  color: #fff;
+}
+
+.lead {
+  background-color: lightslategray;
+  color: white;
+  width: 100%;
+}
+
+.member {
+  background-color: white;
+  width: 100%;
+}
+
+.service {
+  margin-top: 20px;
+}
+
+.service,
+.service h3 {
+  padding-top: 15px;
+  text-align: center;
+}
+
+.service p {
+  padding: 0px 50px;
+  height: 60px;
+  text-align: center;
+}
+
+.service img {
+  max-width: 200px;
+  height: auto;
+  width: auto;
+  position: absolute;
+  left: -100%;
+  right: -100%;
+  top: -100%;
+  bottom: -100%;
+  margin: auto;
+}
+
+.circle-border {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  -webkit-border-radius: 500px;
+  -moz-border-radius: 500px;
+  border-radius: 500px;
+  -khtml-border-radius: 500px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+
+.zoom-in {
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  -ms-transition: all 250ms ease;
+  transition: all 250ms ease;
+}
+
+.zoom-in:hover {
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+  -o-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+}
+
+.lead a {
+  color: white;
+  text-decoration: none;
+}
+
+.member a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#logo {
+  transition: transform 0.2s;
+}
+#logo:hover {
+  transform: scale(1.25);
 }
