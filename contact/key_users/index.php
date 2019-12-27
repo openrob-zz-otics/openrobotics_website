@@ -42,6 +42,7 @@ print_navbar();
                         // Rerun the query to place the pointer at the beginning
                         if ($result = $db->query($query)) {
                             while ($row = $result->fetch_assoc()) {
+                                $memberPerRow = 0;
                                 if ($leadCount > 0) {
                                     $leadCount--;
                                     echo '<div class="span' . $leadSectionDivision . '"> <div class="centered service"> <a href="/contact/user?id=' . $row['id'] . '"> <div class="circle-border zoom-in"> <img class="img-circle" src=';
@@ -56,9 +57,12 @@ print_navbar();
                                     echo ' alt="service 1"> </div> <h3>' . $row['first_name'] . ' ' . $row['last_name'] . '</h3> <p>' . $teams[$i] . ' Lead</p> </a> </div> </div> ';
 
                                     if ($leadCount == 0) {
-                                        echo '</div> </div> <div class="member"> <div class="title"> <h2>TEAM MEMBER</h2> </div> <div class="row-fluid"> ';
+                                        echo '</div> </div> <div class="member"> <div class="title"> <h2>TEAM MEMBER</h2> </div> ';
                                     }
                                 } else {
+                                    if ($memberPerRow == 0) {
+                                        echo '<div class="row-fluid">';
+                                    }
                                     echo '<div class="span4"> <div class="centered service"> <a href="/contact/user?id=' . $row['id'] . '"> <div class="circle-border zoom-in"> <img class="img-circle" src=';
 
                                     // Get the profile picture
@@ -69,10 +73,16 @@ print_navbar();
                                     }
 
                                     echo ' alt="service 1"> </div> <h3>' . $row['first_name'] . ' ' . $row['last_name'] . '</h3> <p>' . $teams[$i] . ' Member</p> </a> </div> </div> ';
+
+                                    $memberPerRow++;
+                                    if ($memberPerRow == 3) {
+                                        echo '</div>';
+                                        $memberPerRow = 0;
+                                    }
                                 }
                             }
                         }
-                        echo '</div> </div> ';
+                        echo '</div>';
                     }
                 }
             }
