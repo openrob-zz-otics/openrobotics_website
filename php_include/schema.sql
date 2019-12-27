@@ -194,6 +194,17 @@ CREATE TABLE IF NOT EXISTS `badge_difficulties` (
 	`description` TEXT NOT NULL,
 	PRIMARY KEY(`id`)
 );
+
+CREATE TABLE IF NOT EXISTS `team_members` (
+    `id` BIGINT(20) UNSIGNED NOT NULL,
+    `team_name` TEXT NOT NULL,
+    `team_lead` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0'
+);
+
+CREATE TABLE IF NOT EXISTS `teams` (
+    `team_name` TEXT NOT NULL,
+    `team_desc` TEXT NOT NULL
+);
 ################################
 #
 # FIX THE GODDAMN FK CONSTRAINTS
