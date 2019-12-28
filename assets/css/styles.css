@@ -42,10 +42,10 @@
 }
 
 .nav-center {
-  margin: 0;
+  position: relative;
   float: none;
-  padding-top: 10px;
   margin-right: 50px;
+  top: -60px;
 }
 
 .navbar-inner {
@@ -336,6 +336,7 @@ a:hover {
 #logo {
   transition: transform 0.2s;
 }
+
 #logo:hover {
   transform: scale(1.25);
 }
