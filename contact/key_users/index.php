@@ -39,10 +39,10 @@ print_navbar();
                             echo '<h2>' . strtoupper($row2['team_name']) . '</h2> <p>' . $row2['team_desc'] . '</p> </div>';
                         }
 
+                        $memberPerRow = 0;
                         // Rerun the query to place the pointer at the beginning
                         if ($result = $db->query($query)) {
                             while ($row = $result->fetch_assoc()) {
-                                $memberPerRow = 0;
                                 if ($leadCount > 0) {
                                     $leadCount--;
                                     echo '<div class="span' . $leadSectionDivision . '"> <div class="centered service"> <a href="/contact/user?id=' . $row['id'] . '"> <div class="circle-border zoom-in"> <img class="img-circle" src=';
@@ -58,6 +58,7 @@ print_navbar();
 
                                     if ($leadCount == 0) {
                                         echo '</div> </div> <div class="member"> <div class="title"> <h2>TEAM MEMBER</h2> </div> ';
+                                        $memberPerRow = 0;
                                     }
                                 } else {
                                     if ($memberPerRow == 0) {
@@ -82,7 +83,7 @@ print_navbar();
                                 }
                             }
                         }
-                        echo '</div>';
+                        echo '</div></div>';
                     }
                 }
             }
