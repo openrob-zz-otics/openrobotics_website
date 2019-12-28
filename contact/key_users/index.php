@@ -82,6 +82,10 @@ print_navbar();
                                     }
                                 }
                             }
+                            if ($memberPerRow != 0) {
+                                echo '</div>';
+                                $memberPerRow = 0;
+                            }
                             echo '</div>';
                         }
                     }
