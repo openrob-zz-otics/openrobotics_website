@@ -82,11 +82,12 @@ print_navbar();
                                     }
                                 }
                             }
+                            echo '</div>';
                         }
-                        echo '</div></div>';
                     }
                 }
             }
+            echo '</div>';
         }
         ?>
     </div>
