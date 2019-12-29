@@ -219,7 +219,6 @@ th {
 }
 
 .section .title h2 {
-  text-align: center;
   font-family: "Monospace", "Lucida Sans", "Lucida Sans Regular",
     "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: bolder;
@@ -231,8 +230,9 @@ th {
   color: #fff;
   font-weight: lighter;
   margin-top: 20px;
-  margin-left: 30px;
+  margin-left: 60px;
   margin-bottom: 30px;
+  margin-right: 60px;
 }
 
 .section .container .title {
@@ -246,9 +246,28 @@ th {
   width: 100%;
 }
 
+.lead .title h2 {
+  margin-left: 60px;
+  text-align: left;
+}
+
+.lead a {
+  color: white;
+  text-decoration: none;
+}
+
 .member {
   background-color: white;
   width: 100%;
+}
+
+.member .title h2 {
+  text-align: center;
+}
+
+.member a {
+  color: black;
+  text-decoration: none;
 }
 
 .service {
@@ -308,16 +327,6 @@ th {
   -ms-transform: scale(1.1, 1.1);
 }
 
-.lead a {
-  color: white;
-  text-decoration: none;
-}
-
-.member a {
-  color: black;
-  text-decoration: none;
-}
-
 a:hover {
   text-decoration: underline;
   cursor: pointer;
@@ -329,8 +338,4 @@ a:hover {
 
 #logo:hover {
   transform: scale(1.25);
-}
-
-.btn-custom {
-  top: 20px;
 }

@@ -27,8 +27,8 @@ print_navbar();
                             $leadCount++;
                         }
 
-                        // This is how we will divide the lead section 
-                        $leadSectionDivision = 12 / ($leadCount + 1);
+                        // This is how we will divide the lead section
+                        $leadSectionDivision = ($leadCount >= 3) ? 12 : 12 - ($leadCount * 4);
 
                         echo '<div class="lead"> <!-- Start title section --> <div class="row"> <div class="title col-md-' . $leadSectionDivision . '"> ';
 
@@ -39,13 +39,19 @@ print_navbar();
                             echo '<h2>' . strtoupper($row2['team_name']) . '</h2> <p>' . $row2['team_desc'] . '</p> </div>';
                         }
 
+                        if ($leadCount >= 3) {
+                            echo '</div><div class="row">';
+                        }
+
+                        $leadPerRow = 0;
                         $memberPerRow = 0;
                         // Rerun the query to place the pointer at the beginning
                         if ($result = $db->query($query)) {
                             while ($row = $result->fetch_assoc()) {
                                 if ($leadCount > 0) {
                                     $leadCount--;
-                                    echo '<div class="col-md-' . $leadSectionDivision . '"> <div class="centered service"> <a href="/contact/user?id=' . $row['id'] . '"> <div class="circle-border zoom-in"> <img class="img-circle" src=';
+                                    $memberPerRow++;
+                                    echo '<div class="col-md-4"> <div class="centered service"> <a href="/contact/user?id=' . $row['id'] . '"> <div class="circle-border zoom-in"> <img class="img-circle" src=';
 
                                     // Get the profile picture
                                     if (file_exists('../../upload_content/user_images/' . $row['id'] . '.png')) {
@@ -71,8 +77,13 @@ print_navbar();
                                         echo '<p>' . $teams[$i] . ' Lead</p> </a> </div> </div> ';
                                     }
 
+                                    if ($leadPerRow == 3) {
+                                        echo '</div><div class="row">';
+                                        $leadPerRow = 0;
+                                    }
                                     if ($leadCount == 0) {
                                         echo '</div> </div> <div class="member"> <div class="title"> <h2>TEAM MEMBER</h2> </div> ';
+                                        $leadPerRow = 0;
                                         $memberPerRow = 0;
                                     }
                                 } else {
