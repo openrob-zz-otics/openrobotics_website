@@ -231,9 +231,9 @@ th {
   color: #fff;
   font-weight: lighter;
   margin-top: 20px;
-  margin-left: 60px;
+  margin-left: 50px;
   margin-bottom: 30px;
-  margin-right: 60px;
+  margin-right: 50px;
 }
 
 .section .container .title {
@@ -248,7 +248,7 @@ th {
 }
 
 .lead .title h2 {
-  margin-left: 60px;
+  margin-left: 50px;
   text-align: left;
 }
 
