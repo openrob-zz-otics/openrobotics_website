@@ -28,7 +28,7 @@ print_navbar();
                         }
 
                         // This is how we will divide the lead section
-                        $leadSectionDivision = ($leadCount >= 3) ? 12 : 12 - ($leadCount * 4);
+                        $leadSectionDivision = ($leadCount >= 3) ? 12 : 12 - ($leadCount * 3);
 
                         echo '<div class="lead"> <!-- Start title section --> <div class="row"> <div class="title col-md-' . $leadSectionDivision . '"> ';
 
@@ -51,7 +51,7 @@ print_navbar();
                                 if ($leadCount > 0) {
                                     $leadCount--;
                                     $memberPerRow++;
-                                    echo '<div class="col-md-4"> <div class="centered service"> <a href="/contact/user?id=' . $row['id'] . '"> <div class="circle-border zoom-in"> <img class="img-circle" src=';
+                                    echo '<div class="col-md-3"> <div class="centered service"> <a href="/contact/user?id=' . $row['id'] . '"> <div class="circle-border zoom-in"> <img class="img-circle" src=';
 
                                     // Get the profile picture
                                     if (file_exists('../../upload_content/user_images/' . $row['id'] . '.png')) {
@@ -90,7 +90,7 @@ print_navbar();
                                     if ($memberPerRow == 0) {
                                         echo '<div class="row">';
                                     }
-                                    echo '<div class="col-md-4"> <div class="centered service"> <a href="/contact/user?id=' . $row['id'] . '"> <div class="circle-border zoom-in"> <img class="img-circle" src=';
+                                    echo '<div class="col-md-3"> <div class="centered service"> <a href="/contact/user?id=' . $row['id'] . '"> <div class="circle-border zoom-in"> <img class="img-circle" src=';
 
                                     // Get the profile picture
                                     if (file_exists('../../upload_content/user_images/' . $row['id'] . '.png')) {
@@ -108,7 +108,7 @@ print_navbar();
                                     }
 
                                     $memberPerRow++;
-                                    if ($memberPerRow == 3) {
+                                    if ($memberPerRow == 4) {
                                         echo '</div>';
                                         $memberPerRow = 0;
                                     }
