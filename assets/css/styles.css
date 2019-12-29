@@ -226,6 +226,7 @@ th {
 }
 
 .section .title > p {
+  text-align: justify;
   font-size: 18px;
   color: #fff;
   font-weight: lighter;
