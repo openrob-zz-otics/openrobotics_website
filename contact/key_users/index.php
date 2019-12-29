@@ -11,7 +11,7 @@ print_navbar();
         <?php
         if ($db = get_db()) {
             // List of teams
-            $teams = array('Admin', 'Robocup Gripper', 'Robocup Drivetrain', 'Robocup Arm', 'Robocup Software', 'PianoBot', 'ArtBot');
+            $teams = array('Admin', 'ArtBot', 'First Year Mentorship', 'PianoBot', 'Robocup Arm', 'Robocup Drivetrain', 'Robocup Gripper', 'Robocup Software');
             for ($i = 0; $i < count($teams); $i++) {
                 // Query each team, from team lead to team members
                 $query = "SELECT * FROM `users` JOIN `user_info` ON `users`.`id`=`user_info`.`id` JOIN `team_members` ON `users`.`id`=`team_members`.`id` WHERE `users`.`is_disabled`='0' AND `users`.`id` IN (SELECT `id` FROM `user_permissions` WHERE `in_contact_list`='1') AND `users`.`id` IN (SELECT `id` FROM `team_members` WHERE `team_name`='" . $teams[$i] . "') ORDER BY `team_lead` DESC, `last_name` ASC;";
@@ -59,6 +59,12 @@ print_navbar();
                                     // Captain has their own title
                                     if ($teams[$i] === 'Admin') {
                                         echo '<p>Co-captain</p> </a> </div> </div> ';
+                                    } else if ($teams[$i] === 'First Year Mentorship') {
+                                        if ($row['id'] == 1) {
+                                            echo '<p>Mechanical Mentor</p> </a> </div> </div> ';
+                                        } else if ($row['id'] == 89) {
+                                            echo '<p>Software Mentor</p> </a> </div> </div> ';
+                                        }
                                     } else {
                                         echo '<p>' . $teams[$i] . ' Lead</p> </a> </div> </div> ';
                                     }
@@ -80,7 +86,13 @@ print_navbar();
                                         echo '"/assets/images/default_profile.png?' . time() . '" width="150"';
                                     }
 
-                                    echo ' alt="service 1"> </div> <h3>' . $row['first_name'] . ' ' . $row['last_name'] . '</h3> <p>' . $teams[$i] . ' Member</p> </a> </div> </div> ';
+                                    echo ' alt="service 1"> </div> <h3>' . $row['first_name'] . ' ' . $row['last_name'] . '</h3> ';
+
+                                    if ($teams[$i] === 'First Year Mentorship') {
+                                        echo '<p>Mentee</p> </a> </div> </div> ';
+                                    } else {
+                                        echo '<p>' . $teams[$i] . ' Member</p> </a> </div> </div> ';
+                                    }
 
                                     $memberPerRow++;
                                     if ($memberPerRow == 3) {
