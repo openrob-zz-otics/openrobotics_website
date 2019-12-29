@@ -101,7 +101,7 @@ define("CLASS_ACTIVE", 'class="active"');
                     </ul>
                 </li>
                 <li <?php if (PAGE_TITLE == "contactus") echo CLASS_ACTIVE; ?>><a href="/contact/">Contact Us</a></li>
-                <li <?php if (PAGE_TITLE == "donate") echo CLASS_ACTIVE; ?> style="padding-top: 12px;"><a href="<?php echo $GLOBALS['donate_link']; ?>"><button class="btn btn-lg btn-or">Donate</button></a></li>
+                <li <?php if (PAGE_TITLE == "donate") echo CLASS_ACTIVE; ?> style="padding-top: 12px;"><a href="<?php echo $GLOBALS['donate_link']; ?>"><button class="btn btn-primary btn-lg">Donate</button></a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->

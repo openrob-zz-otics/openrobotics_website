@@ -203,16 +203,6 @@ th {
   font-family: "klinic-slab-book";
 }
 
-.btn-or {
-  background-color: #bf1e2e;
-  border-color: #731e1e;
-  color: #fff;
-}
-
-.btn-or:hover {
-  color: #fff;
-}
-
 .section {
   padding-bottom: 50px;
 }
@@ -339,4 +329,8 @@ a:hover {
 
 #logo:hover {
   transform: scale(1.25);
+}
+
+.btn-custom {
+  top: 20px;
 }

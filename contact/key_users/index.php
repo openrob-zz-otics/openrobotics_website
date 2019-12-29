@@ -30,7 +30,7 @@ print_navbar();
                         // This is how we will divide the lead section 
                         $leadSectionDivision = 12 / ($leadCount + 1);
 
-                        echo '<div class="lead"> <!-- Start title section --> <div class="row-fluid"> <div class="title span' . $leadSectionDivision . '"> ';
+                        echo '<div class="lead"> <!-- Start title section --> <div class="row"> <div class="title col-md-' . $leadSectionDivision . '"> ';
 
                         // Query the team description
                         $query2 = "SELECT * FROM `teams` WHERE `team_name`='" . $teams[$i] . "';";
@@ -45,7 +45,7 @@ print_navbar();
                             while ($row = $result->fetch_assoc()) {
                                 if ($leadCount > 0) {
                                     $leadCount--;
-                                    echo '<div class="span' . $leadSectionDivision . '"> <div class="centered service"> <a href="/contact/user?id=' . $row['id'] . '"> <div class="circle-border zoom-in"> <img class="img-circle" src=';
+                                    echo '<div class="col-md-' . $leadSectionDivision . '"> <div class="centered service"> <a href="/contact/user?id=' . $row['id'] . '"> <div class="circle-border zoom-in"> <img class="img-circle" src=';
 
                                     // Get the profile picture
                                     if (file_exists('../../upload_content/user_images/' . $row['id'] . '.png')) {
@@ -77,9 +77,9 @@ print_navbar();
                                     }
                                 } else {
                                     if ($memberPerRow == 0) {
-                                        echo '<div class="row-fluid">';
+                                        echo '<div class="row">';
                                     }
-                                    echo '<div class="span4"> <div class="centered service"> <a href="/contact/user?id=' . $row['id'] . '"> <div class="circle-border zoom-in"> <img class="img-circle" src=';
+                                    echo '<div class="col-md-4"> <div class="centered service"> <a href="/contact/user?id=' . $row['id'] . '"> <div class="circle-border zoom-in"> <img class="img-circle" src=';
 
                                     // Get the profile picture
                                     if (file_exists('../../upload_content/user_images/' . $row['id'] . '.png')) {
