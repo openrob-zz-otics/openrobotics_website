@@ -360,24 +360,3 @@ a:hover {
   border-radius: 125px/12px;
   box-shadow: 0 0 8px black;
 }
-
-.h-divider .separator {
-  width: 70px;
-  height: 70px;
-  position: absolute;
-  bottom: 100%;
-  margin-bottom: -35px;
-  left: 50%;
-  margin-left: -25px;
-  border-radius: 100%;
-  box-shadow: 0 2px 4px #999;
-  background: white;
-}
-
-.h-divider img {
-  position: absolute;
-  margin: 4px;
-  max-width: 60px;
-  border-radius: 100%;
-  border: 1px dashed #aaa;
-}
