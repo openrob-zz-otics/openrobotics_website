@@ -109,7 +109,7 @@ define("CLASS_ACTIVE", 'class="active"');
 
         <div class="nav-center hidden-xs">
             <a href="/" title="Home">
-                <img src="/assets/images/logo.png" class="img" id="logo" width="100" text="home">
+                <img src="/assets/images/logo.png" class="img" id="logo" width="120" text="home">
             </a>
         </div>
     </div>
