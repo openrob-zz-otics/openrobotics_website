@@ -7,6 +7,12 @@ define("CLASS_ACTIVE", 'class="active"');
 <div id="nav_container" class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="line hidden-xs" id="left_line" style="display:none;position: absolute; transform: rotate(0deg); width: 400px; top: 120px; left: 10px;"></div>
 
+    <div class="hidden-xs">
+        <a href="/" title="Home">
+            <img src="/assets/images/logo.png" class="img" id="logo" width="130" text="home" style="position: absolute;top: 50px; left:410px;">
+        </a>
+    </div>
+
     <div class="line hidden-xs" id="right_line" style="display:none;position: absolute; transform: rotate(0deg); width: 400px; top: 120px; left: 550px;"></div>
 
     <div class="container navbar-inner navbar-full" id="cred_navbar">
@@ -105,13 +111,6 @@ define("CLASS_ACTIVE", 'class="active"');
             </ul>
         </div>
         <!--/.nav-collapse -->
-
-
-        <div class="nav-center hidden-xs">
-            <a href="/" title="Home">
-                <img src="/assets/images/logo.png" class="img" id="logo" width="120" text="home">
-            </a>
-        </div>
     </div>
 </div>
 

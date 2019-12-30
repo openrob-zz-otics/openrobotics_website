@@ -30,7 +30,7 @@ print_navbar();
                         // This is how we will divide the lead section
                         $leadSectionDivision = ($leadCount >= 3) ? 12 : 12 - ($leadCount * 3);
 
-                        echo '<div class="lead"> <!-- Start title section --> <div class="row"> <div class="title col-md-' . $leadSectionDivision . '"> ';
+                        echo '<div class="lead"> <!-- Start title section --> <div class="row mtt-content"> <div class="title col-md-' . $leadSectionDivision . '"> ';
 
                         // Query the team description
                         $query2 = "SELECT * FROM `teams` WHERE `team_name`='" . $teams[$i] . "';";
@@ -40,7 +40,7 @@ print_navbar();
                         }
 
                         if ($leadCount >= 3) {
-                            echo '</div><div class="row">';
+                            echo '</div><div class="row mtt-content">';
                         }
 
                         $leadPerRow = 0;
@@ -78,7 +78,7 @@ print_navbar();
                                     }
 
                                     if ($leadPerRow == 3) {
-                                        echo '</div><div class="row">';
+                                        echo '</div><div class="row mtt-content">';
                                         $leadPerRow = 0;
                                     }
                                     if ($leadCount == 0) {
@@ -88,7 +88,7 @@ print_navbar();
                                     }
                                 } else {
                                     if ($memberPerRow == 0) {
-                                        echo '<div class="row">';
+                                        echo '<div class="row mtt-content">';
                                     }
                                     echo '<div class="col-md-3"> <div class="centered service"> <a href="/contact/user?id=' . $row['id'] . '"> <div class="circle-border zoom-in"> <img class="img-circle" src=';
 

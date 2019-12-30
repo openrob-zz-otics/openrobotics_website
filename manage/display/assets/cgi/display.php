@@ -133,5 +133,3 @@
 		unlink("../../../../assets/images/carousel/$val");
 		echo json_encode($return);
 	}
-
-?>
