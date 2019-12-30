@@ -119,7 +119,7 @@ print_navbar();
                                 $memberPerRow = 0;
                             }
                             echo '</div>';
-                            echo '<div class="h-divider"> <div class="shadow"></div> <div class="separator"><img src="/assets/images/separator.png" /></div> </div>';
+                            echo '<div class="h-divider"> <div class="shadow"> </div> </div>';
                         }
                     }
                 }
