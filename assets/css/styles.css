@@ -163,15 +163,6 @@ div.line {
   font-style: normal;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "klinic-slab-book";
-}
-
 @font-face {
   font-family: "proxima-nova";
   src: url("/assets/fonts/ProximaNovaRegular.svg") format("svg"),
@@ -186,6 +177,15 @@ h6 {
     url("/assets/fonts/ProximaNovaRegularItalic.otf") format("opentype");
   font-weight: normal;
   font-style: italic;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "proxima-nova";
 }
 
 body {
@@ -206,7 +206,7 @@ th {
 }
 
 .section .title h1 {
-  font-weight: normal;
+  font-weight: bolder;
   margin-bottom: 20px;
   padding: 0;
 }
@@ -310,6 +310,26 @@ th {
   -khtml-border-radius: 500px;
   border: 3px solid #fff;
   border-radius: 50%;
+}
+
+.project-header img {
+  margin-left: 10%;
+  width: 80%;
+  height: 500px;
+}
+
+.project-content h1 {
+  font-weight: bolder;
+  text-align: center;
+}
+
+.project-content disp-content {
+  font-size: 18px;
+  text-align: justify;
+}
+
+.project-content p {
+  font-style: italic;
 }
 
 .zoom-in {

@@ -6,7 +6,7 @@ $(function() {
     // if (width > 1170)
     // 	width = 1170;
 
-    var height = width / 3;
+    var height = width / 1.9;
 
     //Apply the current dimensions
     $(".carousel_resize").width(width);

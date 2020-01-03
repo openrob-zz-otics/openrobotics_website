@@ -11,22 +11,21 @@
 	-->
 
 <div class="row mtt-content">
-    <div class="col-md-12">
+    <div class="col-md-12 project-header">
         <!-- print project name-->
-        <h1><?php echo $project_data['name']; ?></h1>
+        <?php
+        //(after checking it exists), show all images in the project related to this project
+        if (file_exists("../../upload_content/project_images/" . $project_id . "/")) {
+            $array = scandir("../../upload_content/project_images/" . $project_id . "/");
+            echo "<img class='img-responsive img-thumbnail' src='/upload_content/project_images/" . $project_id . "/header.png'>";
+        }
+        ?>;
     </div>
 </div>
 <div class="row mtt-content">
-    <div class="col-md-4">
+    <div class="col-md-12 project-content">
         <?php
-        //Print a list of contributors, using the data we got before, including project creator
-        echo "<h4>Contributors:</h4><ul class='list'>";
-
-        for ($i = 0; $i < count($first_name_array); $i++) {
-            echo "<li><a href='/contact/user?id=" . $contributor_ids[$i] . "'>";
-            echo $first_name_array[$i] . ' ' . $last_name_array[$i] . "</a></li>";
-        }
-        echo "</ul>";
+        echo "<h1>" . $project_data['name'] . "</h1>";
 
         //display project start end date						
         echo "<p>Started: " . $project_data['start_time'] . "<br />";
@@ -36,28 +35,15 @@
             echo "Ongoing project</p><hr>";
         }
 
-        //display description
-        echo "<span class='disp-content'>" . $project_data['description'] . "</span>";
+        echo "<span class='disp-content'>" . $project_data['description'] . "</span><br><br>";
 
-        //start second column
-        echo '</div><div class="col-md-8">';
+        echo "<p>Contributors:</p><ul class='list'>";
 
-
-        //(after checking it exists), show all images in the project related to this project
-        if (file_exists("../../upload_content/project_images/" . $project_id . "/")) {
-            $array = scandir("../../upload_content/project_images/" . $project_id . "/");
-            foreach ($array as $val) {
-                //don't display main picture if set so				
-                if ($val[0] == '0' && $project_data['hide_main_picture'])
-                    continue;
-                $var = explode('.', $val);
-                $ext = strtolower(array_pop($var));
-                if (in_array($ext, $acceptable_image_extensions)) {
-
-                    echo "<img class='img-responsive img-thumbnail' src='/upload_content/project_images/" . $project_id . "/$val'>";
-                }
-            }
+        for ($i = 0; $i < count($first_name_array); $i++) {
+            echo "<li><a href='/contact/user?id=" . $contributor_ids[$i] . "'>";
+            echo $first_name_array[$i] . ' ' . $last_name_array[$i] . "</a></li>";
         }
+        echo "</ul>";
         ?>
     </div>
 </div>
