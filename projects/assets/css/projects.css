@@ -105,11 +105,14 @@
 }
 
 .carousel-title {
-  left: 50px;
+  margin: auto;
   bottom: 50px;
-  width: 250px;
   height: 60px;
   padding-top: 0px;
   background-color: #000;
+  max-width: 300px;
+}
+
+.carousel-title a {
   color: white;
 }
