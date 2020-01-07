@@ -7,18 +7,6 @@ print_header($page_name, false);
 print_navbar();
 ?>
 <div class="container">
-    <!--<div class="row">		
-		<div class="col-lg-2"></div>
-		<div class="col-lg-8">
-			<h3>Here is some contact information:</h3>
-			
-			<p style="padding-left:25px;">
-				Some email, address, phone number? <br />
-				Goes here...
-			</p>
-		</div>
-		<div class="col-lg-2"></div>
-	</div>-->
 
     <?php
 
