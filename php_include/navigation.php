@@ -5,7 +5,7 @@ define("CLASS_ACTIVE", 'class="active"');
 
 <!-- Fixed navbar -->
 <div id="nav_container" class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="line hidden-xs" id="left_line" style="display:none;position: absolute; transform: rotate(0deg); width: 400px; top: 120px; left: 10px;"></div>
+    <div class="line hidden-xs" id="left_line" style="display:none;position: absolute; transform: rotate(0deg); width: 400px; top: 120px; left: 10px; z-index:1;"></div>
 
     <div class="hidden-xs">
         <a href="/" title="Home">
@@ -13,7 +13,7 @@ define("CLASS_ACTIVE", 'class="active"');
         </a>
     </div>
 
-    <div class="line hidden-xs" id="right_line" style="display:none;position: absolute; transform: rotate(0deg); width: 400px; top: 120px; left: 550px;"></div>
+    <div class="line hidden-xs" id="right_line" style="display:none;position: absolute; transform: rotate(0deg); width: 400px; top: 120px; left: 550px; z-index:1;"></div>
 
     <div class="container navbar-inner navbar-full" id="cred_navbar">
         <?php
@@ -92,21 +92,41 @@ define("CLASS_ACTIVE", 'class="active"');
         </div>
 
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li <?php if (PAGE_TITLE == "projects") echo CLASS_ACTIVE; ?>><a href="/projects/">Projects</a></li>
+            <ul class="nav navbar-nav navbar-nav-custom">
+                <?php if (PAGE_TITLE == "projects")
+                    echo '<li class="dropdown active"><a href="/projects/">Projects</span></a>';
+                else
+                    echo '<li class="dropdown"><a href="/projects/">Projects</span></a>';
+                ?>
+                <ul class="dropdown-menu" role="menu">
+                    <?php
+                    if ($db = get_db()) {
+                        $query = "SELECT * FROM `projects`;";
+                        if ($result = $db->query($query)) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo '<li><a class="heading-text" href="/projects/project?id=' . $row['id'] . '">' . $row['name'] . '</a></li>';
+                            }
+                        }
+                    }
+                    ?>
+                </ul>
+                <?php echo '</li>' ?>;
                 <li <?php if (PAGE_TITLE == "key_users") echo CLASS_ACTIVE; ?>><a href="/contact/key_users">Meet the Team</a></li>
                 <li <?php if (PAGE_TITLE == "recruitment") echo CLASS_ACTIVE; ?>><a href="/recruitment/">Recruitment</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a class='heading-text' href="/blog/">Blog</a></li>
-                        <li><a class='heading-text' href="/training/">Training</a></li>
-                        <li><a class='heading-text' href="/calendar/">Calendar</a></li>
-                    </ul>
-                </li>
-                <li <?php if (PAGE_TITLE == "contactus") echo CLASS_ACTIVE; ?>><a href="/contact/">Contact Us</a></li>
+                <?php if (PAGE_TITLE == "blog" || PAGE_TITLE == "training" || PAGE_TITLE == "calendar")
+                    echo '<li class="dropdown active"><a href="#">Resources</span></a>';
+                else
+                    echo '<li class="dropdown"><a href="#">Resources</span></a>';
+                ?>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a class='heading-text' href="/blog/">Blog</a></li>
+                    <li><a class='heading-text' href="/training/">Training</a></li>
+                    <li><a class='heading-text' href="/calendar/">Calendar</a></li>
+                </ul>
+                <?php echo '</li>' ?>;
+                <li <?php if (PAGE_TITLE == "contact") echo CLASS_ACTIVE; ?>><a href="/contact/">Contact Us</a></li>
                 <li <?php if (PAGE_TITLE == "donate") echo CLASS_ACTIVE; ?> style="padding-top: 12px;"><a href="<?php echo $GLOBALS['donate_link']; ?>"><button class="btn btn-primary btn-lg">Donate</button></a></li>
             </ul>
         </div>

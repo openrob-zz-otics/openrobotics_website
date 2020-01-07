@@ -83,18 +83,6 @@ $text_data = start_PageDisplayText($page_name);
 
     <hr>
 
-
-    <div class="row">
-        <div class="col-sm-12" style="text-align:center;">
-            <p style="font-size:19px;">
-                <?php echo get_PageDisplayText($text_data, "donate_text"); ?>
-            </p>
-            <a href="<?php echo $GLOBALS['donate_link']; ?>"><button class="btn btn-primary btn-lg">Donate Now</button></a>
-        </div>
-    </div>
-
-    <hr>
-
     <div class="row">
         <div class="col-sm-12">
             <p style="font-size:17px;text-align:center">
