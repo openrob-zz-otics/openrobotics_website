@@ -34,7 +34,7 @@
                         echo
                             '<div class="item carousel_resize ' . (!$i++ ? 'active' : '') . '">
                         <img src="../assets/images/carousel_projects/' . $val . '" class="carousel_resize">';
-                        echo '<div class="carousel-caption carousel-title"> <h3>' . $row['name'] . '</h3> </div>';
+                        echo '<div class="carousel-caption carousel-title"> <h3> <a href="/projects/project?id=' . $row['id'] . '">' . $row['name'] . '</a> </h3> </div>';
                         echo '</div>';
                     }
                 }
