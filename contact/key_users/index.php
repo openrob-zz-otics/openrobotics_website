@@ -30,7 +30,7 @@ print_navbar();
                         // This is how we will divide the lead section
                         $leadSectionDivision = ($leadCount >= 3) ? 12 : 12 - ($leadCount * 3);
 
-                        echo '<div class="lead"> <!-- Start title section --> <div class="row mtt-content"> <div class="title col-md-' . $leadSectionDivision . '"> ';
+                        echo '<div class="lead" id="' . $teams[$i] . '"> <!-- Start title section --> <div class="row mtt-content"> <div class="title col-md-' . $leadSectionDivision . '"> ';
 
                         // Query the team description
                         $query2 = "SELECT * FROM `teams` WHERE `team_name`='" . $teams[$i] . "';";

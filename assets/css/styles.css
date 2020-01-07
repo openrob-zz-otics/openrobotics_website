@@ -1,8 +1,12 @@
 /*
  * Global Style Sheet
  */
-
 /* Customize the Nav-Bar */
+html,
+body {
+  scroll-padding-top: 155px; /* height of sticky header */
+}
+
 @media (min-width: 768px) {
   .navbar {
     height: 155px;

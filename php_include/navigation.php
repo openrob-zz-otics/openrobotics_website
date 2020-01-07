@@ -81,16 +81,6 @@ define("CLASS_ACTIVE", 'class="active"');
         </ul>
     </div>
     <div class="container navbar-inner navbar-full">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand hidden-lg hidden-md hidden-sm" href="/"><img src="/assets/images/logo.png" class="img" id="logo_small">Open Robotics</a>
-        </div>
-
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-nav-custom">
                 <?php if (PAGE_TITLE == "projects")
@@ -110,8 +100,25 @@ define("CLASS_ACTIVE", 'class="active"');
                     }
                     ?>
                 </ul>
-                <?php echo '</li>' ?>;
-                <li <?php if (PAGE_TITLE == "key_users") echo CLASS_ACTIVE; ?>><a href="/contact/key_users">Meet the Team</a></li>
+                <?php echo '</li>' ?>
+                <?php if (PAGE_TITLE == "key_users")
+                    echo '<li class="dropdown active"><a href="/contact/key_users/">Meet the Team</span></a>';
+                else
+                    echo '<li class="dropdown"><a href="/contact/key_users/">Meet the Team</span></a>';
+                ?>
+                <ul class="dropdown-menu" role="menu">
+                    <?php
+                    if ($db = get_db()) {
+                        $query = "SELECT * FROM `teams`;";
+                        if ($result = $db->query($query)) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo '<li><a class="heading-text" href="#' . $row['team_name'] . '">' . $row['team_name'] . '</a></li>';
+                            }
+                        }
+                    }
+                    ?>
+                </ul>
+                <?php echo '</li>' ?>
                 <li <?php if (PAGE_TITLE == "recruitment") echo CLASS_ACTIVE; ?>><a href="/recruitment/">Recruitment</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -125,7 +132,7 @@ define("CLASS_ACTIVE", 'class="active"');
                     <li><a class='heading-text' href="/training/">Training</a></li>
                     <li><a class='heading-text' href="/calendar/">Calendar</a></li>
                 </ul>
-                <?php echo '</li>' ?>;
+                <?php echo '</li>' ?>
                 <li <?php if (PAGE_TITLE == "contact") echo CLASS_ACTIVE; ?>><a href="/contact/">Contact Us</a></li>
                 <li <?php if (PAGE_TITLE == "donate") echo CLASS_ACTIVE; ?> style="padding-top: 12px;"><a href="<?php echo $GLOBALS['donate_link']; ?>"><button class="btn btn-primary btn-lg">Donate</button></a></li>
             </ul>

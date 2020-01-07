@@ -19,7 +19,7 @@
             $array = scandir("../../upload_content/project_images/" . $project_id . "/");
             echo "<img class='img-responsive img-thumbnail' src='/upload_content/project_images/" . $project_id . "/header.png'>";
         }
-        ?>;
+        ?>
     </div>
 </div>
 <div class="row mtt-content">
