@@ -112,7 +112,7 @@ define("CLASS_ACTIVE", 'class="active"');
                         $query = "SELECT * FROM `teams`;";
                         if ($result = $db->query($query)) {
                             while ($row = $result->fetch_assoc()) {
-                                echo '<li><a class="heading-text" href="#' . $row['team_name'] . '">' . $row['team_name'] . '</a></li>';
+                                echo '<li><a class="heading-text" href="/contact/key_users/#' . $row['team_name'] . '">' . $row['team_name'] . '</a></li>';
                             }
                         }
                     }
