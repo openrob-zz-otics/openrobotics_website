@@ -45,6 +45,19 @@ body {
   font-family: "klinic-slab-book";
 }
 
+.navbar-nav-custom {
+  width: 34%;
+}
+
+.navbar-nav-custom-2 {
+  float: right;
+  width: 34%;
+}
+
+.navbar-nav-custom-2:last-child {
+  margin-right: -3%;
+}
+
 .navbar-brand {
   font-family: "klinic-slab-book";
 }
@@ -76,6 +89,10 @@ body {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-menu {
   display: block;
+}
+
+.tab {
+  width: 30%;
 }
 
 #logo {
