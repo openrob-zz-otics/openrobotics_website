@@ -31,13 +31,17 @@ body {
     max-width: none;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 100%) {
   .navbar-brand {
     padding-top: 5px;
   }
 
   #main_container {
     margin-top: 85px;
+  }
+
+  .right-override {
+    padding-top: 7px;
   }
 }
 
@@ -95,10 +99,6 @@ body {
   width: 30%;
 }
 
-#logo {
-  position: absolute;
-}
-
 #logo_small {
   width: 55px;
   padding-right: 15px;
@@ -128,12 +128,6 @@ body {
   margin-top: 0px;
 }
 
-@media (max-width: 767px) {
-  .right-override {
-    padding-top: 7px;
-  }
-}
-
 .text-error {
   color: #b94a48;
 }
@@ -144,7 +138,6 @@ body {
 
 .navbar-full {
   width: auto;
-  /* max-width: 1170px; */
 }
 
 .bg-danger {
