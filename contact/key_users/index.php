@@ -13,6 +13,7 @@ print_navbar();
             // List of teams
             $teams = array('Admin', 'ArtBot', 'First Year Mentorship', 'PianoBot', 'Robocup Arm', 'Robocup Drivetrain', 'Robocup Gripper', 'Robocup Software');
             for ($i = 0; $i < count($teams); $i++) {
+                echo '<div class="team-section">';
                 // Query each team, from team lead to team members
                 $query = "SELECT * FROM `users` JOIN `user_info` ON `users`.`id`=`user_info`.`id` JOIN `team_members` ON `users`.`id`=`team_members`.`id` WHERE `users`.`is_disabled`='0' AND `users`.`id` IN (SELECT DISTINCT `id` FROM `user_permissions` WHERE `in_contact_list`='1') AND `team_members`.`team_name`='" . $teams[$i] . "' ORDER BY `team_lead` DESC, `last_name` ASC;";
 
@@ -123,6 +124,7 @@ print_navbar();
                         }
                     }
                 }
+                echo '</div>';
             }
             echo '</div>';
         }
