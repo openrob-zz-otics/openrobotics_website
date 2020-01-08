@@ -120,10 +120,16 @@ define("CLASS_ACTIVE", 'class="active"');
                 </ul>
                 <?php echo '</li>' ?>
                 <?php if (PAGE_TITLE == "recruitment")
-                    echo '<li class="tab active"><a href="/recruitment/">Recruitment</a></li>';
+                    echo '<li class="tab dropdown active"><a href="/recruitment/">Recruitment</span></a>';
                 else
-                    echo '<li class="tab"><a href="/recruitment/">Recruitment</a></li>';
+                    echo '<li class="tab dropdown"><a href="/recruitment/">Recruitment</span></a>';
                 ?>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a class='heading-text' href="/recruitment/recruit_form/?level=Beginner">Beginner</a></li>
+                    <li><a class='heading-text' href="/recruitment/recruit_form/?level=Intermediate">Intermediate</a></li>
+                    <li><a class='heading-text' href="/resources/calendar/?level=Advanced">Advanced</a></li>
+                </ul>
+                <?php echo '</li>' ?>
             </ul>
             <ul class="nav navbar-nav navbar-nav-custom-2">
                 <?php if (PAGE_TITLE == "blog" || PAGE_TITLE == "training" || PAGE_TITLE == "calendar")
