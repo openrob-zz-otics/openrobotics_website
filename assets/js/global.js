@@ -6,22 +6,6 @@ $(function() {
   $("#left_line").fadeIn("fast");
   $("#right_line").fadeIn("fast");
   $("#logo").fadeIn("fast");
-  $(window)
-    .resize(function() {
-      var width = $("#nav_container").width();
-      console.log("Nav-container width: " + width);
-      var dif = 0;
-      // if (width > 1170) {
-      // 	dif = width - 1170;
-      // 	width = 1170;
-      // }
-      $("#left_line").width(width / 2 - 75);
-      $("#right_line").width(width / 2 - 75);
-      $("#left_line").css("left", 10 + dif / 2);
-      $("#logo").css("left", width / 2 - 65);
-      $("#right_line").css("left", (dif + width) / 2 + 65);
-    })
-    .trigger("resize");
 
   //poppup on main page for new (non-cookied) viewers
   $("#nav_container").popover({
@@ -39,3 +23,16 @@ $(function() {
     $("div[class~='popover']").css("position", "fixed");
   });
 });
+
+$(window)
+  .resize(function() {
+    var width = $("#nav_container").width();
+    console.log("Nav-container width: " + width);
+    var dif = 0;
+    $("#left_line").width(width / 2 - 75);
+    $("#right_line").width(width / 2 - 75);
+    $("#left_line").css("left", 10 + dif / 2);
+    $("#logo").css("left", width / 2 - 65);
+    $("#right_line").css("left", (dif + width) / 2 + 65);
+  })
+  .trigger("resize");
