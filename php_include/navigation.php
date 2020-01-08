@@ -109,7 +109,7 @@ define("CLASS_ACTIVE", 'class="active"');
                 <ul class="dropdown-menu" role="menu">
                     <?php
                     if ($db = get_db()) {
-                        $query = "SELECT * FROM `teams`;";
+                        $query = "SELECT * FROM `teams` ORDER BY `team_name`;";
                         if ($result = $db->query($query)) {
                             while ($row = $result->fetch_assoc()) {
                                 echo '<li><a class="heading-text" href="/contact/key_users/#' . $row['team_name'] . '">' . $row['team_name'] . '</a></li>';
@@ -127,14 +127,14 @@ define("CLASS_ACTIVE", 'class="active"');
             </ul>
             <ul class="nav navbar-nav navbar-nav-custom-2">
                 <?php if (PAGE_TITLE == "blog" || PAGE_TITLE == "training" || PAGE_TITLE == "calendar")
-                    echo '<li class="tab dropdown active"><a href="#">Resources</span></a>';
+                    echo '<li class="tab dropdown active"><a href="/resources/">Resources</span></a>';
                 else
-                    echo '<li class="tab dropdown"><a href="#">Resources</span></a>';
+                    echo '<li class="tab dropdown"><a href="/resources/">Resources</span></a>';
                 ?>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a class='heading-text' href="/blog/">Blog</a></li>
-                    <li><a class='heading-text' href="/training/">Training</a></li>
-                    <li><a class='heading-text' href="/calendar/">Calendar</a></li>
+                    <li><a class='heading-text' href="/resources/blog/">Blog</a></li>
+                    <li><a class='heading-text' href="/resources/training/">Training</a></li>
+                    <li><a class='heading-text' href="/resources/calendar/">Calendar</a></li>
                 </ul>
                 <?php echo '</li>' ?>
                 <?php if (PAGE_TITLE == "contact")

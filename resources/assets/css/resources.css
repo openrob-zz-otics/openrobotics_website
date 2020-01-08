@@ -1,6 +1,10 @@
+.services {
+  margin-top: 50px;
+}
+
 .services .service-item {
   background-color: #1f3646;
-  height: 500px;
+  height: 400px;
   color: #fff;
   padding: 60px 30px 20px 30px;
   text-align: center;
@@ -20,11 +24,6 @@
   text-align: justify;
 }
 
-.service-item .btn-custom {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .service-item .service-icon {
   margin: 0 auto;
   background-repeat: no-repeat;
@@ -35,19 +34,19 @@
 }
 
 .first-service .service-icon {
-  background-image: url(../images/wrench1-1.png);
+  background-image: url(../images/blog1.png);
   background-size: cover;
   transition: all 0.5s;
 }
 
 .second-service .service-icon {
-  background-image: url(../images/wrench2-1.png);
+  background-image: url(../images/training1.png);
   background-size: cover;
   transition: all 0.5s;
 }
 
 .third-service .service-icon {
-  background-image: url(../images/wrench3-1.png);
+  background-image: url(../images/calendar1.png);
   background-size: cover;
   transition: all 0.5s;
 }
@@ -58,16 +57,16 @@
 }
 
 .first-service:hover .service-icon {
-  background-image: url(../images/wrench1-0.png);
+  background-image: url(../images/blog0.png);
   background-size: cover;
 }
 
 .second-service:hover .service-icon {
-  background-image: url(../images/wrench2-0.png);
+  background-image: url(../images/training0.png);
   background-size: cover;
 }
 
 .third-service:hover .service-icon {
-  background-image: url(../images/wrench3-0.png);
+  background-image: url(../images/calendar0.png);
   background-size: cover;
 }
