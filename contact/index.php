@@ -55,7 +55,7 @@ print_navbar();
 
 
     <div class="row" id="form_control" <?php if (@$message_sent) echo 'style="display:none;"'; ?>>
-        <div class="col-sm-6">
+        <div class="mtt-content">
             <h3>Contact Form</h3>
             <?php
             if (isset($errors)) {
@@ -86,7 +86,7 @@ print_navbar();
             </form>
         </div>
 
-        <div class="col-sm-6" style="text-align:left;">
+        <div class="mtt-content" style="text-align:left;">
             <h3></h3><!-- lazy padding -->
 
             <p style="font-size:19px;">
