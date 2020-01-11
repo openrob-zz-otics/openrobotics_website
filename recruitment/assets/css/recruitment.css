@@ -1,6 +1,11 @@
+.services {
+  margin-left: 14%;
+  margin-right: 14%;
+}
+
 .services .service-item {
-  background-color: #1f3646;
-  height: 500px;
+  background-color: #06589b;
+  height: 600px;
   color: #fff;
   padding: 60px 30px 20px 30px;
   text-align: center;
@@ -69,6 +74,6 @@
 
 .btn-custom {
   position: absolute;
-  left: 240px;
-  bottom: 70px;
+  left: 40%;
+  bottom: 10%;
 }
