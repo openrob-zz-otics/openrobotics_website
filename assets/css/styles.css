@@ -27,6 +27,8 @@ body {
   }
 
   .container {
+    padding-left: 0px;
+    padding-right: 0px;
     width: 100%;
     max-width: none;
   }
@@ -282,7 +284,6 @@ th {
   background-color: lightslategray;
   color: white;
   width: 100%;
-  box-shadow: 10px 10px 5px grey;
 }
 
 .lead .title h2 {
