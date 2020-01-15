@@ -101,6 +101,11 @@ body {
   width: 30%;
 }
 
+.span_content {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
 #logo_small {
   width: 55px;
   padding-right: 15px;
