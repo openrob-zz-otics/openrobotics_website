@@ -27,7 +27,7 @@ $text_data = start_PageDisplayText($page_name);
 <div class="container">
 
     <!-- Three columns of text below the carousel -->
-    <div class="row span_content">
+    <div class="row span_content hideme">
         <div class="col-sm-4">
             <center><img class="img-circle" src="/assets/images/icon1.png" style="width: 140px; height: 140px;"></center>
             <!--
@@ -59,7 +59,7 @@ $text_data = start_PageDisplayText($page_name);
     <!-- START THE FEATURETTES -->
     <hr class="featurette-divider">
 
-    <div class="row featurette span_content">
+    <div class="row span_content hideme">
         <div class="col-sm-7">
             <h2 class="featurette-heading"></span><?php echo get_PageDisplayText($text_data, "first_heading"); ?></h2>
             <p class="lead"><?php echo get_PageDisplayText($text_data, "first_par"); ?></p>
@@ -71,7 +71,7 @@ $text_data = start_PageDisplayText($page_name);
 
     <hr class="featurette-divider">
 
-    <div class="row featurette span_content">
+    <div class="row featurette span_content hideme">
         <div class="col-sm-5">
             <img class="img-responsive" src="/assets/images/fig3.jpg">
         </div>
@@ -80,21 +80,7 @@ $text_data = start_PageDisplayText($page_name);
             <p class="lead"><?php echo get_PageDisplayText($text_data, "second_par"); ?></p>
         </div>
     </div>
-
-    <hr>
-
-    <div class="row">
-        <div class="col-sm-12">
-            <p style="font-size:17px;text-align:center">
-                UBC Open Robotics is currently seeking someone to administrate and further develop this site. Click <a href="/webdev">here</a> for more information.
-            </p>
-        </div>
-    </div>
-
-
     <!-- /END THE FEATURETTES -->
-
-
 
     <?php
     print_footnote();
