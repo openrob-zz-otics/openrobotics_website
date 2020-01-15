@@ -27,7 +27,7 @@ $text_data = start_PageDisplayText($page_name);
 <div class="container">
 
     <!-- Three columns of text below the carousel -->
-    <div class="row">
+    <div class="row span_content">
         <div class="col-sm-4">
             <center><img class="img-circle" src="/assets/images/icon1.png" style="width: 140px; height: 140px;"></center>
             <!--
@@ -59,7 +59,7 @@ $text_data = start_PageDisplayText($page_name);
     <!-- START THE FEATURETTES -->
     <hr class="featurette-divider">
 
-    <div class="row featurette">
+    <div class="row featurette span_content">
         <div class="col-sm-7">
             <h2 class="featurette-heading"></span><?php echo get_PageDisplayText($text_data, "first_heading"); ?></h2>
             <p class="lead"><?php echo get_PageDisplayText($text_data, "first_par"); ?></p>
@@ -71,7 +71,7 @@ $text_data = start_PageDisplayText($page_name);
 
     <hr class="featurette-divider">
 
-    <div class="row featurette">
+    <div class="row featurette span_content">
         <div class="col-sm-5">
             <img class="img-responsive" src="/assets/images/fig3.jpg">
         </div>
