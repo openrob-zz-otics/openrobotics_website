@@ -346,6 +346,10 @@ th {
   margin: auto;
 }
 
+.span_content {
+  padding-left: 30px;
+}
+
 .circle-border {
   display: inline-block;
   width: 200px;
@@ -433,7 +437,7 @@ a:hover {
 
 .footnote {
   height: 300px;
-  background-color: lightslategrey;
+  background-color: gray;
 }
 
 .footnote-content {
