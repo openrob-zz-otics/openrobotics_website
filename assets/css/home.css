@@ -78,10 +78,6 @@
   filter: alpha(opacity=70); /* For IE8 and earlier */
 }
 
-.span_content {
-  padding-left: 30px;
-}
-
 /* Carousel base class */
 .carousel {
   height: 1296px;
