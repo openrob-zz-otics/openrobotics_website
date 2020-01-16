@@ -106,6 +106,7 @@ print_navbar();
             ?>
         </div>
     </div>
+    <br /><br />
     <?php
     print_footnote();
     ?>
