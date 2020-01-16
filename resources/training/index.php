@@ -6,8 +6,8 @@ print_header($page_name, false);
 print_navbar();
 ?>
 <div class="container">
-    <div class="row">
-        <div class="col-lg-8 span-content" id="list_container">
+    <div class="row span-content">
+        <div class="col-lg-8" id="list_container">
             <?php
             $category = isset($_GET['training_category']) ? intval($_GET['training_category']) : 0;
             $limit = 5;
