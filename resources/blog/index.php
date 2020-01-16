@@ -6,8 +6,8 @@ print_header($page_name, false);
 print_navbar();
 ?>
 <div class="container">
-    <div class="row">
-        <div class="col-sm-8 span-content">
+    <div class="row span-content">
+        <div class="col-sm-8">
             <?php
 
             //the limit controls how many posts are displayed on one page

@@ -66,6 +66,10 @@ $text_data = start_PageDisplayText($page_name);
 
     <hr class="featurette-divider">
 
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10414.094123168288!2d-123.2521888!3d49.2664763!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1877a1f004691be!2sHennings%20Building!5e0!3m2!1sen!2sca!4v1579148162771!5m2!1sen!2sca" width="100%" height="450" frameborder="0" allowfullscreen=""></iframe>
+
+    <hr class="featurette-divider">
+
     <div class="row span_content hideme">
         <div class="col-sm-12">
             <center>
