@@ -1,6 +1,9 @@
 /*
  * Global Style Sheet
  */
+
+@import url(//db.onlinewebfonts.com/c/e67c6c6b3acf2cb461458f21b234747a?family=FuturaPTW01-Demi);
+
 /* Customize the Nav-Bar */
 html,
 body {
@@ -227,13 +230,28 @@ div.line {
   font-style: italic;
 }
 
+@font-face {
+  font-family: "FuturaPTW01-Demi";
+  src: url("//db.onlinewebfonts.com/t/e67c6c6b3acf2cb461458f21b234747a.eot");
+  src: url("//db.onlinewebfonts.com/t/e67c6c6b3acf2cb461458f21b234747a.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/e67c6c6b3acf2cb461458f21b234747a.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/e67c6c6b3acf2cb461458f21b234747a.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/e67c6c6b3acf2cb461458f21b234747a.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/e67c6c6b3acf2cb461458f21b234747a.svg#FuturaPTW01-Demi")
+      format("svg");
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "proxima-nova";
+  font-family: "FuturaPTW01-Demi";
 }
 
 body {
