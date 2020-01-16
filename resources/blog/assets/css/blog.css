@@ -1,3 +1,7 @@
 h4.expand:hover {
-	cursor:pointer;
+  cursor: pointer;
+}
+
+.span-content {
+  padding-left: 50px;
 }
