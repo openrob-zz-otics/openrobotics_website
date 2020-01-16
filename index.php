@@ -22,39 +22,7 @@ include("php_include/carousel.php");
 $text_data = start_PageDisplayText($page_name);
 ?>
 
-
-
 <div class="container">
-
-    <!-- Three columns of text below the carousel -->
-    <div class="row span_content hideme">
-        <div class="col-sm-4">
-            <center><img class="img-circle" src="/assets/images/icon1.png" style="width: 140px; height: 140px;"></center>
-            <!--
-			<h2>@home</h2>
-			<p>We aim to complete our electromechanical platform by summer 2015, and compete at RoboCup<a href="http://www.robocupathome.org/">@home</a> 2016 in Germany.</p>
-			-->
-            <h2><?php echo get_PageDisplayText($text_data, "l_heading"); ?></h2>
-            <p>
-                <?php echo get_PageDisplayText($text_data, "l_par"); ?>
-            </p>
-            <p><a class="btn btn-default" href="/training/" role="buttons"><?php echo get_PageDisplayText($text_data, "l_button"); ?> &raquo;</a></p>
-            <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
-        </div><!-- /.col-lg-4 -->
-        <div class="col-sm-4">
-            <center><img class="img-circle" src="/assets/images/icon2.png" style="width: 140px; height: 140px;"></center>
-            <h2><?php echo get_PageDisplayText($text_data, "m_heading"); ?></h2>
-            <p><?php echo get_PageDisplayText($text_data, "m_par"); ?></p>
-            <p><a class="btn btn-default" href="/projects" role="button"><?php echo get_PageDisplayText($text_data, "m_button"); ?> &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-sm-4">
-            <center><img class="img-circle" src="/assets/images/icon3.png" style="width: 140px; height: 140px;"></center>
-            <h2><?php echo get_PageDisplayText($text_data, "r_heading"); ?></h2>
-            <p><?php echo get_PageDisplayText($text_data, "r_par"); ?></p>
-            <p><a class="btn btn-default" href="/recruitment" role="button"><?php echo get_PageDisplayText($text_data, "r_button"); ?> &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-
 
     <!-- START THE FEATURETTES -->
     <hr class="featurette-divider">
@@ -62,10 +30,11 @@ $text_data = start_PageDisplayText($page_name);
     <div class="row span_content hideme">
         <div class="col-sm-7">
             <h2 class="featurette-heading"></span><?php echo get_PageDisplayText($text_data, "first_heading"); ?></h2>
-            <p class="lead"><?php echo get_PageDisplayText($text_data, "first_par"); ?></p>
+            <p class="description"><?php echo get_PageDisplayText($text_data, "first_par"); ?></p>
+            <p><a class="btn btn-default" href="/contact/key_users/" role="buttons">Meet the Team</a></p>
         </div>
         <div class="col-sm-5">
-            <img class="featurette-image img-responsive" src="/assets/images/Arm.PNG">
+            <img class="featurette-image img-responsive" src="/assets/images/about.png">
         </div>
     </div>
 
@@ -73,11 +42,38 @@ $text_data = start_PageDisplayText($page_name);
 
     <div class="row featurette span_content hideme">
         <div class="col-sm-5">
-            <img class="img-responsive" src="/assets/images/fig3.jpg">
+            <img class="img-responsive" src="/assets/images/training.png">
         </div>
         <div class="col-sm-7">
             <h2 class="featurette-heading"><?php echo get_PageDisplayText($text_data, "second_heading"); ?></h2>
-            <p class="lead"><?php echo get_PageDisplayText($text_data, "second_par"); ?></p>
+            <p class="description"><?php echo get_PageDisplayText($text_data, "second_par"); ?></p>
+            <p><a class="btn btn-default" href="/resources/training/" role="buttons">Learn More</a></p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row span_content hideme">
+        <div class="col-sm-7">
+            <h2 class="featurette-heading"></span><?php echo get_PageDisplayText($text_data, "third_heading"); ?></h2>
+            <p class="description"><?php echo get_PageDisplayText($text_data, "third_par"); ?></p>
+            <p><a class="btn btn-default" href="/projects/" role="buttons">Learn More</a></p>
+        </div>
+        <div class="col-sm-5">
+            <img class="featurette-image img-responsive" src="/assets/images/projects.png">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row span_content hideme">
+        <div class="col-sm-12">
+            <center>
+                <p class="description">UBC OpenRobotics highly values inspiring and developing the next generation of engineers. If you are interested in Robotics, Engineering, or just trying something new, please don't hesitate to join our team!</p>
+            </center>
+            <center>
+                <p><a class="btn btn-default" href="/recruitment" role="button">Join the team</a></p>
+            </center>
         </div>
     </div>
     <!-- /END THE FEATURETTES -->
@@ -87,7 +83,6 @@ $text_data = start_PageDisplayText($page_name);
     ?>
 
 </div><!-- /.container -->
-
 
 <?php
 //print the footer	
