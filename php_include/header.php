@@ -32,6 +32,9 @@
     <!-- include unique page css -->
     <link rel="stylesheet" href="assets/css/<?php echo PAGE_TITLE; ?>.css">
 
+    <!-- font -->
+    <link href="//db.onlinewebfonts.com/c/e67c6c6b3acf2cb461458f21b234747a?family=FuturaPTW01-Demi" rel="stylesheet" type="text/css" />
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
 
