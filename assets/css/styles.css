@@ -430,3 +430,16 @@ a:hover {
   border-radius: 125px/12px;
   box-shadow: 0 0 8px black;
 }
+
+.footnote {
+  height: 300px;
+  background-color: lightslategrey;
+}
+
+.footnote-content {
+  padding-top: 100px;
+}
+
+.footnote-content p {
+  color: white;
+}
