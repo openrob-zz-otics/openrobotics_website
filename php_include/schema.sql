@@ -280,6 +280,8 @@ INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `
 INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'first_par', 'First Paragraph', 'Provide your skills to a current team. Aid in CAD, manufacturing, electrical design and programming.');
 INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'second_heading', 'Second Heading', 'Let your idea <span class="text-muted">come to life.</span>');
 INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'second_par', 'Second Paragraph', 'Have an idea? We can help you find the resources and pair you with more people like yourself.');
+INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'third_heading', 'Third Heading', 'Let your idea <span class="text-muted">come to life.</span>');
+INSERT INTO `display_text` (`text_location`, `text_name`, `text_display_name`, `text_content`) VALUES ('2', 'third_par', 'Third Paragraph', 'Have an idea? We can help you find the resources and pair you with more people like yourself.');
 
 #Add a default user
 INSERT INTO `users` VALUES ('1', 'intelligence@openrobotics.ca', '6c527bf7ce0349c332f828ec79fa1eac', '3000-01-01 00:00:00', '0', '0');
