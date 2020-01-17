@@ -137,7 +137,7 @@ body {
 
 .right-override {
   float: right !important;
-  margin-top: 0px;
+  margin-top: -7px;
 }
 
 .text-error {
@@ -255,7 +255,11 @@ h6 {
 }
 
 body {
-  font-family: "proxima-nova";
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  line-height: 2em;
 }
 
 .heading-text {

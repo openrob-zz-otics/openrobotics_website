@@ -5,7 +5,7 @@
 
 .services .service-item {
   background-color: #06589b;
-  height: 600px;
+  height: 800px;
   color: #fff;
   padding: 60px 30px 20px 30px;
   text-align: center;
@@ -75,5 +75,5 @@
 .btn-custom {
   position: absolute;
   left: 40%;
-  bottom: 10%;
+  bottom: 5%;
 }

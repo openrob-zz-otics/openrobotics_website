@@ -98,6 +98,8 @@ print_navbar();
         </div>
     </div>
 
+    <br />
+
     <?php
     print_footnote();
     ?>
