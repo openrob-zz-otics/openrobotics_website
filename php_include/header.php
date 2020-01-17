@@ -34,6 +34,7 @@
 
     <!-- font -->
     <link href="//db.onlinewebfonts.com/c/e67c6c6b3acf2cb461458f21b234747a?family=FuturaPTW01-Demi" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>

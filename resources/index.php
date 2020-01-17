@@ -34,7 +34,7 @@ print_navbar();
             </div>
         </div>
     </section>
-    <br /><br /><br />
+    <br />
     <?php
     print_footnote();
     ?>
