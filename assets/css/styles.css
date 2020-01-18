@@ -117,7 +117,7 @@ body {
 }
 
 #cred_navbar {
-  padding-left: 5px;
+  padding-left: 15px;
   height: 35px;
   background-color: #3d3d3d;
 }
@@ -311,7 +311,7 @@ th {
 }
 
 .lead {
-  background-color: lightslategray;
+  background-image: url("../images/background.png");
   color: white;
   width: 100%;
 }
