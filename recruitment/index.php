@@ -15,7 +15,6 @@ print_navbar();
             We'll post suggestions soon!</span></p>
     </div>
     <br />
-    <br />
     <section class="services">
         <div class="row">
             <div class="mtt-content">
