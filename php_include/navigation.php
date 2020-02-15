@@ -74,8 +74,9 @@ define("CLASS_ACTIVE", 'class="active"');
                 echo '<li class="nav_float_fix heading-text">Welcome, ' . $GLOBALS['user_first_name'] . '</li>'
                     . '<li class="nav_float_fix"><a class="nav_float_fix" href="/logout">Logout</a></li>';
             } else {
-                echo '<li class="nav_float_fix"><a class="nav_float_fix" href="/login">Login</a></li>'
-                    . '<li class="nav_float_fix"><a class="nav_float_fix" href="/register">Sign-up</a></li>';
+                echo '<li class="nav_float_fix"><a class="nav_float_fix" href="/login">Login</a></li>';
+                    # TO-DO: fix the sign-up button
+                    #. '<li class="nav_float_fix"><a class="nav_float_fix" href="/register">Sign-up</a></li>';
             }
             ?>
         </ul>

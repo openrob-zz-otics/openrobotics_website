@@ -40,27 +40,14 @@ $text_data = start_PageDisplayText($page_name);
 
     <hr class="featurette-divider">
 
-    <div class="row featurette span_content hideme">
-        <div class="col-sm-5">
-            <img class="img-responsive" src="/assets/images/training.png">
-        </div>
-        <div class="col-sm-7">
-            <h2 class="featurette-heading"><?php echo get_PageDisplayText($text_data, "second_heading"); ?></h2>
-            <p class="description"><?php echo get_PageDisplayText($text_data, "second_par"); ?></p>
-            <p><a class="btn btn-default" href="/resources/training/" role="buttons">Learn More</a></p>
-        </div>
-    </div>
-
-    <hr class="featurette-divider">
-
     <div class="row span_content hideme">
+        <div class="col-sm-5">
+            <img class="featurette-image img-responsive" src="/assets/images/projects.png">
+        </div>
         <div class="col-sm-7">
             <h2 class="featurette-heading"></span><?php echo get_PageDisplayText($text_data, "third_heading"); ?></h2>
             <p class="description"><?php echo get_PageDisplayText($text_data, "third_par"); ?></p>
             <p><a class="btn btn-default" href="/projects/" role="buttons">Learn More</a></p>
-        </div>
-        <div class="col-sm-5">
-            <img class="featurette-image img-responsive" src="/assets/images/projects.png">
         </div>
     </div>
 
