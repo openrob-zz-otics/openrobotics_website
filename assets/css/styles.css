@@ -7,7 +7,8 @@
 /* Customize the Nav-Bar */
 html,
 body {
-  scroll-padding-top: 155px; /* height of sticky header */
+  scroll-padding-top: 155px;
+  /* height of sticky header */
 }
 
 @media (min-width: 768px) {
@@ -15,11 +16,11 @@ body {
     height: 155px;
   }
 
-  .navbar-nav > li {
+  .navbar-nav>li {
     padding-top: 25px;
   }
 
-  .navbar-nav > li > a {
+  .navbar-nav>li>a {
     color: #000 !important;
     font-size: large;
     font-weight: bold;
@@ -39,6 +40,7 @@ body {
     width: 100%;
   }
 }
+
 @media (max-width: 100%) {
   .navbar-brand {
     padding-top: 5px;
@@ -53,7 +55,7 @@ body {
   }
 }
 
-.navbar-nav > li > a {
+.navbar-nav>li>a {
   font-family: "klinic-slab-book";
 }
 
@@ -122,7 +124,7 @@ body {
   background-color: #3d3d3d;
 }
 
-#cred_navbar > ul > li {
+#cred_navbar>ul>li {
   height: 35px;
   padding-top: 7px;
   padding-right: 15px;
@@ -130,7 +132,7 @@ body {
   font-size: initial !important;
 }
 
-#cred_navbar > ul > li > a {
+#cred_navbar>ul>li>a {
   padding-top: 0px;
   color: #fff !important;
   font-size: initial !important;
@@ -165,13 +167,13 @@ body {
   position: absolute;
 }
 
-#right_nav > ul > li {
+#right_nav>ul>li {
   padding-top: 7px;
   padding-right: 15px;
   color: #fff !important;
 }
 
-#right_nav > ul > li > a {
+#right_nav>ul>li>a {
   padding-top: 0px;
   padding-right: 15px;
   padding-left: 0px;
@@ -191,7 +193,7 @@ body {
   top: 35px;
 }
 
-#manage_dropdown_menu > li {
+#manage_dropdown_menu>li {
   padding-left: 10px;
 }
 
@@ -234,16 +236,11 @@ div.line {
 @font-face {
   font-family: "FuturaPTW01-Demi";
   src: url("//db.onlinewebfonts.com/t/e67c6c6b3acf2cb461458f21b234747a.eot");
-  src: url("//db.onlinewebfonts.com/t/e67c6c6b3acf2cb461458f21b234747a.eot?#iefix")
-      format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/e67c6c6b3acf2cb461458f21b234747a.woff2")
-      format("woff2"),
-    url("//db.onlinewebfonts.com/t/e67c6c6b3acf2cb461458f21b234747a.woff")
-      format("woff"),
-    url("//db.onlinewebfonts.com/t/e67c6c6b3acf2cb461458f21b234747a.ttf")
-      format("truetype"),
-    url("//db.onlinewebfonts.com/t/e67c6c6b3acf2cb461458f21b234747a.svg#FuturaPTW01-Demi")
-      format("svg");
+  src: url("//db.onlinewebfonts.com/t/e67c6c6b3acf2cb461458f21b234747a.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/e67c6c6b3acf2cb461458f21b234747a.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/e67c6c6b3acf2cb461458f21b234747a.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/e67c6c6b3acf2cb461458f21b234747a.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/e67c6c6b3acf2cb461458f21b234747a.svg#FuturaPTW01-Demi") format("svg");
 }
 
 h1,
@@ -289,7 +286,7 @@ th {
   margin-top: 30px;
 }
 
-.section .title > p {
+.section .title>p {
   text-align: justify;
   font-size: 18px;
   color: #fff;
