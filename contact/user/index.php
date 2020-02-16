@@ -17,7 +17,7 @@
 					if ($row = $result->fetch_assoc()) {
 						echo '<div class="row"><div class="col-sm-4"></div><div class="col-sm-8"><h3>'.$row['first_name'].' '.$row['middle_name'].' '.$row['last_name'].'</h3></div></div>';
 						echo '<div class="row">';
-						echo '<div class="col-sm-4">';
+						echo '<div class="col-sm-4" style="margin-left:50px">';
 						echo '	<img src=';
 						if (file_exists('../../upload_content/user_images/'.$row['id'].'.png')) {
 							echo '"/upload_content/user_images/'.$row['id'].'.png"';
