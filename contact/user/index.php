@@ -17,7 +17,7 @@
 					if ($row = $result->fetch_assoc()) {
 						echo '<div class="row"><div class="col-sm-4"></div><div class="col-sm-8"><h3>'.$row['first_name'].' '.$row['middle_name'].' '.$row['last_name'].'</h3></div></div>';
 						echo '<div class="row">';
-						echo '<div class="col-sm-4" style="margin-left:50px">';
+						echo '<div class="col-sm-4" style="padding-left:50px">';
 						echo '	<img src=';
 						if (file_exists('../../upload_content/user_images/'.$row['id'].'.png')) {
 							echo '"/upload_content/user_images/'.$row['id'].'.png"';
@@ -50,18 +50,6 @@
 							echo '<p><a href="'.$row['personal_site'].'">Personal Site</a></p>';
 						if ($row['bio']!="")
 							echo '<p>'.$row['bio'].'</p>';	
-
-						// echo '<h3>Badges:</h3>';
-						// echo '<div class="row">';
-						// $query = "SELECT `badge_id` FROM `user_badges` WHERE `user_id`='$id' AND `badge_id` IN (SELECT `id` FROM `badges` WHERE `visible`='1' AND `is_disabled`='0');";
-						// if ($result2 = $db->query($query)) {
-						// 	while ($row2 = $result2->fetch_assoc()) {
-						// 		echo '<div class="col-sm-2"><a href="/badge?id='.$row2['badge_id'].'">
-						// 		<img class="img-responsive" src="/upload_content/badge_images/small/'.$row2['badge_id'].'.png"></a></div>';
-						// 	}
-						// }
-						// echo '</div>';
-						//echo '<div class="col-sm-3"></div><div class="col-sm-3"></div><div class="col-sm-3"></div>';
 						echo '</div></div>';
 					} else {
 						echo '<h2>Invalid User ID</h2>';
