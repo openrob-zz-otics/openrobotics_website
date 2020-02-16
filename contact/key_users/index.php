@@ -14,8 +14,15 @@ print_navbar();
             $teams = array('Admin', 'ArtBot', 'First Year Mentorship', 'PianoBot', 'Robocup Arm', 'Robocup Drivetrain', 'Robocup Gripper', 'Robocup Software');
             for ($i = 0; $i < count($teams); $i++) {
                 echo '<div class="team-section">';
-                // Query each team, from team lead to team members
-                $query = "SELECT * FROM `users` JOIN `user_info` ON `users`.`id`=`user_info`.`id` JOIN `team_members` ON `users`.`id`=`team_members`.`id` WHERE `users`.`is_disabled`='0' AND `users`.`id` IN (SELECT DISTINCT `id` FROM `user_permissions` WHERE `in_contact_list`='1') AND `team_members`.`team_name`='" . $teams[$i] . "' ORDER BY `team_lead` DESC, `last_name` ASC;";
+                
+                // Admin team is represented according to seniority
+                if ($teams[i] === 'Admin') {
+                    $query = "SELECT * FROM `users` JOIN `user_info` ON `users`.`id`=`user_info`.`id` JOIN `team_members` ON `users`.`id`=`team_members`.`id` WHERE `users`.`is_disabled`='0' AND `users`.`id` IN (SELECT DISTINCT `id` FROM `user_permissions` WHERE `in_contact_list`='1') AND `team_members`.`team_name`='" . $teams[$i] . "' ORDER BY `team_lead` DESC, `id` ASC;";
+                }
+                else {
+                    // Query each team, from team lead to team members
+                    $query = "SELECT * FROM `users` JOIN `user_info` ON `users`.`id`=`user_info`.`id` JOIN `team_members` ON `users`.`id`=`team_members`.`id` WHERE `users`.`is_disabled`='0' AND `users`.`id` IN (SELECT DISTINCT `id` FROM `user_permissions` WHERE `in_contact_list`='1') AND `team_members`.`team_name`='" . $teams[$i] . "' ORDER BY `team_lead` DESC, `last_name` ASC;";
+                }
 
                 if ($result = $db->query($query)) {
                     if ($result->num_rows > 0) {
@@ -101,8 +108,26 @@ print_navbar();
                                     }
 
                                     echo ' alt="service 1"> </div> <h3>' . $row['first_name'] . ' ' . $row['last_name'] . '</h3> ';
-
-                                    if ($teams[$i] === 'First Year Mentorship') {
+                                    
+                                    # Admin and First Year Mentorshop members have their own unique titles 
+                                    if ($teams[$i] === 'Admin') {
+                                        if ($row['id'] == 20) {
+                                            echo '<p>Web Development Lead</p> </a> </div> </div>';
+                                        }
+                                        else if ($row['id'] == 64) {
+                                            echo '<p>Finance Lead/Safety Officer</p> </a> </div> </div>';
+                                        }
+                                        else if ($row['id'] == 95 || $row['id'] == 96 || $row['id'] == 97) {
+                                            echo '<p>Finance Member</p> </a> </div> </div>';
+                                        }
+                                        else if ($row['id'] == 98) {
+                                            echo '<p>Graphic Designer</p> </a> </div> </div>';
+                                        }
+                                        else if ($row['id'] == 99 || $row['id'] == 100) {
+                                            echo '<p>Web Developer</p> </a> </div> </div>';
+                                        }
+                                    }
+                                    else if ($teams[$i] === 'First Year Mentorship') {
                                         echo '<p>Mentee</p> </a> </div> </div> ';
                                     } else {
                                         echo '<p>' . $teams[$i] . ' Member</p> </a> </div> </div> ';
