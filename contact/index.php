@@ -6,50 +6,19 @@ $page_name = "contact";
 print_header($page_name, false);
 print_navbar();
 ?>
+<head>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
 <div class="container">
 
     <?php
-
-    $recaptcha_enabled = true;
-    $public_key = "6LfNF_kSAAAAANXBwd3gJ7qqbJ1NLgRFx5jCi9Gz";
-    $private_key = "6LfNF_kSAAAAAIVGRvYWR7FX2SyLRZpi_lnkZMYf";
-    if (isset($_POST['submit'])) {
-
-        if ($recaptcha_enabled) {
-            $resp = recaptcha_check_answer(
-                $private_key,
-                $_SERVER["REMOTE_ADDR"],
-                $_POST["recaptcha_challenge_field"],
-                $_POST["recaptcha_response_field"]
-            );
-        }
         $email = @$_POST['email'];
         $name = @$_POST['name'];
         $message = @$_POST['message'];
 
-        if (!$recaptcha_enabled || @$resp->is_valid) {
-
-
-            myMailFrom("intelligence@openrobotics.ca", "[Website] Message From $name", $message, $email);
-            myMail($email, "Your recent message to Open Robotics", "Hello $name,\nWe recently received a message from you. We will attempt to reply to as soon as we can. Thank you for your patience.\n\nYour message was as follows:\n$message");
-
-            if ($db = get_db()) {
-                $query = "INSERT INTO `contact_form_messages` (`email`, `name`, `message`) VALUES ('$email', '$name', '$message');";
-                $db->query($query);
-                $db->close();
-            }
-
-            $message_sent = true;
-
-            if (@$message_sent) {
-                echo '<div class="row"><div class="col-sm-3"></div><div class="col-sm-6"><h3>Message sent</h3></div><div class="col-sm-3"></div></div>';
-            }
-        } else {
-            if ($recaptcha_enabled) {
-                $errors = "Incorrect CAPTCHA";
-            }
+        if (isset($_POST['submit'])) {
+            mail("amirbarkam6@gmail.com", "Email from: ".$email, $message);
         }
-    }
 
     ?>
 
@@ -77,11 +46,7 @@ print_navbar();
                     <label for="form_message">Message</label>
                     <textarea class="form-control" rows="10" name="message" id="form_message"></textarea>
                 </div>
-                <?php
-                if ($recaptcha_enabled) {
-                    echo recaptcha_get_html($public_key, NULL, true);
-                }
-                ?><br />
+                <br />
                 <button class="btn btn-default btn-disabled" name="submit" id="form_submit" disabled>Submit</button>
             </form>
         </div>
