@@ -123,7 +123,7 @@ print_navbar();
                                         else if ($row['id'] == 98) {
                                             echo '<p>Graphic Designer</p> </a> </div> </div>';
                                         }
-                                        else if ($row['id'] == 99 || $row['id'] == 100) {
+                                        else if ($row['id'] == 6 || $row['id'] == 100) {
                                             echo '<p>Web Developer</p> </a> </div> </div>';
                                         }
                                     }
