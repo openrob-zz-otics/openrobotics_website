@@ -18,7 +18,7 @@ print_navbar();
                 
                 // Admin team is represented according to seniority
                 if ($teams[$i] === 'Admin') {
-                    $query = "SELECT * FROM `users` JOIN `user_info` ON `users`.`id`=`user_info`.`id` JOIN `team_members` ON `users`.`id`=`team_members`.`id` WHERE `users`.`is_disabled`='0' AND `users`.`id` IN (SELECT DISTINCT `id` FROM `user_permissions` WHERE `in_contact_list`='1') AND `team_members`.`team_name`='" . $teams[$i] . "' ORDER BY FIELD(`users`.`id`,'1', '24', '20','99','100','98', '64', '95', '96', '97');";
+                    $query = "SELECT * FROM `users` JOIN `user_info` ON `users`.`id`=`user_info`.`id` JOIN `team_members` ON `users`.`id`=`team_members`.`id` WHERE `users`.`is_disabled`='0' AND `users`.`id` IN (SELECT DISTINCT `id` FROM `user_permissions` WHERE `in_contact_list`='1') AND `team_members`.`team_name`='" . $teams[$i] . "' ORDER BY FIELD(`users`.`id`,'1', '24','98', '64', '95', '96', '97', '20','99','100');";
                 }
                 else {
                     // Query each team, from team lead to team members
@@ -135,17 +135,9 @@ print_navbar();
                                     }
 
                                     $memberPerRow++;
-                                    if ($teams[$i] === 'Admin') {
-                                        if ($memberPerRow == 3) {
-                                            echo '</div>';
-                                            $memberPerRow = 0;
-                                        }
-                                    }
-                                    else {
-                                        if ($memberPerRow == 4) {
-                                            echo '</div>';
-                                            $memberPerRow = 0;
-                                        }
+                                    if ($memberPerRow == 4) {
+                                        echo '</div>';
+                                        $memberPerRow = 0;
                                     }
                                 }
                             }
