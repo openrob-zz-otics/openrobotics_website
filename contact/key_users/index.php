@@ -12,6 +12,7 @@ print_navbar();
         if ($db = get_db()) {
             // List of teams
             $teams = array('Admin', 'ArtBot', 'First Year Mentorship', 'PianoBot', 'Robocup Arm', 'Robocup Drivetrain', 'Robocup Gripper', 'Robocup Software');
+            define('ADMIN_MEMBER_ROW', 3);
             for ($i = 0; $i < count($teams); $i++) {
                 echo '<div class="team-section">';
                 
@@ -134,9 +135,17 @@ print_navbar();
                                     }
 
                                     $memberPerRow++;
-                                    if ($memberPerRow == 4) {
-                                        echo '</div>';
-                                        $memberPerRow = 0;
+                                    if ($teams[$i] === 'Admin') {
+                                        if ($memberPerRow == 3) {
+                                            echo '</div>';
+                                            $memberPerRow = 0;
+                                        }
+                                    }
+                                    else {
+                                        if ($memberPerRow == 4) {
+                                            echo '</div>';
+                                            $memberPerRow = 0;
+                                        }
                                     }
                                 }
                             }
