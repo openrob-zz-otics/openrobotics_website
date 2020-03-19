@@ -22,7 +22,7 @@ class ValidateSessionResult {
 */
 
 /* -- Constants -- */
-$donate_link = "https://www.donate.startanevolution.ca/ea-action/action?ea.client.id=1730&ea.campaign.id=19413&Direct%20my%20Gift%20to%20Module=Open%20Robotics%20Student%20Team%20G1102";
+$donate_link = "https://donate.support.ubc.ca/page/20924/donate/1?transaction.dirgift=Open+Robotics+Student+Team%20G1102";
 
 /* -- Globals -- */
 $user_email = "";
