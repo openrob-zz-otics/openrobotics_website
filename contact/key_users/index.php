@@ -134,7 +134,7 @@ print_navbar();
                                     }
 
                                     $memberPerRow++;
-                                    if ($memberPerRow == 4) {
+                                    if ($memberPerRow == 4 || $row['id'] == 98) {
                                         echo '</div>';
                                         $memberPerRow = 0;
                                     }
