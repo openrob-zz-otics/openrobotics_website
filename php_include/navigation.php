@@ -29,7 +29,6 @@ define("CLASS_ACTIVE", 'class="active"');
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="/manage/blog">Manage Blog</a></li>
 						<li><a href="/manage/training">Manage Training</a></li>
-						<li><a href="/manage/badges">Manage Badges</a></li>
 					</ul>
 					</a>					
 					</li>';
