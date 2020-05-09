@@ -8,16 +8,17 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="subcontent">
 			<h2>Manage Badges</h2>
 		<div>
 	</div>
 <?php
 if (!canManageUsers()) {
-	echo '<div class="row"><div class="col-md-12"><h3>You do not have permission to be here</h3></div></div>';
+	echo '<div class="row"><div class="subcontent"><h3>You do not have permission to be here</h3></div></div>';
 } else {
-	echo '<div class="row">
-		<div class="col-sm-12">
+	echo '
+	<div class="row">
+		<div class="subcontent">
 			<a href="badge?id=0"><button class="btn btn-default">New Badge</button></a>
 		</div>
 		</div>';
