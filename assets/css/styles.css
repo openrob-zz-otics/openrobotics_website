@@ -308,6 +308,11 @@ th {
   width: 1170px;
 }
 
+.subcontent {
+  margin: auto;
+  width: 1170px;
+}
+
 .lead {
   background-image: url("../images/background.png");
   color: white;

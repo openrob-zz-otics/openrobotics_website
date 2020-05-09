@@ -8,17 +8,17 @@
 
 <div class="container">
 	<div class="row">
-		<div class="mtt-content">
+		<div class="subcontent">
 			<h2>Manage Projects</h2>	
 		</div>
 	</div>
 <?php
 	if (!canAddProjects() && !canManageAllProjects()) {
-		echo '<div class="row"><div class="mtt-content"><h3>You do not have permission to be here.</h3></div></div>';
+		echo '<div class="row"><div class="subcontent"><h3>You do not have permission to be here.</h3></div></div>';
 	} else {
 		echo '
 		<div class="row">
-			<div class="mtt-content">
+			<div class="subcontent">
 				<div class="col-md-4">
 					<a href="project?id=0"><button class="btn btn-default">New Project</button></a>
 				</div>
