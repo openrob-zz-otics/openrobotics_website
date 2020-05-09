@@ -14,10 +14,10 @@
 	</div>
 <?php
 	if (!canAddProjects() && !canManageAllProjects()) {
-		echo '<div class="row"><div class="col-md-12"><h3>You do not have permission to be here.</h3></div></div>';
+		echo '<div class="row"><div class="mtt-content"><h3>You do not have permission to be here.</h3></div></div>';
 	} else {
 		echo '<div class="row">
-		<div class="col-md-4">
+		<div class="mtt-content">
 			<a href="project?id=0"><button class="btn btn-default">New Project</button></a>
 		</div>
 		<div class="col-md-8">
