@@ -8,7 +8,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="mtt-content">
 			<h2>Manage Projects</h2>	
 		</div>
 	</div>
