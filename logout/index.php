@@ -22,6 +22,8 @@ print_navbar();
         </div>
     </div>
 
+    <br/><br/><br/><br/><br/><br/>
+
     <?php
     print_footnote();
     ?>
