@@ -462,6 +462,8 @@ a:hover {
 }
 
 .footnote {
+  position: absolute;
+  bottom: 0;
   height: 300px;
   background-color: gray;
 }
