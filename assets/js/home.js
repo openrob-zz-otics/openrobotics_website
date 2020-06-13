@@ -12,11 +12,12 @@ $(function () {
     $(".carousel_resize").width(width);
     $(".carousel_resize").height(height);
     $("#carousel-overlay").css("width", width * 5 / 7);
-    $("#carousel-overlay").css("height", height * 2 / 6);
+    $("#carousel-overlay").css("height", height / 3);
     $("#carousel-overlay").css("margin-left", width * 1 / 6);
-    $("#carousel-overlay").css("margin-top", height * 2 / 6);
-    $("#carousel-overlay-slogan").css("margin-top", height / 12);
+    $("#carousel-overlay").css("margin-top", height / 3);
     $("#carousel-overlay-title").css("font-size", width / 15);
+    $("#carousel-overlay-title").css("height", height / 3 * 0.6);
+    $("#carousel-overlay-title").css("padding-top", height / 10);
     $("#carousel-overlay-slogan").css("font-size", width / 30);
   });
   //Set the dimensions immediately

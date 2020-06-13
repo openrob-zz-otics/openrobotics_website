@@ -12,11 +12,15 @@
   position: absolute;
   z-index: 200;
   font-family: "Lucida Console", Courier, monospace;
+  background-color: rgba(0, 0, 0, .5);
 }
 
-.carousel-overlay-title {
+#carousel-overlay-title {
   font-weight: 900;
-  text-decoration: none;
+}
+
+#carousel-overlay-slogan {
+  margin: auto;
 }
 
 .transparent-button {
