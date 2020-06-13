@@ -11,9 +11,9 @@ $(function () {
     //Apply the current dimensions
     $(".carousel_resize").width(width);
     $(".carousel_resize").height(height);
-    $("#carousel-overlay").css("width", width * 5 / 7);
+    $("#carousel-overlay").css("width", width * 8 / 10);
     $("#carousel-overlay").css("height", height / 3);
-    $("#carousel-overlay").css("margin-left", width * 1 / 6);
+    $("#carousel-overlay").css("margin-left", width * 1 / 10);
     $("#carousel-overlay").css("margin-top", height / 3);
     $("#carousel-overlay-title").css("font-size", width / 15);
     $("#carousel-overlay-title").css("height", height / 3 * 0.6);
