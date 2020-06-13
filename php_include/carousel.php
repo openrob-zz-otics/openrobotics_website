@@ -18,7 +18,9 @@
     </ol>
 
     <div id="carousel-overlay">
-        <p style="font-family:'klinic-slab-book';">Creating Robots, Improving Humans.</p>
+        <p id="carousel-overlay-title" style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"><span style="color: red;">UBC </span><span style="color: white;">OPEN ROBOTICS</span></p>
+        <br/>
+        <p id="carousel-overlay-slogan" style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; color: white;">Creating robots, improving humans</p>
     </div>
 
     <div class="carousel-inner">
