@@ -17,7 +17,7 @@ print_navbar();
                 
                 // Admin team is represented according to seniority
                 if ($teams[$i] === 'Admin') {
-                    $query = "SELECT * FROM `users` JOIN `user_info` ON `users`.`id`=`user_info`.`id` JOIN `team_members` ON `users`.`id`=`team_members`.`id` WHERE `users`.`is_disabled`='0' AND `users`.`id` IN (SELECT DISTINCT `id` FROM `user_permissions` WHERE `in_contact_list`='1') AND `team_members`.`team_name`='" . $teams[$i] . "' ORDER BY FIELD(`users`.`id`,'1', '24', '20','6','100','98', '64', '95', '96', '97');";
+                    $query = "SELECT * FROM `users` JOIN `user_info` ON `users`.`id`=`user_info`.`id` JOIN `team_members` ON `users`.`id`=`team_members`.`id` WHERE `users`.`is_disabled`='0' AND `users`.`id` IN (SELECT DISTINCT `id` FROM `user_permissions` WHERE `in_contact_list`='1') AND `team_members`.`team_name`='" . $teams[$i] . "' ORDER BY FIELD(`users`.`id`,'1', '24', '20','6','100','98', '64', '95', '96', '97', '4');";
                 }
                 else {
                     // Query each team, from team lead to team members
@@ -117,7 +117,7 @@ print_navbar();
                                         else if ($row['id'] == 64) {
                                             echo '<p>Finance Lead/Safety Officer</p> </a> </div> </div>';
                                         }
-                                        else if ($row['id'] == 95 || $row['id'] == 96 || $row['id'] == 97) {
+                                        else if ($row['id'] == 95 || $row['id'] == 96 || $row['id'] == 97 || $row['id'] == 4) {
                                             echo '<p>Finance Member</p> </a> </div> </div>';
                                         }
                                         else if ($row['id'] == 98) {
