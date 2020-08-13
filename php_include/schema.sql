@@ -60,17 +60,17 @@ CREATE TABLE IF NOT EXISTS `user_info` (
 
 CREATE TABLE IF NOT EXISTS `projects` (
 	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-	`created_by` BIGINT(20) UNSIGNED NOT NULL,
-	`visible` TINYINT(1) UNSIGNED NOT NULL,
-	`is_featured` TINYINT(1) UNSIGNED NOT NULL,
-	`start_time` DATE NOT NULL,
-	`finish_time` DATE,
+	`created_by` BIGINT(20) UNSIGNED NULL,
+	`visible` TINYINT(1) UNSIGNED NULL,
+	`is_featured` TINYINT(1) UNSIGNED NULL,
+	`start_time` DATE NULL,
+	`finish_time` DATE NULL,
 	`name` TEXT NOT NULL,
 	`description` TEXT NOT NULL,
-	`hide_main_picture` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
-	`is_upcoming_project` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
-	`display_type` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
-	`is_disabled` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+	`hide_main_picture` TINYINT(1) UNSIGNED NULL DEFAULT '0',
+	`is_upcoming_project` TINYINT(1) UNSIGNED NULL DEFAULT '0',
+	`display_type` TINYINT(1) UNSIGNED NULL DEFAULT '0',
+	`is_disabled` TINYINT(1) UNSIGNED NULL DEFAULT '0',
 	PRIMARY KEY(`id`),
 	CONSTRAINT `projects.fk_user`
 		FOREIGN KEY (`created_by`)
