@@ -15,8 +15,8 @@
         <a href="https://twitter.com/@ubcopenrobotics" target="_blank">
             <img src="/assets/images/twitter-icon.png" width="35">
         </a>
-        <p>
-            Sponsored By:
+        <p class="footnote-sponsor">
+            Sponsored By
             <a href="https://www.jukeboxprint.ca/" target="_blank">
                 <img src="/assets/images/jukebox-transparent.png" width="100">
             </a>
