@@ -462,14 +462,18 @@ a:hover {
 }
 
 .footnote {
-  height: 300px;
-  background-color: gray;
+  height: 350px;
+  background-color: black;
 }
 
 .footnote-content {
-  padding-top: 100px;
+  padding-top: 75px;
 }
 
 .footnote-content p {
   color: white;
+}
+
+.footnote-sponsor {
+  padding-top: 20px;
 }
