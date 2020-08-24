@@ -263,6 +263,28 @@ CREATE TABLE IF NOT EXISTS `display_text` (
 	PRIMARY KEY(`id`)
 );
 
+CREATE TABLE IF NOT EXISTS `admin_postings` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`application` TEXT NOT NULL,
+	`position` TEXT NOT NULL,
+	`details` TEXT NOT NULL,
+	`project` TEXT NOT NULL,
+	`project_link` TEXT NOT NULL,
+	`role_count` BIGINT(20) UNSIGNED NOT NULL,
+	PRIMARY KEY(`id`) 
+);
+
+CREATE TABLE IF NOT EXISTS `technical_postings` (
+	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`application` TEXT NOT NULL,
+	`position` TEXT NOT NULL,
+	`details` TEXT NOT NULL,
+	`project` TEXT NOT NULL,
+	`project_link` TEXT NOT NULL,
+	`role_count` BIGINT(20) UNSIGNED NOT NULL,
+	PRIMARY KEY(`id`) 
+);
+
 #default text to display
 INSERT INTO `text_locations` VALUES('1', 'global', 'Global');
 INSERT INTO `text_locations` VALUES('2', 'home', 'Home Page');
