@@ -28,7 +28,6 @@ $(window)
     var width = $("#nav_container").width();
     var top = $("#left_line").css("top");
     console.log("Nav-container width: " + width);
-    console.log(top);
     var dif = 0;
     if (width < 1000) {
       $("#left_line").css("top", 140);
