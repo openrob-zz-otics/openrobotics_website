@@ -265,7 +265,6 @@ CREATE TABLE IF NOT EXISTS `display_text` (
 
 CREATE TABLE IF NOT EXISTS `admin_postings` (
 	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-	`application` TEXT NOT NULL,
 	`position` TEXT NOT NULL,
 	`details` TEXT NOT NULL,
 	`project` TEXT NOT NULL,
@@ -276,7 +275,6 @@ CREATE TABLE IF NOT EXISTS `admin_postings` (
 
 CREATE TABLE IF NOT EXISTS `technical_postings` (
 	`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-	`application` TEXT NOT NULL,
 	`position` TEXT NOT NULL,
 	`details` TEXT NOT NULL,
 	`project` TEXT NOT NULL,

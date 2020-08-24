@@ -40,7 +40,7 @@ print_navbar();
                         echo 
                             '<tr>
                                 <td>
-                                    <a href="' . $row['application'] . '">
+                                    <a href="https://forms.gle/M2yZpicG4zeLc1k48">
                                         <button>Apply Now</button>
                                     </a>
                                 </td>
