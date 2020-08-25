@@ -37,7 +37,7 @@ print_navbar();
                 $query = "SELECT * FROM `" . $type . "_postings`;";
                 if ($result = $db->query($query)) {
                     while ($row = $result->fetch_assoc()) {
-                        $position = '<p>' . $row['position'] . '</p>';
+                        $position = $row['position'];
                         if (strlen($row['details']) > 0) {
                             $position = '<a href="/recruitment/postings/assets/files/' . $row['details'] . '" download>' . $row['position'] . '</a>';
                         }
@@ -52,7 +52,7 @@ print_navbar();
                                     ' . $position .'
                                 </td>
                                 <td>
-                                    <p>'. $row['role_count'] .'</p>
+                                    ' . $row['role_count'] . '
                                 </td>
                                 <td>
                                     <a href="' . $row['project_link'] . '">' . $row['project'] . '</a>
