@@ -13,7 +13,7 @@ print_navbar();
 <div class="container">
     <div class="mtt-content">
     <?php
-        echo '<h2>' . ucfirst($type) . ' Positions</h2>'
+        echo '<h2>' . ucfirst($type) . ' Roles</h2>'
     ?>
     </div>
 
@@ -37,6 +37,10 @@ print_navbar();
                 $query = "SELECT * FROM `" . $type . "_postings`;";
                 if ($result = $db->query($query)) {
                     while ($row = $result->fetch_assoc()) {
+                        $position = '<p>' . $row['position'] . '</p>';
+                        if (strlen($row['details']) > 0) {
+                            $position = '<a href="/recruitment/postings/assets/files/' . $row['details'] . '" download>' . $row['position'] . '</a>';
+                        }
                         echo 
                             '<tr>
                                 <td>
@@ -45,7 +49,7 @@ print_navbar();
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="/recruitment/postings/assets/files/' . $row['details'] . '" download>' . $row['position'] . '</a>
+                                    ' . $position .'
                                 </td>
                                 <td>
                                     <p>'. $row['role_count'] .'</p>
