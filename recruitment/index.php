@@ -8,10 +8,12 @@ print_navbar();
 
 <div class="container">
     <div class="mtt-content">
-        <h2>So we've got your interest, what's next?<span class="text-muted"></h2>
-        <p>Right now we are looking for technically experienced individuals who can help write the training program, improve the website,
-            and complete the first iteration of our full-size robotics platform. If that's not you don't worry, just follow us on social media, and try and do a couple small hands on projects.
-            We'll post suggestions soon!</span></p>
+        <h2>So we've got your interest, what's next?</h2>
+        <p>
+            Our Fall Recruitment cycle is in full swing right now! If you're interested in joining, apply for a technical position <a href="/recruitment/postings/?type=technical">here</a>. 
+            If you're interested in an admin position apply <a href="/recruitment/postings/?type=admin">here</a>! Note that our applications are open to students across all faculties and of varying skill levels. 
+            We look forward to your applications!
+        </p>
     </div>
     <?php
     print_footnote();
