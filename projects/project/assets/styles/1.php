@@ -36,14 +36,6 @@
         }
 
         echo "<span class='disp-content'>" . $project_data['description'] . "</span><br><br>";
-
-        echo "<p>Contributors:</p><ul class='list'>";
-
-        for ($i = 0; $i < count($first_name_array); $i++) {
-            echo "<li><a href='/contact/user?id=" . $contributor_ids[$i] . "'>";
-            echo $first_name_array[$i] . ' ' . $last_name_array[$i] . "</a></li>";
-        }
-        echo "</ul>";
         ?>
     </div>
 </div>
