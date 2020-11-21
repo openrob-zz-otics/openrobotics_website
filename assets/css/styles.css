@@ -8,7 +8,14 @@
 html,
 body {
   scroll-padding-top: 155px;
+  background-color: #121212;
+  color: white;
   /* height of sticky header */
+}
+
+.navbar {
+  background-color: #121212;
+  color: white
 }
 
 @media (min-width: 768px) {
@@ -21,7 +28,7 @@ body {
   }
 
   .navbar-nav>li>a {
-    color: #000 !important;
+    color: white !important;
     font-size: large;
     font-weight: bold;
   }
