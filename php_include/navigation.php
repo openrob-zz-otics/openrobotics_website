@@ -9,7 +9,7 @@ define("CLASS_ACTIVE", 'class="active"');
 
     <div class="hidden-xs">
         <a href="/" title="Home">
-            <img src="/assets/images/logo.png" class="img" id="logo" width="130" text="home" style="position: absolute;top: 50px; left:410px;">
+            <img src="/assets/images/logo_white_text.png" class="img" id="logo" width="130" text="home" style="position: absolute;top: 50px; left:410px;">
         </a>
     </div>
 
