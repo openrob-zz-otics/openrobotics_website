@@ -484,3 +484,7 @@ a:hover {
 .footnote-sponsor {
   padding-top: 20px;
 }
+
+.popover {
+  background-color: #121212;
+}
