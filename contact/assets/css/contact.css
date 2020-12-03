@@ -5,3 +5,12 @@
 .bg-success {
 	padding: 1em 1em 1em 1em;
 }
+
+#form_submit {
+	margin-top: 10px;
+}
+
+#captcha-error {
+	margin-top: 5px;
+	color: red;
+}

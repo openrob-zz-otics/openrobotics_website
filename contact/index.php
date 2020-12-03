@@ -17,7 +17,7 @@ print_navbar();
         $message = @$_POST['message'];
 
         if (isset($_POST['submit'])) {
-            mail("webdevelopment@openrobotics.ca", "Email from: ".$email, $message);
+            mail("webdevelopment@openrobotics.ca", "Email from: ".$email." (".$name.")", $message);
         }
 
     ?>
@@ -47,6 +47,8 @@ print_navbar();
                     <textarea class="form-control" rows="10" name="message" id="form_message"></textarea>
                 </div>
                 <br />
+                <div class="g-recaptcha" data-sitekey="6LcLgt0UAAAAADb3C05_LsPRlGBzkh9g1oTmerZw"></div>
+                <p id="captcha-error" style="display:none;">Please prove you are not a robot before submitting</p>
                 <button class="btn btn-default btn-disabled" name="submit" id="form_submit" disabled>Submit</button>
             </form>
         </div>
