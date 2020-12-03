@@ -67,23 +67,12 @@ $(function() {
 	{
 		validate_form();
 	});
-/*
-	$("#form_submit").click(function() {
-		//submit form
-		if (validate_form()) {
-			var name = $("#form_name").val();
-			var message = $("#form_message").val();
-			var email = $("#form_email").val();
-			$("#form_control").slideUp();
-			
-			
-			$.ajax({
-				
-			}).done(function()
-			
-			});
-			
+
+	$("form").submit(function(e) {
+		var captcha = grecaptcha.getResponse();
+		if (captcha.length == 0) {
+			$("#captcha-error").css("display", "block");
+			e.preventDefault();
 		}
 	});
-*/
 });
