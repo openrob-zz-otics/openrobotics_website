@@ -17,7 +17,7 @@ print_navbar();
         $message = @$_POST['message'];
 
         if (isset($_POST['submit'])) {
-            mail("webdevelopment@openrobotics.ca", "Email from: ".$email."(".$name.")", $message);
+            mail("webdevelopment@openrobotics.ca", "Email from: ".$email." (".$name.")", $message);
         }
 
     ?>

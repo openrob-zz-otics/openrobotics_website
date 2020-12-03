@@ -71,7 +71,7 @@ $(function() {
 	$("form").submit(function(e) {
 		var captcha = grecaptcha.getResponse();
 		if (captcha.length == 0) {
-			$("#captcha-error").css("display", "block");
+			$("#captcha-error").show();
 			e.preventDefault();
 		}
 	});
