@@ -124,6 +124,10 @@ define("CLASS_ACTIVE", 'class="active"');
                 else
                     echo '<li class="tab dropdown"><a href="/recruitment/">Recruitment</span></a>';
                 ?>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a class='heading-text' href="/recruitment/postings/?type=admin">Admin Roles</a></li>
+                    <li><a class='heading-text' href="/recruitment/postings/?type=technical">Technical Roles</a></li>
+                </ul>
                 <?php echo '</li>' ?>
             </ul>
             <ul class="nav navbar-nav navbar-nav-custom-2">

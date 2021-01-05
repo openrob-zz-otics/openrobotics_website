@@ -10,10 +10,9 @@ print_navbar();
     <div class="mtt-content">
         <h2>So we've got your interest, what's next?</h2>
         <p>
-            Our Fall Recruitment Cycle is now closed, but stay tuned! Our next recruitment cycle will open on <b>January 1st, 2021</b>. 
-            In the mean time follow us on <a href="https://www.facebook.com/UBCOpenRobotics/" target="_blank">Facebook</a>, 
-            <a href="https://www.instagram.com/ubcopenrobotics/" target="_blank">Instagram</a>, or <a href="https://twitter.com/ubcopenrobotics" target="_blank">Twitter</a> 
-            or email us at <a href="mailto:intelligence@openrobotics.ca">intelligence@openrobotics.ca</a> if you have any questions. 
+            Our Winter Recruitment cycle is in full swing right now! If you're interested in joining, apply for a technical position <a href="/recruitment/postings/?type=technical">here</a>. 
+            If you're interested in an admin position apply <a href="/recruitment/postings/?type=admin">here</a>! Note that our applications are open to students across all faculties and of varying skill levels. 
+            We look forward to your applications! 
         </p>
     </div>
     <?php
