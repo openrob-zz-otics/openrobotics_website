@@ -39,6 +39,7 @@ $(window)
     $("#left_line").width(width / 2 - 75);
     $("#right_line").width(width / 2 - 75);
     $("#left_line").css("left", 10 + dif / 2);
+    $("#logo").css("left", width / 2 - 65);
     $("#right_line").css("left", (dif + width) / 2 + 65);
 
   })
