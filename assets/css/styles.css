@@ -18,7 +18,32 @@ body {
   color: white
 }
 
-@media (min-width: 768px) {
+@media (max-width: 999px) {
+    .navbar {
+        height: 155px;
+    }
+
+    .navbar-nav-custom {
+        display: none;
+    }
+
+    .navbar-nav-custom-2 {
+        display: none;
+    }
+
+    #main_container {
+        margin-top: 155px;
+    }
+
+    #logo {
+        position: absolute;
+        top: 40px; 
+        left: 30%;
+        transition: transform 0.2s;
+    }
+}
+
+@media (min-width: 1000px) {
   .navbar {
     height: 155px;
   }
@@ -31,6 +56,18 @@ body {
     color: white !important;
     font-size: large;
     font-weight: bold;
+  }
+
+  .navbar-nav-custom {
+    width: 0px;
+  }
+
+  .navbar-nav-custom-2 {
+    display: none;
+  }
+
+  #logo {
+      left: 0%;
   }
 
   #main_container {
@@ -46,9 +83,16 @@ body {
   .row {
     width: 100%;
   }
+
+  #logo {
+    position: absolute;
+    top: 40px; 
+    left: 60%;
+    transition: transform 0.2s;
+  }
 }
 
-@media (max-width: 100%) {
+@media (min-width: 1350px) {
   .navbar-brand {
     padding-top: 5px;
   }
@@ -60,6 +104,21 @@ body {
   .right-override {
     padding-top: 7px;
   }
+
+  .navbar-nav-custom {
+    display: block;
+  }
+
+  .navbar-nav-custom-2 {
+    display: block;
+  }
+
+  #logo {
+    position: absolute;
+    top: 40px; 
+    left: 60%;
+    transition: transform 0.2s;
+  }
 }
 
 .navbar-nav>li>a {
@@ -67,12 +126,12 @@ body {
 }
 
 .navbar-nav-custom {
-  width: 34%;
+  width: 75%;
 }
 
 .navbar-nav-custom-2 {
   float: right;
-  width: 34%;
+  width: 14%;
 }
 
 .navbar-nav-custom-2:last-child {
@@ -113,7 +172,7 @@ body {
 }
 
 .tab {
-  width: 30%;
+  width: 15%;
 }
 
 .hideme {
@@ -437,13 +496,9 @@ a:hover {
   cursor: pointer;
 }
 
-#logo {
-  transition: transform 0.2s;
-}
-
-#logo:hover {
+/* #logo:hover {
   transform: scale(1.25);
-}
+} */
 
 .h-divider {
   margin: auto;

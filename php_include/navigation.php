@@ -5,15 +5,15 @@ define("CLASS_ACTIVE", 'class="active"');
 
 <!-- Fixed navbar -->
 <div id="nav_container" class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="line hidden-xs" id="left_line" style="display:none;position: absolute; transform: rotate(0deg); width: 400px; top: 120px; left: 10px; z-index:1;"></div>
+    <!-- <div class="line hidden-xs" id="left_line" style="display:none;position: absolute; transform: rotate(0deg); width: 400px; top: 120px; left: 10px; z-index:1;"></div> -->
 
     <div class="hidden-xs">
         <a href="/" title="Home">
-            <img src="/assets/images/logo_white_text.png" class="img" id="logo" width="130" text="home" style="position: absolute;top: 50px; left:410px;">
+            <img src="/assets/images/logo_update.png" class="img" id="logo" width="380" text="home">
         </a>
     </div>
 
-    <div class="line hidden-xs" id="right_line" style="display:none;position: absolute; transform: rotate(0deg); width: 400px; top: 120px; left: 550px; z-index:1;"></div>
+    <!-- <div class="line hidden-xs" id="right_line" style="display:none;position: absolute; transform: rotate(0deg); width: 400px; top: 120px; left: 550px; z-index:1;"></div> -->
 
     <div class="container navbar-inner navbar-full" id="cred_navbar">
         <?php
@@ -129,8 +129,6 @@ define("CLASS_ACTIVE", 'class="active"');
                     <li><a class='heading-text' href="/recruitment/postings/?type=technical">Technical Roles</a></li>
                 </ul>
                 <?php echo '</li>' ?>
-            </ul>
-            <ul class="nav navbar-nav navbar-nav-custom-2">
                 <?php if (PAGE_TITLE == "blog" || PAGE_TITLE == "training" || PAGE_TITLE == "calendar")
                     echo '<li class="tab dropdown active"><a href="/resources/">Resources</span></a>';
                 else
@@ -147,6 +145,9 @@ define("CLASS_ACTIVE", 'class="active"');
                 else
                     echo '<li class="tab"><a href="/contact/">Contact Us</a></li>';
                 ?>
+                <?php echo '</li>' ?>
+            </ul>
+            <ul class="nav navbar-nav navbar-nav-custom-2">
                 <?php if (PAGE_TITLE == "donate")
                     echo '<li class="tab active" style="padding-top: 12px;"><a href="' . $GLOBALS["donate_link"] . '"><button class="btn btn-primary btn-lg">Donate</button></a></li>';
                 else
