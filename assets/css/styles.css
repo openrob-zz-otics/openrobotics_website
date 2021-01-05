@@ -18,32 +18,7 @@ body {
   color: white
 }
 
-@media (max-width: 999px) {
-    .navbar {
-        height: 155px;
-    }
-
-    .navbar-nav-custom {
-        display: none;
-    }
-
-    .navbar-nav-custom-2 {
-        display: none;
-    }
-
-    #main_container {
-        margin-top: 155px;
-    }
-
-    #logo {
-        position: absolute;
-        top: 40px; 
-        left: 30%;
-        transition: transform 0.2s;
-    }
-}
-
-@media (min-width: 1000px) {
+@media (min-width: 768px) {
   .navbar {
     height: 155px;
   }
@@ -56,18 +31,6 @@ body {
     color: white !important;
     font-size: large;
     font-weight: bold;
-  }
-
-  .navbar-nav-custom {
-    width: 0px;
-  }
-
-  .navbar-nav-custom-2 {
-    display: none;
-  }
-
-  #logo {
-      left: 0%;
   }
 
   #main_container {
@@ -83,16 +46,9 @@ body {
   .row {
     width: 100%;
   }
-
-  #logo {
-    position: absolute;
-    top: 40px; 
-    left: 60%;
-    transition: transform 0.2s;
-  }
 }
 
-@media (min-width: 1350px) {
+@media (max-width: 100%) {
   .navbar-brand {
     padding-top: 5px;
   }
@@ -104,21 +60,6 @@ body {
   .right-override {
     padding-top: 7px;
   }
-
-  .navbar-nav-custom {
-    display: block;
-  }
-
-  .navbar-nav-custom-2 {
-    display: block;
-  }
-
-  #logo {
-    position: absolute;
-    top: 40px; 
-    left: 60%;
-    transition: transform 0.2s;
-  }
 }
 
 .navbar-nav>li>a {
@@ -126,12 +67,12 @@ body {
 }
 
 .navbar-nav-custom {
-  width: 75%;
+  width: 34%;
 }
 
 .navbar-nav-custom-2 {
   float: right;
-  width: 14%;
+  width: 34%;
 }
 
 .navbar-nav-custom-2:last-child {
@@ -172,7 +113,7 @@ body {
 }
 
 .tab {
-  width: 15%;
+  width: 30%;
 }
 
 .hideme {
@@ -496,9 +437,13 @@ a:hover {
   cursor: pointer;
 }
 
-/* #logo:hover {
+#logo {
+  transition: transform 0.2s;
+}
+
+#logo:hover {
   transform: scale(1.25);
-} */
+}
 
 .h-divider {
   margin: auto;
