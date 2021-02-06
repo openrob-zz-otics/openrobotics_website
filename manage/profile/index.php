@@ -1,7 +1,7 @@
 <?php
 	//include our library and start drawing the page
 	require_once("../../php_include/functions.php");
-	$page_name = "profile";
+	$page_name = "login";
 	print_header($page_name, true);
 	print_navbar();	
 ?>
