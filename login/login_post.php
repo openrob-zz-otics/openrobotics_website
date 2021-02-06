@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
 		session_start();
 		$_SESSION['email'] = $email;
 		$_SESSION['session_id'] = $login_response->session_id;
-		include("../manage/profile/index.php");
+		include("login_success.php");
 	}
 	
 } else {
