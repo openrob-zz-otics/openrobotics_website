@@ -17,7 +17,7 @@ print_navbar();
                 
                 // Admin team is represented according to seniority
                 if ($teams[$i] === 'Admin') {
-                    $query = "SELECT * FROM `users` JOIN `user_info` ON `users`.`id`=`user_info`.`id` JOIN `team_members` ON `users`.`id`=`team_members`.`id` WHERE `users`.`is_disabled`='0' AND `users`.`id` IN (SELECT DISTINCT `id` FROM `user_permissions` WHERE `in_contact_list`='1') AND `team_members`.`team_name`='" . $teams[$i] . "' ORDER BY FIELD(`users`.`id`,'1', '24', '20','6','100','98', '64', '95', '96', '97', '4');";
+                    $query = "SELECT * FROM `users` JOIN `user_info` ON `users`.`id`=`user_info`.`id` JOIN `team_members` ON `users`.`id`=`team_members`.`id` WHERE `users`.`is_disabled`='0' AND `users`.`id` IN (SELECT DISTINCT `id` FROM `user_permissions` WHERE `in_contact_list`='1') AND `team_members`.`team_name`='" . $teams[$i] . "' ORDER BY FIELD(`users`.`id`,'1', '24', '20','6','98','100','62','65','66','64');";
                 }
                 else {
                     // Query each team, from team lead to team members
@@ -114,17 +114,20 @@ print_navbar();
                                         if ($row['id'] == 20) {
                                             echo '<p>Web Development Lead</p> </a> </div> </div>';
                                         }
-                                        else if ($row['id'] == 64) {
-                                            echo '<p>Finance Lead/Safety Officer</p> </a> </div> </div>';
+                                        else if ($row['id'] == 100) {
+                                            echo '<p>Finance Lead/Treasurer</p> </a> </div> </div>';
                                         }
-                                        else if ($row['id'] == 95 || $row['id'] == 96 || $row['id'] == 97 || $row['id'] == 4) {
+                                        else if ($row['id'] == 62 || $row['id'] == 65 || $row['id'] == 66) {
                                             echo '<p>Finance Member</p> </a> </div> </div>';
                                         }
                                         else if ($row['id'] == 98) {
                                             echo '<p>Graphic Designer</p> </a> </div> </div>';
                                         }
-                                        else if ($row['id'] == 6 || $row['id'] == 100) {
+                                        else if ($row['id'] == 6) {
                                             echo '<p>Web Developer</p> </a> </div> </div>';
+                                        }
+                                        else if ($row['id'] == 64) {
+                                            echo '<p>Safety Officer</p> </a> </div> </div>';
                                         }
                                     }
                                     else if ($teams[$i] === 'First Year Mentorship') {
