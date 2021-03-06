@@ -9,8 +9,7 @@ print_navbar();
     <section class="services">
         <div class="row">
             <div class="col-md-4">
-                <!-- <div class="service-item first-service" id="blog" onclick="location.href='/resources/blog/'"> -->
-                <div class="service-item first-service" id="blog">
+                <div class="service-item first-service" id="blog" onclick="location.href='/resources/blog/'">
                     <div class="service-icon"></div>
                     <h2>Blog</h2>
                     <p>Blog section contains all blog posts of Open Robotics. We look forward to sharing current and exciting news and information about our team members, projects, and competitions. We hope that our blog will be a place where people will come to read interesting, relevant, and thought-provoking content.</p>

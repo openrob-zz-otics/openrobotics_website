@@ -7,7 +7,7 @@ print_navbar();
 ?>
 <div class="container">
     <div class="row span-content">
-        <div class="col-sm-8">
+        <div class="col-sm-8 mtt-content">
             <?php
 
             //the limit controls how many posts are displayed on one page

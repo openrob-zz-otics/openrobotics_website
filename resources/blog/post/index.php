@@ -1,6 +1,6 @@
 <?php
 	//include our library and start drawing the page
-	require_once("../../php_include/functions.php");
+	require_once("../../../php_include/functions.php");
 	$page_name = "post";
 	print_header($page_name, false);
 	print_navbar();
@@ -15,7 +15,7 @@
 			if ($result = $db->query($query)) {
 				//check that we got data
 				if ($result->num_rows < 1) {
-					echo '<div class="row"><div class="col-sm-12"><h3 class="text-danger">Invalid ID!</h3></div></div>';
+					echo '<div class="row mtt-content"><div class="col-sm-12"><h3 class="text-danger">Invalid ID!</h3></div></div>';
 				} else {
 					//print the blog post
 					if ($row = $result->fetch_assoc()) {
@@ -23,7 +23,7 @@
 						$asoc = $db->query($query)->fetch_assoc();
 						$name = $asoc['first_name'].' '.$asoc['last_name'];
 					
-						echo '<div class="row">';
+						echo '<div class="row mtt-content">';
 						echo '  <div class="col-sm-2"></div>';
 						echo '	<div class="col-sm-8">';
 						echo '		<h3>'.$row['title'].'</h3>';
