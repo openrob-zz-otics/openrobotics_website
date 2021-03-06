@@ -374,6 +374,10 @@ th {
   width: 1170px;
 }
 
+.pt-5 {
+    padding-top: 5%;
+}
+
 .subcontent {
   margin: auto;
   width: 1170px;

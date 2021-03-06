@@ -136,7 +136,7 @@ define("CLASS_ACTIVE", 'class="active"');
                 ?>
                 <ul class="dropdown-menu" role="menu">
                     <li><a class='heading-text' href="/resources/blog/">Blog</a></li>
-                    <li><a class='heading-text' href="/resources/training/">Training</a></li>
+                    <!-- <li><a class='heading-text' href="/resources/training/">Training</a></li> -->
                     <!-- <li><a class='heading-text' href="/resources/calendar/">Calendar</a></li> -->
                 </ul>
                 <?php echo '</li>' ?>
