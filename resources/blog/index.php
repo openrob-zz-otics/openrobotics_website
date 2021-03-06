@@ -6,8 +6,8 @@ print_header($page_name, false);
 print_navbar();
 ?>
 <div class="container">
-    <div class="row span-content">
-        <div class="col-sm-8 mtt-content">
+    <div class="row span-content mtt-content">
+        <div class="col-sm-8 pt-5">
             <?php
 
             //the limit controls how many posts are displayed on one page
@@ -52,7 +52,7 @@ print_navbar();
                 //display buttons for older/newer posts when relevant
                 if ($count > $offset + $limit || $offset) {
                     echo '<hr><div class="row">';
-                    echo '	<div class="col-sm-12">';
+                    echo '	<div class="col-sm-8">';
                     if ($count > $offset + $limit) {
                         echo '	<span style="float:right;"><a href="?offset=' . ($offset + 5) . '"><button type="button" class="btn btn-default btn-sm">Older Posts&raquo;</button></a></span>';
                     }
@@ -68,7 +68,7 @@ print_navbar();
             ?>
         </div>
         <!-- List all posts by month-->
-        <div class="col-sm-4">
+        <div class="col-sm-4 pt-5">
             <?php
             if ($db) {
                 //!!!!!!USE THE FIRST QUERY WE MADE TO GET NUMBER OF BLOG POSTS!!!
