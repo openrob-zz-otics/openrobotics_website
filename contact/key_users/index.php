@@ -11,7 +11,7 @@ print_navbar();
         <?php
         if ($db = get_db()) {
             // List of teams
-            $teams = array('Admin', 'ArtBot', 'First Year Mentorship', 'PianoBot', 'Robocup Arm', 'Robocup Drivetrain', 'Robocup Gripper', 'Robocup Software');
+            $teams = array('Admin', 'ArtBot', 'PianoBot', 'Robocup Arm', 'Robocup Drivetrain', 'Robocup Gripper', 'Robocup Software');
             for ($i = 0; $i < count($teams); $i++) {
                 echo '<div class="team-section">';
                 
@@ -73,14 +73,6 @@ print_navbar();
                                     // Captain has their own title
                                     if ($teams[$i] === 'Admin') {
                                         echo '<p>Co-captain</p> </a> </div> </div> ';
-                                    } else if ($teams[$i] === 'First Year Mentorship') {
-                                        if ($row['id'] == 1) {
-                                            echo '<p>Mechanical Mentor</p> </a> </div> </div> ';
-                                        } else if ($row['id'] == 89) {
-                                            echo '<p>Software Mentor</p> </a> </div> </div> ';
-                                        } else {
-                                            echo '</a> </div> </div> ';
-                                        }
                                     } else {
                                         echo '<p>' . $teams[$i] . ' Lead</p> </a> </div> </div> ';
                                     }
@@ -109,7 +101,7 @@ print_navbar();
 
                                     echo ' alt="service 1"> </div> <h3>' . $row['first_name'] . ' ' . $row['last_name'] . '</h3> ';
                                     
-                                    # Admin and First Year Mentorshop members have their own unique titles 
+                                    # Admin members have their own unique titles 
                                     if ($teams[$i] === 'Admin') {
                                         if ($row['id'] == 20) {
                                             echo '<p>Web Development Lead</p> </a> </div> </div>';
