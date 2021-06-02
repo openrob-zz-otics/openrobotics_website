@@ -44,7 +44,7 @@ print_navbar();
                         echo 
                             '<tr>
                                 <td>
-                                    <a href="https://forms.gle/NSvWYUBuawSqvVNu8">
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe7r83mF7X93vDTpJzVad5lVt7_37c1P_lt-nw2BY3yescSdA/viewform">
                                         <button>Apply Now</button>
                                     </a>
                                 </td>
