@@ -124,6 +124,9 @@ print_navbar();
 										else if ($row['id'] == 24) {
 											echo '<p>Mentor</p> </a> </div> </div>';
 										} 
+										else if ($row['id'] == 1) {
+											echo '<p>Integration Lead</p> </a> </div> </div>';
+										}
                                     }
                                     else if ($teams[$i] === 'First Year Mentorship') {
                                         echo '<p>Mentee</p> </a> </div> </div> ';
@@ -132,7 +135,7 @@ print_navbar();
                                     }
 
                                     $memberPerRow++;
-                                    if ($memberPerRow == 4 || $row['id'] == 98 || $row['id'] == 24) {
+                                    if ($memberPerRow == 4 || $row['id'] == 98 || $row['id'] == 24 || $row['id'] == 1) {
                                         echo '</div>';
                                         $memberPerRow = 0;
                                     }
