@@ -124,6 +124,9 @@ print_navbar();
 										else if ($row['id'] == 24) {
 											echo '<p>Mentor</p> </a> </div> </div>';
 										} 
+										else if ($row['id'] == 1) {
+											echo '<p>Integration Lead</p> </a> </div> </div>'
+										}
                                     }
                                     else if ($teams[$i] === 'First Year Mentorship') {
                                         echo '<p>Mentee</p> </a> </div> </div> ';
