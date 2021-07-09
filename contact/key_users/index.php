@@ -125,7 +125,7 @@ print_navbar();
 											echo '<p>Mentor</p> </a> </div> </div>';
 										} 
 										else if ($row['id'] == 1) {
-											echo '<p>Integration Lead</p> </a> </div> </div>'
+											echo '<p>Integration Lead</p> </a> </div> </div>';
 										}
                                     }
                                     else if ($teams[$i] === 'First Year Mentorship') {
