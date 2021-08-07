@@ -21,7 +21,7 @@
                 <img src="/assets/images/jukebox-transparent.png" width="100">
             </a>
 			<a href="https://assunmotor.com/" target="_blank">
-                <img src="/assets/images/assunmotor-transparent.png" width="100">
+                <img src="/assets/images/assunmotor-white.png" width="100">
             </a>
         </p>
     </center>
