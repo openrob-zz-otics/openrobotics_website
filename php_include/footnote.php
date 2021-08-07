@@ -20,6 +20,9 @@
             <a href="https://www.jukeboxprint.ca/" target="_blank">
                 <img src="/assets/images/jukebox-transparent.png" width="100">
             </a>
+			<a href="https://assunmotor.com/" target="_blank">
+                <img src="/assets/images/assunmotor-white.png" width="100">
+            </a>
         </p>
     </center>
 </footer>
