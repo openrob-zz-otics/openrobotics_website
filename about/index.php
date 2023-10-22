@@ -15,7 +15,7 @@ print_navbar();
                     Our team was started in 2012 as
                     Thunderbots @home, to compete
                     in the July 2014 <a href="http://www.robocupathome.org/">RoboCup@home</a>
-                    competition.
+                    competition
                 </p>
             </blockquote>
             <blockquote class="blockquote-reverse">
